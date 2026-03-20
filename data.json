@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "update_time": "2026-03-20T13:08:34.646971",
+=======
+  "update_time": "2026-03-20T13:09:49.653517",
+>>>>>>> 1a2b3e9 (Update: Weekly report stats and layout optimization)
   "date_range": "2026-03-13 to 2026-03-20",
   "total_count": 2243,
   "stats": {
@@ -63,7 +67,11 @@
       "history_geojson": {
         "type": "FeatureCollection",
         "metadata": {
+<<<<<<< HEAD
           "generated": 1774012115000,
+=======
+          "generated": 1774012191000,
+>>>>>>> 1a2b3e9 (Update: Weekly report stats and layout optimization)
           "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude=-61.1525&longitude=-56.2683&maxradius=10&minmagnitude=5.0",
           "title": "USGS Earthquakes",
           "status": 200,
@@ -13099,7 +13107,11 @@
       "history_geojson": {
         "type": "FeatureCollection",
         "metadata": {
+<<<<<<< HEAD
           "generated": 1774012118000,
+=======
+          "generated": 1774012196000,
+>>>>>>> 1a2b3e9 (Update: Weekly report stats and layout optimization)
           "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude=-28.684&longitude=-71.6269&maxradius=10&minmagnitude=5.0",
           "title": "USGS Earthquakes",
           "status": 200,
@@ -157653,7 +157665,11 @@
       "history_geojson": {
         "type": "FeatureCollection",
         "metadata": {
+<<<<<<< HEAD
           "generated": 1774012121000,
+=======
+          "generated": 1774012204000,
+>>>>>>> 1a2b3e9 (Update: Weekly report stats and layout optimization)
           "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude=-19.2927&longitude=168.3597&maxradius=10&minmagnitude=5.0",
           "title": "USGS Earthquakes",
           "status": 200,

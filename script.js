@@ -26,9 +26,7 @@ async function loadApp() {
         renderTopThree(data, plates);
     } catch (error) {
         console.error('Error loading data:', error);
-        document.getElementById('loading').innerHTML = `
-            <p>Seismic analysis in progress or data unavailable.</p>
-        `;
+        document.getElementById('loading').innerHTML = `<p>Seismic analysis in progress or data unavailable.</p>`;
     }
 }
 
@@ -37,9 +35,7 @@ function initMainMap(data, plates) {
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap'
     }).addTo(map);
-
     L.geoJSON(plates, { style: { color: 'orange', weight: 1.5, dashArray: '5, 5' } }).addTo(map);
-
     L.geoJSON(data, {
         pointToLayer: (f, latlng) => L.circleMarker(latlng, {
             radius: Math.max(f.properties.mag * 2.2, 2),
@@ -57,12 +53,7 @@ function getColor(mag) {
 }
 
 function renderStats(data) {
-    // 1. Set Date Range
-    if (data.date_range) {
-        document.getElementById('date-range-display').innerText = `Report Period: ${data.date_range}`;
-    }
-
-    // 2. Set Statistics
+    if (data.date_range) document.getElementById('date-range-display').innerText = `Report Period: ${data.date_range}`;
     if (data.stats) {
         document.getElementById('stat-total').innerText = data.total_count || 0;
         document.getElementById('stat-m45').innerText = data.stats.m4_5 || 0;
@@ -74,21 +65,24 @@ function renderStats(data) {
 
 function renderTopThree(data, plates) {
     const container = document.getElementById('top-earthquakes');
-    container.innerHTML = ''; // Clear existing
-
+    container.innerHTML = '';
     if (!data.top_3) return;
 
     data.top_3.forEach((eq, i) => {
         const card = document.createElement('div');
         card.className = 'eq-card';
-
         const reports = eq.usgs_reports;
+
+        // 1. Media Gallery logic
         let mediaHTML = '';
         const reportTypes = ['shakemap', 'losspager', 'dyfi', 'focal_mechanism', 'moment_tensor'];
         reportTypes.forEach(type => {
             const report = reports[type];
             if (report && report.images && report.images.length > 0) {
-                report.images.forEach(imgUrl => {
+                // EXCLUSION: If it's shakemap, only take the first image (usually the one with the legend/table)
+                // This removes the "middle" duplicate shakemap image requested.
+                const imgsToDisplay = (type === 'shakemap') ? [report.images[0]] : report.images;
+                imgsToDisplay.forEach(imgUrl => {
                     mediaHTML += `
                         <div class="media-item">
                             <img src="${imgUrl}" alt="${report.title}" onclick="window.open('${imgUrl}', '_blank')">
@@ -99,10 +93,7 @@ function renderTopThree(data, plates) {
             }
         });
 
-        let usgsNewsHTML = eq.public_info && eq.public_info.length > 0
-            ? eq.public_info.map(n => `<li><a href="${n.url}" target="_blank">${n.text}</a></li>`).join('')
-            : '<li>No direct reports in USGS feed.</li>';
-
+        // 2. Google News & USGS Button integration
         let googleNewsHTML = (eq.google_news && eq.google_news.length > 0)
             ? eq.google_news.map(n => `<li><a href="${n.url}" target="_blank">${n.text}</a></li>`).join('')
             : '<li>No matching Google News found.</li>';
@@ -112,26 +103,18 @@ function renderTopThree(data, plates) {
                 <h3>#${i + 1}: Magnitude ${eq.mag} - ${eq.place}</h3>
                 <p><strong>Time:</strong> ${new Date(eq.time).toUTCString()}</p>
             </div>
-
             <div id="local-map-${i}" class="local-map"></div>
-
             <p><strong>Regional Context:</strong> ${eq.history_count} historical earthquakes (M5.0+) within 10° since 1970.</p>
-
             <div class="media-grid">${mediaHTML || '<p style="padding: 20px; color: #666;">Waiting for USGS to process visual reports...</p>'}</div>
 
-            <div class="report-section">
-                <div class="report-box" style="border-left-color: #27ae60;">
-                    <h4>USGS Reports</h4>
-                    <ul>${usgsNewsHTML}</ul>
-                </div>
+            <div class="report-section" style="grid-template-columns: 1fr;">
                 <div class="report-box" style="border-left-color: #f1c40f;">
-                    <h4>Latest Google News</h4>
-                    <ul>${googleNewsHTML}</ul>
+                    <h4>Latest News & Official Data</h4>
+                    <ul style="margin-bottom: 15px;">${googleNewsHTML}</ul>
+                    <div style="text-align: right; border-top: 1px solid #eee; padding-top: 10px;">
+                         <a href="${eq.usgs_url}" target="_blank" class="btn">Full USGS Event Page</a>
+                    </div>
                 </div>
-            </div>
-
-            <div style="margin-top: 15px; text-align: center;">
-                 <a href="${eq.usgs_url}" target="_blank" class="btn">Full USGS Event Page</a>
             </div>
 
             ${reports.tectonic_summary ? `
@@ -143,18 +126,14 @@ function renderTopThree(data, plates) {
         `;
         container.appendChild(card);
 
-        // Map rendering
         const localMap = L.map(`local-map-${i}`).setView([eq.lat, eq.lon], 6);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(localMap);
         L.geoJSON(plates, { style: { color: 'orange', weight: 2 } }).addTo(localMap);
         L.circleMarker([eq.lat, eq.lon], { radius: 10, color: '#d32f2f', fillColor: '#d32f2f', fillOpacity: 0.8 }).addTo(localMap);
-
         if (eq.history_geojson) {
             L.geoJSON(eq.history_geojson, {
-                pointToLayer: (f, latlng) => {
-                    if (f.id === eq.id) return null;
-                    return L.circleMarker(latlng, { radius: 4, color: '#2980b9', weight: 1, fillOpacity: 0.3 });
-                }
+                pointToLayer: (f, latlng) => (f.id === eq.id) ? null : L.circleMarker(latlng, { radius: 4, color: '#2980b9', weight: 1, fillOpacity: 0.3 }),
+                onEachFeature: (f, layer) => layer.bindPopup(`M${f.properties.mag} - ${new Date(f.properties.time).getFullYear()}`)
             }).addTo(localMap);
         }
     });
