@@ -2,8 +2,12 @@ name: Update Earthquake Data
 
 on:
   schedule:
-    - cron: '0 0 * * 0' # 每周日午夜运行 (UTC)
-  workflow_dispatch: # 允许手动运行
+    - cron: '0 0 * * 0' # 每周日凌晨 (UTC)
+  workflow_dispatch: # 允许手动触发
+
+# 显式声明权限，确保可以推送代码
+permissions:
+  contents: write
 
 jobs:
   update-data:
@@ -28,5 +32,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add data.json
-          git commit -m "Update earthquake data" || exit 0
-          git push
+          # 如果没有变化则不报错
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update earthquake data" && git push)
