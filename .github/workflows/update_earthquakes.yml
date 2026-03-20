@@ -1,0 +1,32 @@
+name: Update Earthquake Data
+
+on:
+  schedule:
+    - cron: '0 0 * * 0' # 每周日午夜运行 (UTC)
+  workflow_dispatch: # 允许手动运行
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch USGS data
+        run: python fetch_data.py
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data.json
+          git commit -m "Update earthquake data" || exit 0
+          git push

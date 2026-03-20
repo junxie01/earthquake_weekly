@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Earthquake Report</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; background-color: #f0f2f5; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        #main-map { height: 500px; width: 100%; margin-bottom: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid #ddd; }
+        .stats { background: white; padding: 20px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; }
+        .stat-item { text-align: center; padding: 10px 20px; }
+        .stat-item h3 { margin: 0; color: #666; font-size: 0.9em; text-transform: uppercase; }
+        .stat-item p { margin: 5px 0 0; font-size: 1.8em; font-weight: bold; color: #2c3e50; }
+
+        .top-earthquakes { display: flex; flex-direction: column; gap: 30px; }
+        .eq-card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        .eq-header { border-bottom: 2px solid #eee; padding-bottom: 15px; margin-bottom: 15px; }
+        .eq-header h3 { margin: 0; color: #d32f2f; font-size: 1.5em; }
+        .local-map { height: 400px; width: 100%; margin: 15px 0; border-radius: 8px; border: 1px solid #eee; }
+
+        .report-section { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+        .report-box { background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #3498db; }
+        .report-box h4 { margin-top: 0; margin-bottom: 10px; color: #2c3e50; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+        .report-box ul { padding-left: 20px; margin: 0; }
+        .report-box li { margin-bottom: 8px; }
+        .report-box a { color: #3498db; text-decoration: none; font-weight: 500; }
+        .report-box a:hover { text-decoration: underline; }
+
+        .tectonic-summary { font-style: italic; color: #555; background: #fff; padding: 10px; border: 1px dashed #ccc; margin-top: 10px; font-size: 0.9em; max-height: 150px; overflow-y: auto; }
+
+        h1 { text-align: center; color: #2c3e50; margin-bottom: 30px; }
+        .loading { text-align: center; padding: 100px; font-size: 1.5em; color: #666; }
+
+        @media (max-width: 768px) {
+            .report-section { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Weekly Earthquake Insights</h1>
+        <div id="loading" class="loading">Analyzing seismic data...</div>
+
+        <div id="content" style="display:none;">
+            <div id="main-map"></div>
+
+            <div class="stats" id="stats">
+                <div class="stat-item">
+                    <h3>Total (7 Days)</h3>
+                    <p id="stat-total">-</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Mag 5.0+</h3>
+                    <p id="stat-m5">-</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Mag 6.0+</h3>
+                    <p id="stat-m6">-</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Last Update</h3>
+                    <p id="stat-update" style="font-size: 1em;">-</p>
+                </div>
+            </div>
+
+            <h2 style="color: #2c3e50; border-left: 5px solid #d32f2f; padding-left: 15px;">Top 3 Significant Events</h2>
+            <div class="top-earthquakes" id="top-earthquakes"></div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
