@@ -2,8 +2,8 @@
 
 # 请将下面的 <YOUR_USERNAME> 替换为您的 GitHub 用户名
 # 请将 <YOUR_REPO_NAME> 替换为您的 仓库名（如 earthquake-weekly）
-GITHUB_USER="<YOUR_USERNAME>"
-REPO_NAME="earthquake-weekly"
+GITHUB_USER="junxie01@gmail.com"
+REPO_NAME="earthquake_weekly"
 
 # 检查是否已初始化 git
 if [ ! -d ".git" ]; then
