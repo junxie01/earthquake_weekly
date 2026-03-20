@@ -1,5 +1,5 @@
 {
-  "update_time": "2026-03-20T12:58:31.023509",
+  "update_time": "2026-03-20T13:08:34.646971",
   "date_range": "2026-03-13 to 2026-03-20",
   "total_count": 2243,
   "stats": {
@@ -19,8 +19,8 @@
       "usgs_reports": {
         "shakemap": {
           "images": [
-            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shlp:1773974562979/contents/download/intensity.jpg",
-            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shlp:1773974562979/contents/download/intensity_overlay.png"
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shlp:1773974562979/contents/download/intensity_overlay.png",
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shlp:1773974562979/contents/download/intensity.jpg"
           ],
           "title": "Shakemap"
         },
@@ -56,14 +56,14 @@
         },
         {
           "text": "6.6 Magnitude Earthquake Reported",
-          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQaHpONVNIUmxjek9EV2w0UkgwZUtPdWhuRHRVTkktZ2JwV2sxQkVwUEtHaXEwNE16TE8wYnlDeWY3MXJnZVdwUzZBX0hSeEhsUnRLUXozeEcyWHI2VTZOWVM3U2ZmNkIwbnVuMkFEYms3d0F3M3p3aTF1UkNuOVpwTmdR?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNRl8yNTlEUXRqN1V0Sm1la2VxU0VFNlZxTHFROHJYdDNjXzNGcVNpRzlPeVQ1N3BOWXYwbE52SGRqQVhuc1lrOGh4Z3g1ckFkSFdRN05jSU5qZGdfeVEydmQ4NC0zZVdZcThTSDhHUFpNbU9LNldQcDJmXzJjVm94bXpn?oc=5"
         }
       ],
       "history_count": 324,
       "history_geojson": {
         "type": "FeatureCollection",
         "metadata": {
-          "generated": 1774011511000,
+          "generated": 1774012115000,
           "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude=-61.1525&longitude=-56.2683&maxradius=10&minmagnitude=5.0",
           "title": "USGS Earthquakes",
           "status": 200,
@@ -13053,8 +13053,8 @@
       "usgs_reports": {
         "shakemap": {
           "images": [
-            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000sg0y:1773496737378/contents/download/intensity_overlay.png",
-            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000sg0y:1773496737378/contents/download/intensity.jpg"
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000sg0y:1773496737378/contents/download/intensity.jpg",
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000sg0y:1773496737378/contents/download/intensity_overlay.png"
           ],
           "title": "Shakemap"
         },
@@ -13091,15 +13091,15 @@
           "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9Dby05aHM4S1dBSk5tN1JvZ2xmVlVpdS1mRDlQdFpwak9USy1PWFBHeDNJR2hwTTFIWVZjdktkUGtsNjZRRE1mS2dZQmNISDZsUnd1VEYxbHFDYXdLcXdxMTdEN3hDVHhkTnI1WGc4dw?oc=5"
         },
         {
-          "text": "6.2 magnitude quake shakes northern Chile",
-          "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOS3FnU2ZxMU5Nd0Noc0NGTThLQkxMS0daTkJCVVQxQUtZQjZpZFRFalQwNlotMXd1c3oyWWx5cFlRTUx4VXprRDEwNGRnNDhXZ1A5UEJHZUxkWUE5U0lZUndQZ3MzbXZ6LTA3YWdDLU1MM2xUemV0ejhyekJWRnpzdTA3NVU4MExpekE?oc=5"
+          "text": "Strong and shallow M6.3 earthquake hits near the coast of Atacama, Chile - The Watchers",
+          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPZ3kxNEE2X1JTRUhPc2QwdktPWjFWZGRNM3d0QlF1cTZTRzNLdm1ub1JkWHZqRngyd2NvWmJrSVlhOUJXMURibE1Td0VyVDVPRm5LVmhTZkRqb2RndlZyWkUxeWJHSElzVFR4RGVJdDJqX3hvdjliMkcycGhHaHlsXzRxUmNYdnZUcGxFOE0zZw?oc=5"
         }
       ],
       "history_count": 3612,
       "history_geojson": {
         "type": "FeatureCollection",
         "metadata": {
-          "generated": 1774011513000,
+          "generated": 1774012118000,
           "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude=-28.684&longitude=-71.6269&maxradius=10&minmagnitude=5.0",
           "title": "USGS Earthquakes",
           "status": 200,
@@ -157609,8 +157609,8 @@
       "usgs_reports": {
         "shakemap": {
           "images": [
-            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shnl:1773982715008/contents/download/intensity.jpg",
-            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shnl:1773982715008/contents/download/intensity_overlay.png"
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shnl:1773982715008/contents/download/intensity_overlay.png",
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shnl:1773982715008/contents/download/intensity.jpg"
           ],
           "title": "Shakemap"
         },
@@ -157645,15 +157645,15 @@
           "url": "https://news.google.com/rss/articles/CBMisgJBVV95cUxPdUJwMDJZOXowNEdrSU1wc3hJQTRVXzFOM01aa1FXdmhTa1RKZmRjUmRJcnYwYWRnUUFyZ182ZGstQ0hzNDN3TlhyR1F5bFl1bkNBeTdWeVBXeWI1ZUV3SDZ2Q3RzNWhHM2R5Rm0tdnU1NWJMdWZzdTFmTHExc0QtUjZCdVRtWkZGai1McEdqeVcyaVcwdGlEZUx4aUtHRE84cDRrbXRuQXUtUjJXaW1pMjJjOHgxZnNLTGJ4ZDBuY3R3WHBKZDVnVDlsd2h6QzhMM1BGZEloZ0hvWHpLOFJkOGQ4VGs5NllzTllHRlAzaUJIejFFMzNyS3l5cElvRVliemlOSHJtZjVuNVZSeEZESmUyQ21IdXFYUTFOTjhoS21KWUx5LWFpUjRJdktpekRDOEE?oc=5"
         },
         {
-          "text": "Vanuatu turns 'grief into purpose' as it remembers earthquake dead",
-          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNZS1WRE16Rm1lNmwzaWxYUUxldWRMVFltQVRObnl3Y0ZDQmJVRFZCVjNaaVlTRnlld0xLV3cxQzQ3eXRVOW1MMEJsTzBnYU5JeXltUWpHbEZzV1RMQlJYSXdFa2RnTlFBQi1yVnJkTzVDVV9uM3BRVERpWWJHT3h4ZWIwNUJpanp1WlU5RkZVaWsyanZMSW5ILU5QUEJUd2FPOFE?oc=5"
+          "text": "5.6-magnitude earthquake strikes near Sola, Vanuatu",
+          "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5YdFZlYnR4Yk8wTjFUb0FhR3RkdnNEUjBrM2hWYTcxcmpMWWl4Z214M250cmhsVUZzYWpRMGZKVG45OGcydlZQOFJpREpTdjJOVTNySUxfZ0NNaEhkaFJxdHdoQUUwSXRMTE5kTVJkOVBCbW9mdzNnOFpB?oc=5"
         }
       ],
       "history_count": 6046,
       "history_geojson": {
         "type": "FeatureCollection",
         "metadata": {
-          "generated": 1774011517000,
+          "generated": 1774012121000,
           "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude=-19.2927&longitude=168.3597&maxradius=10&minmagnitude=5.0",
           "title": "USGS Earthquakes",
           "status": 200,
