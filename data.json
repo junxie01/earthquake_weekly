@@ -1,8 +1,13 @@
 {
-  "update_time": "2026-03-20T10:19:34.238317",
-  "total_count": 2249,
-  "m5_plus": 27,
-  "m6_plus": 3,
+  "update_time": "2026-03-20T12:58:31.023509",
+  "date_range": "2026-03-13 to 2026-03-20",
+  "total_count": 2243,
+  "stats": {
+    "m4_5": 136,
+    "m5_6": 24,
+    "m6_7": 3,
+    "m7_plus": 0
+  },
   "top_3": [
     {
       "id": "us6000shlp",
@@ -46,19 +51,19 @@
           "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNeVFMa0ZEVnRuU3VaQ0c5N3pXYzlpMWtzXzVQdDFERVFTTlF5T1VOdmstQ0g0ZUwyZ0hVcGJINEJDZUJObllTeEZUY2t4U2VvbWh1elg0UHF4R2Q0Ti0yTDJGTTBoeXFwT2JGc1RRNUVyRHpMNUpIaVBKTDk3OGRVZHFxcndsMnJRcVJsbEhxV1N2b3lrR0NVUjJHcWw?oc=5"
         },
         {
-          "text": "Strong and shallow M6.1 earthquake hits Vanuatu - The Watchers",
-          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQdGpLODVmcGRZcmhjTTRCMm5veElTMzcyOXNCTG5hbXRYc1o0N215bzVwa2NkQU9CWi1Bel9MT3lhSVRUeXRDZ0pNYmg3VEpfcW1OdkEzVkdCXzFYb0ZzdVVDS0V0NjlOR0FkdWJKb2gzd2pRU3hiUlBpd2lBUkpLUHhGeVFwRU05NXlJ?oc=5"
+          "text": "6.7 magnitude earthquake strikes South Shetland Islands, no tsunami threat",
+          "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQZ2x4SFFZS01WMlM1T2Jtb0dBVEY4dnFUcHFRb2tfdXItZG84RDdDV1lmT050eVhIVkhlaVB6ZTB1VGxqSkZ4c1ZGNE53MUVlWXhOcTE3MkptT3NtT2FOZnBuS3M1ckxTak9vMlhQWW1hM3NUTlpMeFZiRHRMVDdHVURLaUEwNVlaWjVIU3AtR2VndVYtZlloeXpRN09xSU9DNGdadWxXeld1TFluMDBXVVU4aHZDVk1YakRtaGlwM0Vwei1lLTlZRkRmY3hKY05vNHpz0gHYAUFVX3lxTE5BZ3JtQXl1Z1dob1VjTFlmQ044MFNsZW5rd3JsQUNPcTU5anJ1MFNPUWhMQ1Q2NVdsRHFJajd1UjlqM0pvTGdqLVhRd3MzbFRIaG9MbHdEOFRzdDBKd29jVHRTaFpySDAtaXVDZ3hibHZ3N2QzYmwzbXhmeTdmaVBYMnNWT1hnVWx6QXZzZUdmYkE1eU1Ma0oxV29vT0RJM1FDS0lSYjY0OTZ1WVlKNl9Jc2p2ZUFxMmxrUmkwN3d5VHN0SHRvbkdwWGxsUEpkY3hMMEQtSG9sWA?oc=5"
         },
         {
-          "text": "Temperature in Cuba hits 0\u00b0C (32\u00b0F) for the first time on record - The Watchers",
-          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQTnA3OWIwUUJWVTFqSlhpSTB6NVhuTWdGa0dYZmxhRmF1cTB2dHp6Y0twMGE2S1VEdHZxX0hfdnQ5b1haRklTS3hjQndLU3NWeTU1QngzbHZYUE5GWnJqZktLS093elpxTHJwNUw1blhfQzFVb195S1RUNkVnQ2p2QkhaeVlHeFZhbUxLbFlCbGFNWlU5d25CaVpR?oc=5"
+          "text": "6.6 Magnitude Earthquake Reported",
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQaHpONVNIUmxjek9EV2w0UkgwZUtPdWhuRHRVTkktZ2JwV2sxQkVwUEtHaXEwNE16TE8wYnlDeWY3MXJnZVdwUzZBX0hSeEhsUnRLUXozeEcyWHI2VTZOWVM3U2ZmNkIwbnVuMkFEYms3d0F3M3p3aTF1UkNuOVpwTmdR?oc=5"
         }
       ],
       "history_count": 324,
       "history_geojson": {
         "type": "FeatureCollection",
         "metadata": {
-          "generated": 1774001974000,
+          "generated": 1774011511000,
           "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude=-61.1525&longitude=-56.2683&maxradius=10&minmagnitude=5.0",
           "title": "USGS Earthquakes",
           "status": 200,
@@ -13048,8 +13053,8 @@
       "usgs_reports": {
         "shakemap": {
           "images": [
-            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000sg0y:1773496737378/contents/download/intensity.jpg",
-            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000sg0y:1773496737378/contents/download/intensity_overlay.png"
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000sg0y:1773496737378/contents/download/intensity_overlay.png",
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000sg0y:1773496737378/contents/download/intensity.jpg"
           ],
           "title": "Shakemap"
         },
@@ -13078,23 +13083,23 @@
       "public_info": [],
       "google_news": [
         {
-          "text": "Strong and shallow M6.3 earthquake hits near the coast of Atacama, Chile - The Watchers",
-          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPZ3kxNEE2X1JTRUhPc2QwdktPWjFWZGRNM3d0QlF1cTZTRzNLdm1ub1JkWHZqRngyd2NvWmJrSVlhOUJXMURibE1Td0VyVDVPRm5LVmhTZkRqb2RndlZyWkUxeWJHSElzVFR4RGVJdDJqX3hvdjliMkcycGhHaHlsXzRxUmNYdnZUcGxFOE0zZw?oc=5"
+          "text": "Chile earthquake of 1960",
+          "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE54UGdZZTBOcDBjVms1eUpSZ21kMEJIaHZCcHdKQl92ejNEb0FIZWU1Rl9nN3JCSGw1anNUeThnSUo1N1M4TjlmOWlZUDhYS25hcEhzZzItSURjMUhvcHN1SHZGNmlUejF6?oc=5"
         },
         {
-          "text": "M6.2 earthquake rattles central Chile",
-          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQd0c2WXJhNVNGc25FMkRTc1VIZHlpLXFfZExtQmJDTnU5VVhVd0l6NHliX291ZlRhWGVNdzNyeFN0QWxKWTFvMFBZNkVzNzhlSFZJTk5ONy1yeGR4U2hvQzZvdzI2OTlwVnZwYlB1QmVSVFZhWFU4bk9hRmhfSXktZ2NJTEE?oc=5"
+          "text": "Something hidden deep underground supercharged this Chile earthquake",
+          "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9Dby05aHM4S1dBSk5tN1JvZ2xmVlVpdS1mRDlQdFpwak9USy1PWFBHeDNJR2hwTTFIWVZjdktkUGtsNjZRRE1mS2dZQmNISDZsUnd1VEYxbHFDYXdLcXdxMTdEN3hDVHhkTnI1WGc4dw?oc=5"
         },
         {
-          "text": "Strong M6.4 earthquake hits Atacama, Chile - The Watchers",
-          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPZUc2a1cyUVFET2JQVFBGZzdoWGRCYU03QUE5ZkJJSVNiaGF3STgzY2VCN3N0cE9leC16UlpqY0czOG01c0huYlowZWRRb3JDdEgtcEQ2cEdOZDNraE9DaVFIRFluRl9jV1RZUS1oNlBlSkFJWFh3VE5DRTFuUW9Ucw?oc=5"
+          "text": "6.2 magnitude quake shakes northern Chile",
+          "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOS3FnU2ZxMU5Nd0Noc0NGTThLQkxMS0daTkJCVVQxQUtZQjZpZFRFalQwNlotMXd1c3oyWWx5cFlRTUx4VXprRDEwNGRnNDhXZ1A5UEJHZUxkWUE5U0lZUndQZ3MzbXZ6LTA3YWdDLU1MM2xUemV0ejhyekJWRnpzdTA3NVU4MExpekE?oc=5"
         }
       ],
       "history_count": 3612,
       "history_geojson": {
         "type": "FeatureCollection",
         "metadata": {
-          "generated": 1774001977000,
+          "generated": 1774011513000,
           "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude=-28.684&longitude=-71.6269&maxradius=10&minmagnitude=5.0",
           "title": "USGS Earthquakes",
           "status": 200,
@@ -157636,19 +157641,19 @@
           "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQdGpLODVmcGRZcmhjTTRCMm5veElTMzcyOXNCTG5hbXRYc1o0N215bzVwa2NkQU9CWi1Bel9MT3lhSVRUeXRDZ0pNYmg3VEpfcW1OdkEzVkdCXzFYb0ZzdVVDS0V0NjlOR0FkdWJKb2gzd2pRU3hiUlBpd2lBUkpLUHhGeVFwRU05NXlJ?oc=5"
         },
         {
-          "text": "Strong and shallow M6.4 earthquake hits near Port-Olry, Vanuatu - The Watchers",
-          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNVkR3RDE5ZC1oTHg2cHV4Njd2MHF1NmFoRTVIcnRjTVIyQ3Vudmdfcmt6akYxZ20ybDFFVER5eXRQdXEwVERPWENXLXI1dnNhTWVDMzl1SGFnbGRNcEFvN2pFZi1ESUp4VUhZSUlJSVg2cFYteWVSdWI0dWRLMzhNNUkwX2xuTnFDeVJtRkN3elB3MUptemdOMEltRTk?oc=5"
+          "text": "Earthquake Today Worldwide: 6.6 &amp; 6.1 Magnitude Tremors Felt in Antarctica, New Caledonia, Vanuatu, Argentina, &amp; More \u2013 Check Epicentre &amp; Tsunami Update",
+          "url": "https://news.google.com/rss/articles/CBMisgJBVV95cUxPdUJwMDJZOXowNEdrSU1wc3hJQTRVXzFOM01aa1FXdmhTa1RKZmRjUmRJcnYwYWRnUUFyZ182ZGstQ0hzNDN3TlhyR1F5bFl1bkNBeTdWeVBXeWI1ZUV3SDZ2Q3RzNWhHM2R5Rm0tdnU1NWJMdWZzdTFmTHExc0QtUjZCdVRtWkZGai1McEdqeVcyaVcwdGlEZUx4aUtHRE84cDRrbXRuQXUtUjJXaW1pMjJjOHgxZnNLTGJ4ZDBuY3R3WHBKZDVnVDlsd2h6QzhMM1BGZEloZ0hvWHpLOFJkOGQ4VGs5NllzTllHRlAzaUJIejFFMzNyS3l5cElvRVliemlOSHJtZjVuNVZSeEZESmUyQ21IdXFYUTFOTjhoS21KWUx5LWFpUjRJdktpekRDOEE?oc=5"
         },
         {
-          "text": "Strong and shallow M6.1 earthquake hits Vanuatu - The Watchers",
-          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQbDlnYUlZWmZ1TEgteHRtOWZLRTVxUjgtclRkMGdVRVRQak5tSG10WTZkcEd1T1VITlJxdDhkR3FBTmdxOVZpdHVCTHpfYmVyQkh2VkpZZmpHTHVmX0stNkZUX29aYmJSVnhCbE1xeE1xSHJOcGpYdGVPeWVYU0xUSTlGTWE5VkM2ZVBv?oc=5"
+          "text": "Vanuatu turns 'grief into purpose' as it remembers earthquake dead",
+          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNZS1WRE16Rm1lNmwzaWxYUUxldWRMVFltQVRObnl3Y0ZDQmJVRFZCVjNaaVlTRnlld0xLV3cxQzQ3eXRVOW1MMEJsTzBnYU5JeXltUWpHbEZzV1RMQlJYSXdFa2RnTlFBQi1yVnJkTzVDVV9uM3BRVERpWWJHT3h4ZWIwNUJpanp1WlU5RkZVaWsyanZMSW5ILU5QUEJUd2FPOFE?oc=5"
         }
       ],
       "history_count": 6046,
       "history_geojson": {
         "type": "FeatureCollection",
         "metadata": {
-          "generated": 1774001981000,
+          "generated": 1774011517000,
           "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude=-19.2927&longitude=168.3597&maxradius=10&minmagnitude=5.0",
           "title": "USGS Earthquakes",
           "status": 200,
