@@ -13,24 +13,25 @@ fi
 
 # 检查远程仓库是否已关联（确保是 SSH）
 if ! git remote | grep -q "origin"; then
+    echo "Adding remote origin (SSH)..."
     git remote add origin "git@github.com:$GITHUB_USER/$REPO_NAME.git"
 fi
 
-echo "Pulling latest changes from GitHub (handling Actions updates)..."
-git pull origin main --rebase
-
-echo "Staging files..."
+# 1. 先把本地的修改全部暂存并提交
+echo "Staging and committing local changes..."
 git add .
-
-echo "Committing changes..."
-# 检查是否有内容需要提交，避免报错
 if git diff-index --quiet HEAD --; then
     echo "No local changes to commit."
 else
-    git commit -m "Update: Weekly report stats and layout optimization"
+    git commit -m "Update: UI/Script layout optimization"
 fi
 
+# 2. 再从云端拉取 Actions 产生的新数据并自动合并（Rebase）
+echo "Syncing with GitHub Actions data (pulling with rebase)..."
+git pull origin main --rebase
+
+# 3. 最后安全地推送到云端
 echo "Pushing to GitHub via SSH..."
 git push -u origin main
 
-echo "Done! Your website content is now synced."
+echo "Done! Your website content is now synced and updated."
