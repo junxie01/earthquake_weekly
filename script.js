@@ -73,14 +73,11 @@ function renderTopThree(data, plates) {
         card.className = 'eq-card';
         const reports = eq.usgs_reports;
 
-        // 1. Media Gallery logic
         let mediaHTML = '';
         const reportTypes = ['shakemap', 'losspager', 'dyfi', 'focal_mechanism', 'moment_tensor'];
         reportTypes.forEach(type => {
             const report = reports[type];
             if (report && report.images && report.images.length > 0) {
-                // EXCLUSION: If it's shakemap, only take the first image (usually the one with the legend/table)
-                // This removes the "middle" duplicate shakemap image requested.
                 const imgsToDisplay = (type === 'shakemap') ? [report.images[0]] : report.images;
                 imgsToDisplay.forEach(imgUrl => {
                     mediaHTML += `
@@ -93,7 +90,6 @@ function renderTopThree(data, plates) {
             }
         });
 
-        // 2. Google News & USGS Button integration
         let googleNewsHTML = (eq.google_news && eq.google_news.length > 0)
             ? eq.google_news.map(n => `<li><a href="${n.url}" target="_blank">${n.text}</a></li>`).join('')
             : '<li>No matching Google News found.</li>';
@@ -105,15 +101,17 @@ function renderTopThree(data, plates) {
             </div>
             <div id="local-map-${i}" class="local-map"></div>
             <p><strong>Regional Context:</strong> ${eq.history_count} historical earthquakes (M5.0+) within 10° since 1970.</p>
+
+            <div style="text-align: right; margin-bottom: 15px;">
+                 <a href="${eq.usgs_url}" target="_blank" class="btn" style="color: #fff !important; font-weight: bold; background-color: #3498db; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">Full USGS Event Page</a>
+            </div>
+
             <div class="media-grid">${mediaHTML || '<p style="padding: 20px; color: #666;">Waiting for USGS to process visual reports...</p>'}</div>
 
             <div class="report-section" style="grid-template-columns: 1fr;">
                 <div class="report-box" style="border-left-color: #f1c40f;">
                     <h4>Latest News & Official Data</h4>
-                    <ul style="margin-bottom: 15px;">${googleNewsHTML}</ul>
-                    <div style="text-align: right; border-top: 1px solid #eee; padding-top: 10px;">
-                         <a href="${eq.usgs_url}" target="_blank" class="btn">Full USGS Event Page</a>
-                    </div>
+                    <ul style="margin-bottom: 5px;">${googleNewsHTML}</ul>
                 </div>
             </div>
 
