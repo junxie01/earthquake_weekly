@@ -1,10 +1,10 @@
 {
-  "update_time": "2026-03-20T14:09:01.901082",
-  "date_range": "2026-03-13 to 2026-03-20",
-  "total_count": 2253,
+  "update_time": "2026-03-21T10:06:33.793652",
+  "date_range": "2026-03-14 to 2026-03-21",
+  "total_count": 2328,
   "stats": {
-    "m4_5": 137,
-    "m5_6": 24,
+    "m4_5": 141,
+    "m5_6": 22,
     "m6_7": 2,
     "m7_plus": 0
   },
@@ -16,11 +16,16 @@
       "time": 1773966122120,
       "lat": -61.1525,
       "lon": -56.2683,
+      "focal_params": {
+        "strike": 66.61,
+        "dip": 24.07,
+        "rake": 98.4
+      },
       "usgs_reports": {
         "shakemap": {
           "images": [
-            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shlp:1773974562979/contents/download/intensity_overlay.png",
-            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shlp:1773974562979/contents/download/intensity.jpg"
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shlp:1774053862802/contents/download/intensity_overlay.png",
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shlp:1774053862802/contents/download/intensity.jpg"
           ],
           "title": "Shakemap"
         },
@@ -28,17 +33,9 @@
           "images": [],
           "title": "DYFI"
         },
-        "moment_tensor": {
-          "images": [],
-          "title": "Moment Tensor"
-        },
-        "focal_mechanism": {
-          "images": [],
-          "title": "Focal Mechanism"
-        },
         "losspager": {
           "images": [
-            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:losspager:us6000shlp:1773974694282/contents/alertfatal.png"
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:losspager:us6000shlp:1774054005373/contents/alertfatal.png"
           ],
           "title": "PAGER"
         },
@@ -47,8 +44,8 @@
       "public_info": [],
       "google_news": [
         {
-          "text": "Strong and shallow M6.6 earthquake hits South Shetland Islands - The Watchers",
-          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNeVFMa0ZEVnRuU3VaQ0c5N3pXYzlpMWtzXzVQdDFERVFTTlF5T1VOdmstQ0g0ZUwyZ0hVcGJINEJDZUJObllTeEZUY2t4U2VvbWh1elg0UHF4R2Q0Ti0yTDJGTTBoeXFwT2JGc1RRNUVyRHpMNUpIaVBKTDk3OGRVZHFxcndsMnJRcVJsbEhxV1N2b3lrR0NVUjJHcWw?oc=5"
+          "text": "7.0 magnitude #earthquake. South Shetland Islands",
+          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBnd2x0MUdJd3RVSngxbXZLNmN5ek9TSGY4SFdGWlliYWY0WFhLTHJvVzZqNk1xTG4yNUM2UXd2YXMyOTRPRklIdGY0R3prRTlGMlg0Z0l2dWFmS3BpQlNOdnNKdWlrdHo5RExnVGNR?oc=5"
         },
         {
           "text": "6.7 magnitude earthquake strikes South Shetland Islands, no tsunami threat",
@@ -56,14 +53,14 @@
         },
         {
           "text": "6.6 Magnitude Earthquake Reported",
-          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNRl8yNTlEUXRqN1V0Sm1la2VxU0VFNlZxTHFROHJYdDNjXzNGcVNpRzlPeVQ1N3BOWXYwbE52SGRqQVhuc1lrOGh4Z3g1ckFkSFdRN05jSU5qZGdfeVEydmQ4NC0zZVdZcThTSDhHUFpNbU9LNldQcDJmXzJjVm94bXpn?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOc19RcGxJOTJCMkNHZTFfNjJreHpXQnBxOXV1LUlIRDk0R29NWnBQaUkxTzduV2psWnAwU2NGM2VoMFcyLUhGeE1rUkVISEJnNVFBek1IOG10cHBEUVdLaXp4SVBuX0NmRnhBODkxTXNtYWlhZzRpYUxPTEJnVmdHMnFyQQ?oc=5"
         }
       ],
       "history_count": 324,
       "history_geojson": {
         "type": "FeatureCollection",
         "metadata": {
-          "generated": 1774015742000,
+          "generated": 1774087596000,
           "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude=-61.1525&longitude=-56.2683&maxradius=10&minmagnitude=5.0",
           "title": "USGS Earthquakes",
           "status": 200,
@@ -117,7 +114,7 @@
               "mag": 6.6,
               "place": "South Shetland Islands",
               "time": 1773966122120,
-              "updated": 1773974694282,
+              "updated": 1774054005373,
               "tz": null,
               "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000shlp",
               "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000shlp&format=geojson",
@@ -156,8 +153,8 @@
             "properties": {
               "mag": 5.3,
               "place": "Drake Passage",
-              "time": 1772217079564,
-              "updated": 1772563258040,
+              "time": 1772217078635,
+              "updated": 1774024289040,
               "tz": null,
               "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s0v7",
               "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us7000s0v7&format=geojson",
@@ -174,8 +171,8 @@
               "sources": ",us,",
               "types": ",origin,phase-data,",
               "nst": 150,
-              "dmin": 4.658,
-              "rms": 0.72,
+              "dmin": 4.673,
+              "rms": 0.61,
               "gap": 46,
               "magType": "mb",
               "type": "earthquake",
@@ -184,9 +181,9 @@
             "geometry": {
               "type": "Point",
               "coordinates": [
-                -61.3738,
-                -60.3002,
-                17.556
+                -61.5252,
+                -60.2661,
+                10
               ]
             },
             "id": "us7000s0v7"
@@ -13046,15 +13043,20 @@
     {
       "id": "us6000shnl",
       "mag": 6.1,
-      "place": "100 km WNW of Isangel, Vanuatu",
-      "time": 1773973833067,
-      "lat": -19.2927,
-      "lon": 168.3597,
+      "place": "105 km WNW of Isangel, Vanuatu",
+      "time": 1773973832675,
+      "lat": -19.2783,
+      "lon": 168.3207,
+      "focal_params": {
+        "strike": 132.09,
+        "dip": 70.41,
+        "rake": 147.45
+      },
       "usgs_reports": {
         "shakemap": {
           "images": [
-            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shnl:1773982715008/contents/download/intensity.jpg",
-            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shnl:1773982715008/contents/download/intensity_overlay.png"
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shnl:1774061920200/contents/download/intensity_overlay.png",
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shnl:1774061920200/contents/download/intensity.jpg"
           ],
           "title": "Shakemap"
         },
@@ -13062,17 +13064,9 @@
           "images": [],
           "title": "DYFI"
         },
-        "moment_tensor": {
-          "images": [],
-          "title": "Moment Tensor"
-        },
-        "focal_mechanism": {
-          "images": [],
-          "title": "Focal Mechanism"
-        },
         "losspager": {
           "images": [
-            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:losspager:us6000shnl:1773982837401/contents/alertfatal.png"
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:losspager:us6000shnl:1774062046737/contents/alertfatal.png"
           ],
           "title": "PAGER"
         },
@@ -13081,43 +13075,83 @@
       "public_info": [],
       "google_news": [
         {
-          "text": "Strong and shallow M6.1 earthquake hits Vanuatu - The Watchers",
-          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQdGpLODVmcGRZcmhjTTRCMm5veElTMzcyOXNCTG5hbXRYc1o0N215bzVwa2NkQU9CWi1Bel9MT3lhSVRUeXRDZ0pNYmg3VEpfcW1OdkEzVkdCXzFYb0ZzdVVDS0V0NjlOR0FkdWJKb2gzd2pRU3hiUlBpd2lBUkpLUHhGeVFwRU05NXlJ?oc=5"
-        },
-        {
           "text": "Earthquake Today Worldwide: 6.6 &amp; 6.1 Magnitude Tremors Felt in Antarctica, New Caledonia, Vanuatu, Argentina, &amp; More \u2013 Check Epicentre &amp; Tsunami Update",
           "url": "https://news.google.com/rss/articles/CBMisgJBVV95cUxPdUJwMDJZOXowNEdrSU1wc3hJQTRVXzFOM01aa1FXdmhTa1RKZmRjUmRJcnYwYWRnUUFyZ182ZGstQ0hzNDN3TlhyR1F5bFl1bkNBeTdWeVBXeWI1ZUV3SDZ2Q3RzNWhHM2R5Rm0tdnU1NWJMdWZzdTFmTHExc0QtUjZCdVRtWkZGai1McEdqeVcyaVcwdGlEZUx4aUtHRE84cDRrbXRuQXUtUjJXaW1pMjJjOHgxZnNLTGJ4ZDBuY3R3WHBKZDVnVDlsd2h6QzhMM1BGZEloZ0hvWHpLOFJkOGQ4VGs5NllzTllHRlAzaUJIejFFMzNyS3l5cElvRVliemlOSHJtZjVuNVZSeEZESmUyQ21IdXFYUTFOTjhoS21KWUx5LWFpUjRJdktpekRDOEE?oc=5"
         },
         {
-          "text": "5.6-magnitude earthquake strikes near Sola, Vanuatu",
-          "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5YdFZlYnR4Yk8wTjFUb0FhR3RkdnNEUjBrM2hWYTcxcmpMWWl4Z214M250cmhsVUZzYWpRMGZKVG45OGcydlZQOFJpREpTdjJOVTNySUxfZ0NNaEhkaFJxdHdoQUUwSXRMTE5kTVJkOVBCbW9mdzNnOFpB?oc=5"
+          "text": "Strong and shallow M6.1 earthquake hits Vanuatu - The Watchers",
+          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQdGpLODVmcGRZcmhjTTRCMm5veElTMzcyOXNCTG5hbXRYc1o0N215bzVwa2NkQU9CWi1Bel9MT3lhSVRUeXRDZ0pNYmg3VEpfcW1OdkEzVkdCXzFYb0ZzdVVDS0V0NjlOR0FkdWJKb2gzd2pRU3hiUlBpd2lBUkpLUHhGeVFwRU05NXlJ?oc=5"
+        },
+        {
+          "text": "Vanuatu turns 'grief into purpose' as it remembers earthquake dead",
+          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNZS1WRE16Rm1lNmwzaWxYUUxldWRMVFltQVRObnl3Y0ZDQmJVRFZCVjNaaVlTRnlld0xLV3cxQzQ3eXRVOW1MMEJsTzBnYU5JeXltUWpHbEZzV1RMQlJYSXdFa2RnTlFBQi1yVnJkTzVDVV9uM3BRVERpWWJHT3h4ZWIwNUJpanp1WlU5RkZVaWsyanZMSW5ILU5QUEJUd2FPOFE?oc=5"
         }
       ],
-      "history_count": 6046,
+      "history_count": 6056,
       "history_geojson": {
         "type": "FeatureCollection",
         "metadata": {
-          "generated": 1774015749000,
-          "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude=-19.2927&longitude=168.3597&maxradius=10&minmagnitude=5.0",
+          "generated": 1774087601000,
+          "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude=-19.2783&longitude=168.3207&maxradius=10&minmagnitude=5.0",
           "title": "USGS Earthquakes",
           "status": 200,
           "api": "2.4.0",
-          "count": 6046
+          "count": 6056
         },
         "features": [
           {
             "type": "Feature",
             "properties": {
+              "mag": 5.7,
+              "place": "51 km W of Norsup, Vanuatu",
+              "time": 1774063260605,
+              "updated": 1774072046991,
+              "tz": null,
+              "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000si17",
+              "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000si17&format=geojson",
+              "felt": 1,
+              "cdi": 3.1,
+              "mmi": 4.462,
+              "alert": "green",
+              "status": "reviewed",
+              "tsunami": 0,
+              "sig": 500,
+              "net": "us",
+              "code": "6000si17",
+              "ids": ",us6000si17,usauto6000si17,",
+              "sources": ",us,usauto,",
+              "types": ",dyfi,internal-moment-tensor,losspager,moment-tensor,origin,phase-data,shakemap,",
+              "nst": 82,
+              "dmin": 0.62,
+              "rms": 0.94,
+              "gap": 32,
+              "magType": "mww",
+              "type": "earthquake",
+              "title": "M 5.7 - 51 km W of Norsup, Vanuatu"
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                166.9182,
+                -16.0064,
+                37.084
+              ]
+            },
+            "id": "us6000si17"
+          },
+          {
+            "type": "Feature",
+            "properties": {
               "mag": 6.1,
-              "place": "100 km WNW of Isangel, Vanuatu",
-              "time": 1773973833067,
-              "updated": 1773982957714,
+              "place": "105 km WNW of Isangel, Vanuatu",
+              "time": 1773973832675,
+              "updated": 1774062196668,
               "tz": null,
               "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000shnl",
               "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000shnl&format=geojson",
               "felt": null,
               "cdi": null,
-              "mmi": 4.3,
+              "mmi": 4.236,
               "alert": "green",
               "status": "reviewed",
               "tsunami": 0,
@@ -13127,19 +13161,19 @@
               "ids": ",us6000shnl,usauto6000shnl,",
               "sources": ",us,usauto,",
               "types": ",ground-failure,internal-moment-tensor,losspager,moment-tensor,origin,phase-data,shakemap,",
-              "nst": 67,
-              "dmin": 3.389,
-              "rms": 0.88,
-              "gap": 91,
+              "nst": 94,
+              "dmin": 3.38,
+              "rms": 0.91,
+              "gap": 42,
               "magType": "mww",
               "type": "earthquake",
-              "title": "M 6.1 - 100 km WNW of Isangel, Vanuatu"
+              "title": "M 6.1 - 105 km WNW of Isangel, Vanuatu"
             },
             "geometry": {
               "type": "Point",
               "coordinates": [
-                168.3597,
-                -19.2927,
+                168.3207,
+                -19.2783,
                 10
               ]
             },
@@ -16788,6 +16822,46 @@
           {
             "type": "Feature",
             "properties": {
+              "mag": 5.4,
+              "place": "145 km E of Kirakira, Solomon Islands",
+              "time": 1738325050579,
+              "updated": 1744750525040,
+              "tz": null,
+              "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000paai",
+              "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us7000paai&format=geojson",
+              "felt": null,
+              "cdi": null,
+              "mmi": 3.695,
+              "alert": "green",
+              "status": "reviewed",
+              "tsunami": 0,
+              "sig": 449,
+              "net": "us",
+              "code": "7000paai",
+              "ids": ",usauto7000paai,us7000paai,",
+              "sources": ",usauto,us,",
+              "types": ",internal-moment-tensor,losspager,moment-tensor,origin,phase-data,shakemap,",
+              "nst": 183,
+              "dmin": 3.434,
+              "rms": 0.42,
+              "gap": 38,
+              "magType": "mww",
+              "type": "earthquake",
+              "title": "M 5.4 - 145 km E of Kirakira, Solomon Islands"
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                163.2435,
+                -10.5642,
+                10
+              ]
+            },
+            "id": "us7000paai"
+          },
+          {
+            "type": "Feature",
+            "properties": {
               "mag": 5.1,
               "place": "24 km W of Port-Vila, Vanuatu",
               "time": 1737960903657,
@@ -17344,6 +17418,46 @@
               ]
             },
             "id": "us7000p0ub"
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "mag": 5.1,
+              "place": "93 km SE of Kirakira, Solomon Islands",
+              "time": 1734834684140,
+              "updated": 1740677454040,
+              "tz": null,
+              "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000p0nz",
+              "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us7000p0nz&format=geojson",
+              "felt": null,
+              "cdi": null,
+              "mmi": null,
+              "alert": null,
+              "status": "reviewed",
+              "tsunami": 0,
+              "sig": 400,
+              "net": "us",
+              "code": "7000p0nz",
+              "ids": ",us7000p0nz,",
+              "sources": ",us,",
+              "types": ",origin,phase-data,",
+              "nst": 52,
+              "dmin": 3.018,
+              "rms": 1,
+              "gap": 114,
+              "magType": "mb",
+              "type": "earthquake",
+              "title": "M 5.1 - 93 km SE of Kirakira, Solomon Islands"
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                162.6049,
+                -10.954,
+                45.912
+              ]
+            },
+            "id": "us7000p0nz"
           },
           {
             "type": "Feature",
@@ -43948,46 +44062,6 @@
           {
             "type": "Feature",
             "properties": {
-              "mag": 5.2,
-              "place": "107 km W of Labasa, Fiji",
-              "time": 1587025314763,
-              "updated": 1766428363006,
-              "tz": null,
-              "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us70008xf4",
-              "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us70008xf4&format=geojson",
-              "felt": null,
-              "cdi": null,
-              "mmi": null,
-              "alert": null,
-              "status": "reviewed",
-              "tsunami": 0,
-              "sig": 416,
-              "net": "us",
-              "code": "70008xf4",
-              "ids": ",iscgem618099934,us70008xf4,",
-              "sources": ",iscgem,us,",
-              "types": ",origin,phase-data,",
-              "nst": null,
-              "dmin": 1.481,
-              "rms": 0.64,
-              "gap": 73,
-              "magType": "mww",
-              "type": "earthquake",
-              "title": "M 5.2 - 107 km W of Labasa, Fiji"
-            },
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                178.3742,
-                -16.2879,
-                10
-              ]
-            },
-            "id": "us70008xf4"
-          },
-          {
-            "type": "Feature",
-            "properties": {
               "mag": 5.7,
               "place": "166 km E of Tadine, New Caledonia",
               "time": 1585505954153,
@@ -50864,6 +50938,46 @@
               ]
             },
             "id": "us1000hsnh"
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "mag": 5,
+              "place": "155 km E of Kirakira, Solomon Islands",
+              "time": 1542344624960,
+              "updated": 1548873380040,
+              "tz": null,
+              "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us1000hsjb",
+              "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us1000hsjb&format=geojson",
+              "felt": null,
+              "cdi": null,
+              "mmi": null,
+              "alert": null,
+              "status": "reviewed",
+              "tsunami": 0,
+              "sig": 385,
+              "net": "us",
+              "code": "1000hsjb",
+              "ids": ",us1000hsjb,",
+              "sources": ",us,",
+              "types": ",origin,phase-data,",
+              "nst": null,
+              "dmin": 3.508,
+              "rms": 0.97,
+              "gap": 138,
+              "magType": "mb",
+              "type": "earthquake",
+              "title": "M 5.0 - 155 km E of Kirakira, Solomon Islands"
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                163.3359,
+                -10.5258,
+                10
+              ]
+            },
+            "id": "us1000hsjb"
           },
           {
             "type": "Feature",
@@ -66468,6 +66582,46 @@
           {
             "type": "Feature",
             "properties": {
+              "mag": 6,
+              "place": "91 km SE of Kirakira, Solomon Islands",
+              "time": 1435779321460,
+              "updated": 1651604578666,
+              "tz": null,
+              "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us10002mw0",
+              "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us10002mw0&format=geojson",
+              "felt": null,
+              "cdi": null,
+              "mmi": 5.735,
+              "alert": "green",
+              "status": "reviewed",
+              "tsunami": 0,
+              "sig": 554,
+              "net": "us",
+              "code": "10002mw0",
+              "ids": ",us10002mw0,gcmt20150701193521,iscgem611836113,atlas20150701193521,",
+              "sources": ",us,gcmt,iscgem,atlas,",
+              "types": ",cap,losspager,moment-tensor,origin,phase-data,shakemap,",
+              "nst": null,
+              "dmin": 2.995,
+              "rms": 0.77,
+              "gap": 24,
+              "magType": "mww",
+              "type": "earthquake",
+              "title": "M 6.0 - 91 km SE of Kirakira, Solomon Islands"
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                162.5558,
+                -10.9911,
+                12
+              ]
+            },
+            "id": "us10002mw0"
+          },
+          {
+            "type": "Feature",
+            "properties": {
               "mag": 5.1,
               "place": "31 km SE of Lakatoro, Vanuatu",
               "time": 1435249223510,
@@ -70428,6 +70582,46 @@
           {
             "type": "Feature",
             "properties": {
+              "mag": 7.6,
+              "place": "93 km SSE of Kirakira, Solomon Islands",
+              "time": 1397333679300,
+              "updated": 1651596464748,
+              "tz": null,
+              "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usc000phx5",
+              "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=usc000phx5&format=geojson",
+              "felt": null,
+              "cdi": null,
+              "mmi": 6.561,
+              "alert": "green",
+              "status": "reviewed",
+              "tsunami": 1,
+              "sig": 889,
+              "net": "us",
+              "code": "c000phx5",
+              "ids": ",usc000phx5,at00n3xpk9,pt14102002,iscgem604452785,",
+              "sources": ",us,at,pt,iscgem,",
+              "types": ",finite-fault,general-text,impact-link,losspager,moment-tensor,origin,phase-data,poster,shakemap,",
+              "nst": null,
+              "dmin": 2.828,
+              "rms": 0.71,
+              "gap": 13,
+              "magType": "mww",
+              "type": "earthquake",
+              "title": "M 7.6 - 93 km SSE of Kirakira, Solomon Islands"
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                162.1481,
+                -11.2701,
+                22.56
+              ]
+            },
+            "id": "usc000phx5"
+          },
+          {
+            "type": "Feature",
+            "properties": {
               "mag": 5,
               "place": "189 km W of Lata, Solomon Islands",
               "time": 1396407088570,
@@ -72064,46 +72258,6 @@
               ]
             },
             "id": "usb000kdxd"
-          },
-          {
-            "type": "Feature",
-            "properties": {
-              "mag": 5.1,
-              "place": "102 km SSE of Suva, Fiji",
-              "time": 1381648523380,
-              "updated": 1764781863570,
-              "tz": null,
-              "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usb000kc60",
-              "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=usb000kc60&format=geojson",
-              "felt": 4,
-              "cdi": 2,
-              "mmi": null,
-              "alert": null,
-              "status": "reviewed",
-              "tsunami": 0,
-              "sig": 401,
-              "net": "us",
-              "code": "b000kc60",
-              "ids": ",usb000kc60,iscgem603770005,",
-              "sources": ",us,iscgem,",
-              "types": ",cap,dyfi,origin,phase-data,",
-              "nst": null,
-              "dmin": 10.246,
-              "rms": 0.86,
-              "gap": 63,
-              "magType": "mb",
-              "type": "earthquake",
-              "title": "M 5.1 - 102 km SSE of Suva, Fiji"
-            },
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                178.9066,
-                -18.952,
-                57.5
-              ]
-            },
-            "id": "usb000kc60"
           },
           {
             "type": "Feature",
@@ -90144,6 +90298,46 @@
               ]
             },
             "id": "usp000j6fq"
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "mag": 5.6,
+              "place": "85 km SSE of Kirakira, Solomon Islands",
+              "time": 1312847603150,
+              "updated": 1649455075753,
+              "tz": null,
+              "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp000j66n",
+              "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=usp000j66n&format=geojson",
+              "felt": null,
+              "cdi": null,
+              "mmi": 4.902,
+              "alert": null,
+              "status": "reviewed",
+              "tsunami": 0,
+              "sig": 482,
+              "net": "us",
+              "code": "p000j66n",
+              "ids": ",usp000j66n,iscgem16929733,",
+              "sources": ",us,iscgem,",
+              "types": ",impact-text,moment-tensor,origin,phase-data,shakemap,",
+              "nst": 60,
+              "dmin": null,
+              "rms": 1.14,
+              "gap": 102.7,
+              "magType": "mwc",
+              "type": "earthquake",
+              "title": "M 5.6 - 85 km SSE of Kirakira, Solomon Islands"
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                162.339,
+                -11.11,
+                23.2
+              ]
+            },
+            "id": "usp000j66n"
           },
           {
             "type": "Feature",
@@ -108548,46 +108742,6 @@
           {
             "type": "Feature",
             "properties": {
-              "mag": 5,
-              "place": "106 km W of Labasa, Fiji",
-              "time": 1245850581510,
-              "updated": 1478744029388,
-              "tz": null,
-              "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp000gyjb",
-              "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=usp000gyjb&format=geojson",
-              "felt": null,
-              "cdi": null,
-              "mmi": null,
-              "alert": null,
-              "status": "reviewed",
-              "tsunami": 0,
-              "sig": 385,
-              "net": "us",
-              "code": "p000gyjb",
-              "ids": ",gcmtc200906241336a,usp000gyjb,gcmt20090624133621,",
-              "sources": ",gcmt,us,gcmt,",
-              "types": ",focal-mechanism,impact-text,moment-tensor,origin,phase-data,",
-              "nst": 65,
-              "dmin": null,
-              "rms": 0.72,
-              "gap": 120.9,
-              "magType": "mwc",
-              "type": "earthquake",
-              "title": "M 5.0 - 106 km W of Labasa, Fiji"
-            },
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                178.377,
-                -16.294,
-                35
-              ]
-            },
-            "id": "usp000gyjb"
-          },
-          {
-            "type": "Feature",
-            "properties": {
               "mag": 5.3,
               "place": "73 km WNW of Port-Vila, Vanuatu",
               "time": 1244817171920,
@@ -110384,46 +110538,6 @@
               ]
             },
             "id": "usp000gty0"
-          },
-          {
-            "type": "Feature",
-            "properties": {
-              "mag": 5.7,
-              "place": "113 km WNW of Labasa, Fiji",
-              "time": 1234360361980,
-              "updated": 1651526989950,
-              "tz": null,
-              "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp000gtn8",
-              "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=usp000gtn8&format=geojson",
-              "felt": null,
-              "cdi": null,
-              "mmi": null,
-              "alert": null,
-              "status": "reviewed",
-              "tsunami": 0,
-              "sig": 500,
-              "net": "us",
-              "code": "p000gtn8",
-              "ids": ",gcmtc200902111352a,usp000gtn8,gcmt20090211135242,iscgem14189410,",
-              "sources": ",gcmt,us,gcmt,iscgem,",
-              "types": ",focal-mechanism,impact-text,moment-tensor,origin,phase-data,",
-              "nst": 167,
-              "dmin": null,
-              "rms": 1.17,
-              "gap": 57.7,
-              "magType": "mwc",
-              "type": "earthquake",
-              "title": "M 5.7 - 113 km WNW of Labasa, Fiji"
-            },
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                178.329,
-                -16.221,
-                10
-              ]
-            },
-            "id": "usp000gtn8"
           },
           {
             "type": "Feature",
@@ -114224,6 +114338,46 @@
               ]
             },
             "id": "usp000gdfy"
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "mag": 5.9,
+              "place": "136 km E of Kirakira, Solomon Islands",
+              "time": 1217281052570,
+              "updated": 1651520591932,
+              "tz": null,
+              "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp000gdbt",
+              "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=usp000gdbt&format=geojson",
+              "felt": null,
+              "cdi": null,
+              "mmi": null,
+              "alert": null,
+              "status": "reviewed",
+              "tsunami": 0,
+              "sig": 536,
+              "net": "us",
+              "code": "p000gdbt",
+              "ids": ",gcmtc200807282137a,usp000gdbt,gcmt20080728213732,iscgem11153887,",
+              "sources": ",gcmt,us,gcmt,iscgem,",
+              "types": ",focal-mechanism,impact-text,moment-tensor,origin,phase-data,",
+              "nst": 308,
+              "dmin": null,
+              "rms": 1.12,
+              "gap": 23.8,
+              "magType": "mwc",
+              "type": "earthquake",
+              "title": "M 5.9 - 136 km E of Kirakira, Solomon Islands"
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                163.162,
+                -10.606,
+                10
+              ]
+            },
+            "id": "usp000gdbt"
           },
           {
             "type": "Feature",
@@ -131868,6 +132022,86 @@
           {
             "type": "Feature",
             "properties": {
+              "mag": 5.8,
+              "place": "87 km SSE of Kirakira, Solomon Islands",
+              "time": 1100259110890,
+              "updated": 1651512756311,
+              "tz": null,
+              "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp000d895",
+              "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=usp000d895&format=geojson",
+              "felt": null,
+              "cdi": null,
+              "mmi": 4.695,
+              "alert": null,
+              "status": "reviewed",
+              "tsunami": 0,
+              "sig": 518,
+              "net": "us",
+              "code": "p000d895",
+              "ids": ",gcmtc111204m,usp000d895,gcmt20041112113150,iscgem7435052,",
+              "sources": ",gcmt,us,gcmt,iscgem,",
+              "types": ",focal-mechanism,impact-text,moment-tensor,origin,phase-data,shakemap,",
+              "nst": 67,
+              "dmin": null,
+              "rms": 0.84,
+              "gap": 40.1,
+              "magType": "mwb",
+              "type": "earthquake",
+              "title": "M 5.8 - 87 km SSE of Kirakira, Solomon Islands"
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                162.284,
+                -11.156,
+                10
+              ]
+            },
+            "id": "usp000d895"
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "mag": 5.9,
+              "place": "92 km SSE of Kirakira, Solomon Islands",
+              "time": 1100194387330,
+              "updated": 1651512741048,
+              "tz": null,
+              "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp000d854",
+              "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=usp000d854&format=geojson",
+              "felt": null,
+              "cdi": null,
+              "mmi": null,
+              "alert": null,
+              "status": "reviewed",
+              "tsunami": 0,
+              "sig": 536,
+              "net": "us",
+              "code": "p000d854",
+              "ids": ",usp000d854,iscgem7434511,",
+              "sources": ",us,iscgem,",
+              "types": ",impact-text,moment-tensor,origin,phase-data,",
+              "nst": 130,
+              "dmin": null,
+              "rms": 1.11,
+              "gap": 31,
+              "magType": "mwb",
+              "type": "earthquake",
+              "title": "M 5.9 - 92 km SSE of Kirakira, Solomon Islands"
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                162.123,
+                -11.266,
+                10
+              ]
+            },
+            "id": "usp000d854"
+          },
+          {
+            "type": "Feature",
+            "properties": {
               "mag": 6.9,
               "place": "209 km ESE of Kirakira, Solomon Islands",
               "time": 1100044703650,
@@ -145909,46 +146143,6 @@
             "type": "Feature",
             "properties": {
               "mag": 5,
-              "place": "116 km WNW of Labasa, Fiji",
-              "time": 989505930590,
-              "updated": 1415322766987,
-              "tz": null,
-              "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp000aequ",
-              "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=usp000aequ&format=geojson",
-              "felt": null,
-              "cdi": null,
-              "mmi": null,
-              "alert": null,
-              "status": "reviewed",
-              "tsunami": 0,
-              "sig": 385,
-              "net": "us",
-              "code": "p000aequ",
-              "ids": ",usp000aequ,",
-              "sources": ",us,",
-              "types": ",origin,phase-data,",
-              "nst": 90,
-              "dmin": null,
-              "rms": 1.11,
-              "gap": null,
-              "magType": "mb",
-              "type": "earthquake",
-              "title": "M 5.0 - 116 km WNW of Labasa, Fiji"
-            },
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                178.304,
-                -16.171,
-                33
-              ]
-            },
-            "id": "usp000aequ"
-          },
-          {
-            "type": "Feature",
-            "properties": {
-              "mag": 5,
               "place": "130 km WNW of Labasa, Fiji",
               "time": 989505499350,
               "updated": 1415322766977,
@@ -152624,6 +152818,46 @@
               ]
             },
             "id": "usp00097m4"
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "mag": 5.3,
+              "place": "90 km SSE of Kirakira, Solomon Islands",
+              "time": 926186203540,
+              "updated": 1651256644185,
+              "tz": null,
+              "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp00097kz",
+              "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=usp00097kz&format=geojson",
+              "felt": null,
+              "cdi": null,
+              "mmi": null,
+              "alert": null,
+              "status": "reviewed",
+              "tsunami": 0,
+              "sig": 432,
+              "net": "us",
+              "code": "p00097kz",
+              "ids": ",gcmtb050899e,usp00097kz,gcmt19990508175643,iscgem1675708,",
+              "sources": ",gcmt,us,gcmt,iscgem,",
+              "types": ",focal-mechanism,moment-tensor,origin,phase-data,",
+              "nst": null,
+              "dmin": null,
+              "rms": 1.11,
+              "gap": null,
+              "magType": "mwc",
+              "type": "earthquake",
+              "title": "M 5.3 - 90 km SSE of Kirakira, Solomon Islands"
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                162.246,
+                -11.205,
+                33
+              ]
+            },
+            "id": "usp00097kz"
           },
           {
             "type": "Feature",
@@ -181668,6 +181902,46 @@
           {
             "type": "Feature",
             "properties": {
+              "mag": 5.1,
+              "place": "144 km E of Kirakira, Solomon Islands",
+              "time": 667161412950,
+              "updated": 1415321284295,
+              "tz": null,
+              "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp0004n8a",
+              "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=usp0004n8a&format=geojson",
+              "felt": null,
+              "cdi": null,
+              "mmi": null,
+              "alert": null,
+              "status": "reviewed",
+              "tsunami": 0,
+              "sig": 400,
+              "net": "us",
+              "code": "p0004n8a",
+              "ids": ",usp0004n8a,",
+              "sources": ",us,",
+              "types": ",origin,phase-data,",
+              "nst": null,
+              "dmin": null,
+              "rms": 0.9,
+              "gap": null,
+              "magType": "mb",
+              "type": "earthquake",
+              "title": "M 5.1 - 144 km E of Kirakira, Solomon Islands"
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                163.234,
+                -10.583,
+                33
+              ]
+            },
+            "id": "usp0004n8a"
+          },
+          {
+            "type": "Feature",
+            "properties": {
               "mag": 5.7,
               "place": "100 km NW of Isangel, Vanuatu",
               "time": 666893706590,
@@ -188384,46 +188658,6 @@
               ]
             },
             "id": "usp0003vhf"
-          },
-          {
-            "type": "Feature",
-            "properties": {
-              "mag": 5.1,
-              "place": "127 km WNW of Labasa, Fiji",
-              "time": 611759254370,
-              "updated": 1766178352172,
-              "tz": null,
-              "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp0003vf3",
-              "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=usp0003vf3&format=geojson",
-              "felt": null,
-              "cdi": null,
-              "mmi": null,
-              "alert": null,
-              "status": "reviewed",
-              "tsunami": 0,
-              "sig": 400,
-              "net": "us",
-              "code": "p0003vf3",
-              "ids": ",gcmtb052189b,usp0003vf3,gcmt19890521130734,iscgem405254,",
-              "sources": ",gcmt,us,gcmt,iscgem,",
-              "types": ",focal-mechanism,impact-text,origin,phase-data,",
-              "nst": null,
-              "dmin": null,
-              "rms": 0.9,
-              "gap": null,
-              "magType": "mw",
-              "type": "earthquake",
-              "title": "M 5.1 - 127 km WNW of Labasa, Fiji"
-            },
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                178.262,
-                -15.988,
-                33
-              ]
-            },
-            "id": "usp0003vf3"
           },
           {
             "type": "Feature",
@@ -230068,6 +230302,46 @@
           {
             "type": "Feature",
             "properties": {
+              "mag": 6.9,
+              "place": "90 km SSE of Kirakira, Solomon Islands",
+              "time": 279066562100,
+              "updated": 1766182175212,
+              "tz": null,
+              "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp0000x94",
+              "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=usp0000x94&format=geojson",
+              "felt": null,
+              "cdi": null,
+              "mmi": 5.922,
+              "alert": null,
+              "status": "reviewed",
+              "tsunami": 0,
+              "sig": 732,
+              "net": "us",
+              "code": "p0000x94",
+              "ids": ",gcmtc110478b,gcmt19781104222922,atlas19781104222925,iscgem673505,usp0000x94,",
+              "sources": ",gcmt,gcmt,atlas,iscgem,us,",
+              "types": ",focal-mechanism,origin,shakemap,trump-shakemap,",
+              "nst": null,
+              "dmin": null,
+              "rms": null,
+              "gap": null,
+              "magType": "ms",
+              "type": "earthquake",
+              "title": "M 6.9 - 90 km SSE of Kirakira, Solomon Islands"
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                162.176,
+                -11.23,
+                33
+              ]
+            },
+            "id": "usp0000x94"
+          },
+          {
+            "type": "Feature",
+            "properties": {
               "mag": 5.1,
               "place": "57 km E of Lakatoro, Vanuatu",
               "time": 278357800300,
@@ -241868,6 +242142,46 @@
           {
             "type": "Feature",
             "properties": {
+              "mag": 5,
+              "place": "91 km SE of Kirakira, Solomon Islands",
+              "time": 166136087400,
+              "updated": 1415316089664,
+              "tz": null,
+              "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp0000ahb",
+              "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=usp0000ahb&format=geojson",
+              "felt": null,
+              "cdi": null,
+              "mmi": null,
+              "alert": null,
+              "status": "reviewed",
+              "tsunami": 0,
+              "sig": 385,
+              "net": "us",
+              "code": "p0000ahb",
+              "ids": ",usp0000ahb,",
+              "sources": ",us,",
+              "types": ",origin,",
+              "nst": null,
+              "dmin": null,
+              "rms": null,
+              "gap": null,
+              "magType": "mb",
+              "type": "earthquake",
+              "title": "M 5.0 - 91 km SE of Kirakira, Solomon Islands"
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                162.536,
+                -11.011,
+                42
+              ]
+            },
+            "id": "usp0000ahb"
+          },
+          {
+            "type": "Feature",
+            "properties": {
               "mag": 5.3,
               "place": "185 km SSE of Lata, Solomon Islands",
               "time": 165726851500,
@@ -248268,6 +248582,46 @@
           {
             "type": "Feature",
             "properties": {
+              "mag": 5,
+              "place": "145 km E of Kirakira, Solomon Islands",
+              "time": 118883554500,
+              "updated": 1415316080722,
+              "tz": null,
+              "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp00003rd",
+              "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=usp00003rd&format=geojson",
+              "felt": null,
+              "cdi": null,
+              "mmi": null,
+              "alert": null,
+              "status": "reviewed",
+              "tsunami": 0,
+              "sig": 385,
+              "net": "us",
+              "code": "p00003rd",
+              "ids": ",usp00003rd,",
+              "sources": ",us,",
+              "types": ",origin,",
+              "nst": null,
+              "dmin": null,
+              "rms": null,
+              "gap": null,
+              "magType": "mb",
+              "type": "earthquake",
+              "title": "M 5.0 - 145 km E of Kirakira, Solomon Islands"
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                163.247,
+                -10.572,
+                41
+              ]
+            },
+            "id": "usp00003rd"
+          },
+          {
+            "type": "Feature",
+            "properties": {
               "mag": 5.6,
               "place": "105 km WNW of Sola, Vanuatu",
               "time": 118484379900,
@@ -249904,6 +250258,46 @@
               ]
             },
             "id": "usp0000054"
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "mag": 5.9,
+              "place": "88 km SSE of Kirakira, Solomon Islands",
+              "time": 95514403700,
+              "updated": 1594409028791,
+              "tz": null,
+              "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp000003f",
+              "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=usp000003f&format=geojson",
+              "felt": null,
+              "cdi": null,
+              "mmi": 4.626,
+              "alert": null,
+              "status": "reviewed",
+              "tsunami": 0,
+              "sig": 536,
+              "net": "us",
+              "code": "p000003f",
+              "ids": ",usp000003f,",
+              "sources": ",us,",
+              "types": ",origin,shakemap,",
+              "nst": null,
+              "dmin": null,
+              "rms": null,
+              "gap": null,
+              "magType": "ms",
+              "type": "earthquake",
+              "title": "M 5.9 - 88 km SSE of Kirakira, Solomon Islands"
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                162.251,
+                -11.187,
+                32
+              ]
+            },
+            "id": "usp000003f"
           },
           {
             "type": "Feature",
@@ -254950,7 +255344,7 @@
           161.8783,
           -27.917,
           1,
-          178.9066,
+          178.885,
           -10.15,
           667.1
         ]
@@ -254964,6 +255358,11 @@
       "time": 1773721705013,
       "lat": 19.8399,
       "lon": -74.3586,
+      "focal_params": {
+        "strike": 45.97,
+        "dip": 73.68,
+        "rake": -33.62
+      },
       "usgs_reports": {
         "shakemap": {
           "images": [
@@ -254977,14 +255376,6 @@
             "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:dyfi:us6000sgrt:1773764473199/contents/us6000sgrt_ciim.jpg"
           ],
           "title": "DYFI"
-        },
-        "moment_tensor": {
-          "images": [],
-          "title": "Moment Tensor"
-        },
-        "focal_mechanism": {
-          "images": [],
-          "title": "Focal Mechanism"
         },
         "losspager": {
           "images": [
@@ -255013,7 +255404,7 @@
       "history_geojson": {
         "type": "FeatureCollection",
         "metadata": {
-          "generated": 1774015752000,
+          "generated": 1774087608000,
           "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude=19.8399&longitude=-74.3586&maxradius=10&minmagnitude=5.0",
           "title": "USGS Earthquakes",
           "status": 200,

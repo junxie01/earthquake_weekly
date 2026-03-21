@@ -10,9 +10,7 @@ def fetch_google_news(query):
     print(f"  Searching Google News for: {query}")
     rss_url = f"https://news.google.com/rss/search?q={encoded_query}&hl=en-US&gl=US&ceid=US:en"
     try:
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-        }
+        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}
         resp = requests.get(rss_url, headers=headers, timeout=15)
         items = re.findall(r'<item>(.*?)</item>', resp.text, re.DOTALL)
         news = []
@@ -40,13 +38,10 @@ def fetch_data():
         return
 
     features = data.get('features', [])
-
-    # 1. Calculate Date Range
     all_times = [f['properties']['time'] for f in features if f['properties']['time']]
     start_time = datetime.datetime.utcfromtimestamp(min(all_times)/1000).strftime('%Y-%m-%d') if all_times else "N/A"
     end_time = datetime.datetime.utcfromtimestamp(max(all_times)/1000).strftime('%Y-%m-%d') if all_times else "N/A"
 
-    # 2. Magnitude Statistics
     magnitudes = [f['properties']['mag'] for f in features if f['properties']['mag'] is not None]
     stats = {
         "m4_5": len([m for m in magnitudes if 4.0 <= m < 5.0]),
@@ -55,11 +50,7 @@ def fetch_data():
         "m7_plus": len([m for m in magnitudes if m >= 7.0])
     }
 
-    sorted_eqs = sorted(
-        [f for f in features if f['properties']['mag'] is not None],
-        key=lambda x: x['properties']['mag'],
-        reverse=True
-    )
+    sorted_eqs = sorted([f for f in features if f['properties']['mag'] is not None], key=lambda x: x['properties']['mag'], reverse=True)
 
     results = {
         "update_time": datetime.datetime.utcnow().isoformat(),
@@ -89,6 +80,23 @@ def fetch_data():
 
         products = detail_data.get('properties', {}).get('products', {})
 
+        # Extract Focal Mechanism Parameters (Strike, Dip, Rake)
+        focal_params = None
+        # Priority: moment-tensor -> focal-mechanism
+        for p_type in ['moment-tensor', 'focal-mechanism']:
+            if p_type in products:
+                # Get the first item (usually primary)
+                item = products[p_type][0]
+                # Look into properties for focal-mechanism parameters
+                p = item.get('properties', {})
+                if 'nodal-plane-1-strike' in p:
+                    focal_params = {
+                        "strike": float(p.get('nodal-plane-1-strike')),
+                        "dip": float(p.get('nodal-plane-1-dip')),
+                        "rake": float(p.get('nodal-plane-1-rake'))
+                    }
+                    break
+
         def get_images(p_type):
             items = products.get(p_type, [])
             imgs = []
@@ -109,8 +117,6 @@ def fetch_data():
         usgs_reports = {
             "shakemap": {"images": get_images('shakemap'), "title": "Shakemap"},
             "dyfi": {"images": get_images('dyfi'), "title": "DYFI"},
-            "moment_tensor": {"images": get_images('moment-tensor'), "title": "Moment Tensor"},
-            "focal_mechanism": {"images": get_images('focal-mechanism'), "title": "Focal Mechanism"},
             "losspager": {"images": get_images('losspager'), "title": "PAGER"},
             "tectonic_summary": detail_data.get('properties', {}).get('description')
         }
@@ -127,6 +133,7 @@ def fetch_data():
 
         results['top_3'].append({
             "id": event_id, "mag": props['mag'], "place": props['place'], "time": props['time'], "lat": lat, "lon": lon,
+            "focal_params": focal_params, # STRIKE, DIP, RAKE for canvas plotting
             "usgs_reports": usgs_reports, "public_info": public_info, "google_news": google_news,
             "history_count": len(hist_data.get('features', [])), "history_geojson": hist_data,
             "usgs_url": f"https://earthquake.usgs.gov/earthquakes/eventpage/{event_id}"
