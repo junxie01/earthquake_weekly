@@ -331,9 +331,12 @@ function renderTopThree(data, plates) {
             <p><strong>Regional Context:</strong> ${eq.history_count} historical earthquakes (M5.0+) within 10° since 1970.</p>
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             <div style="text-align: right; margin-bottom: 15px;">
                  <a href="${eq.usgs_url}" target="_blank" class="btn" style="color: #fff !important; font-weight: bold; background-color: #3498db; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">Full USGS Event Page</a>
 =======
+=======
+>>>>>>> Stashed changes
             <div style="margin: 10px 0;">
                 <p style="margin:0 0 10px 0;"><strong>Regional Context:</strong> ${eq.history_count} historical earthquakes (M5.0+) within 10° since 1970.</p>
                 <a href="${eq.usgs_url}" target="_blank" class="btn" style="color: #fff !important; font-weight: bold; background-color: #3498db; padding: 8px 15px; text-decoration: none; border-radius: 5px; font-size: 0.9em;">Full USGS Event Page</a>
@@ -359,7 +362,10 @@ function renderTopThree(data, plates) {
         container.appendChild(card);
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
         // 绘图执行 - 只有在没有本地震源球图片时才绘制
         if (!eq.beachball_image && eq.focal_params) {
             drawBeachball(`beachball-${i}`, eq.focal_params.strike, eq.focal_params.dip, eq.focal_params.rake);

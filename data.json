@@ -1,8 +1,14 @@
 {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   "update_time": "2026-03-21T12:33:23.046510",
   "date_range": "2026-03-14 to 2026-03-21",
   "total_count": 2320,
+=======
+  "update_time": "2026-03-22T01:09:45.010949",
+  "date_range": "2026-03-15 to 2026-03-22",
+  "total_count": 2298,
+>>>>>>> Stashed changes
 =======
   "update_time": "2026-03-22T01:09:45.010949",
   "date_range": "2026-03-15 to 2026-03-22",
@@ -17,6 +23,7 @@
   "top_3": [
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "id": "pt26080001",
       "mag": 6.9,
       "place": "northern Mid-Atlantic Ridge",
@@ -28,6 +35,8 @@
         "shakemap": {
           "images": [],
 =======
+=======
+>>>>>>> Stashed changes
       "id": "us6000si5l",
       "mag": 6.7,
       "place": "northern Mid-Atlantic Ridge",
@@ -46,6 +55,9 @@
             "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000si5l:1774103945612/contents/download/intensity.jpg",
             "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000si5l:1774103945612/contents/download/intensity_overlay.png"
           ],
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
           "title": "Shakemap"
         },
@@ -55,7 +67,13 @@
         },
         "losspager": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
           "images": [],
+=======
+          "images": [
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:losspager:us6000si5l:1774104073017/contents/alertfatal.png"
+          ],
+>>>>>>> Stashed changes
 =======
           "images": [
             "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:losspager:us6000si5l:1774104073017/contents/alertfatal.png"
@@ -74,16 +92,23 @@
       "google_news": [
         {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
           "text": "Strong and shallow M6.7 earthquake hits northern Mid-Atlantic Ridge - The Watchers",
           "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNUDlTd0ZSWWJKcWVkMVE4VVdxbDNENWgwOEJPR01rRW1JamxWM2JWUmFqc0R0VmVqNjlXNm9DVVlwUVhoS1VDdmI3YTN1ZVBQdjExcnpaV0ZKeTlzcGtIcWRoRWF1RVhiSDlXNzNFWkNYSld4WkhEQ2xQeEVJLUp5ZGI2T2JOZzhDZk9YX0Z2X2Zka1BVWEs5QnZiR1Z5VHRjS0Zr?oc=5"
         },
         {
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
           "text": "Earthquake swarms on the Mid-Atlantic Ridge: assessing the applicability of a global catalogue for seismic analysis",
           "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOQlg2THotRWVfMlVIYzVTY2VESTVDYjRMbXl1V0RUMjlFejAwVXZNejQ2V2IwSG9qTl9QbWJsMHdtRmFnSzBqa1NIcWcxM0d5Z0xYTFIwX2hEU1dXbW02T25XXzVoc29PdjFlemRzcXpPNW9pSzVrQ2Ita2tnaFpLQTNwbk9RR3AtTHNqTkwtWmRhMU9Gamc?oc=5"
         },
         {
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
           "text": "Earthquakes in Iceland: The Ultimate Guide",
           "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE03ZFFBSEE3RmlyYWNMUWlLLXZPaWljWTJRclNKd09tQ3BjNmlvX0pULTd6MFdGVFVHam1zQ1Y3Y0FnY3Z4NDRxUTJCLTU4V0xLcDJGaExkTldDOVhJZ1NFZDZYMThaZWZQUnFFVkxGZzhmMk9YU1UxRFVEVFRldw?oc=5"
@@ -104,6 +129,8 @@
           "api": "2.4.0",
           "count": 375
 =======
+=======
+>>>>>>> Stashed changes
           "text": "No Tsunami Threat to Antigua and Barbuda After Strong Atlantic Earthquake",
           "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPRndhQVp5WFBETVB4blpRSEc3MGstMlpEa1dTNkpBNjhJZ2ZNaFFVLWV3UlZJMVZNRHVvaHdjVHE2ZGZzcTNRNXJ0N1lRTnhqdUZkVHVMd2lGZnJRNGhtXzlLeDFDV0dpelNYZ3RDWEZuNFV1NWpVZk50Q3d4RVBTall1OTJXY1hDaktnaGltNm1DcEdHUHk1THhBdWZIbnkxbGlDUTBCVmxRZw?oc=5"
         }
@@ -118,12 +145,16 @@
           "status": 200,
           "api": "2.4.0",
           "count": 374
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         },
         "features": [
           {
             "type": "Feature",
             "properties": {
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
               "mag": 6.9,
               "place": "northern Mid-Atlantic Ridge",
@@ -152,6 +183,8 @@
               "type": "earthquake",
               "title": "M 6.9 - northern Mid-Atlantic Ridge"
 =======
+=======
+>>>>>>> Stashed changes
               "mag": 6.7,
               "place": "northern Mid-Atlantic Ridge",
               "time": 1774095406766,
@@ -178,11 +211,15 @@
               "magType": "mww",
               "type": "earthquake",
               "title": "M 6.7 - northern Mid-Atlantic Ridge"
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
             },
             "geometry": {
               "type": "Point",
               "coordinates": [
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
                 -45.803,
                 23.817,
@@ -191,12 +228,17 @@
             },
             "id": "pt26080001"
 =======
+=======
+>>>>>>> Stashed changes
                 -45.8413,
                 23.8862,
                 10
               ]
             },
             "id": "us6000si5l"
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
           },
           {
@@ -13565,6 +13607,7 @@
               "mag": 5.1,
               "place": "North Atlantic Ocean",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
               "time": 245465609000,
               "updated": 1415316104580,
               "tz": null,
@@ -13605,6 +13648,8 @@
             "properties": {
               "mag": 5.1,
               "place": "North Atlantic Ocean",
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
               "time": 244701513700,
@@ -15166,8 +15211,13 @@
         "bbox": [
           -49.9874,
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
           14.106,
           1,
+=======
+          14.14,
+          9.53,
+>>>>>>> Stashed changes
 =======
           14.14,
           9.53,
@@ -15178,7 +15228,11 @@
         ]
       },
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "usgs_url": "https://earthquake.usgs.gov/earthquakes/eventpage/pt26080001"
+=======
+      "usgs_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000si5l"
+>>>>>>> Stashed changes
 =======
       "usgs_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000si5l"
 >>>>>>> Stashed changes
@@ -15236,7 +15290,11 @@
         "type": "FeatureCollection",
         "metadata": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
           "generated": 1774096406000,
+=======
+          "generated": 1774141793000,
+>>>>>>> Stashed changes
 =======
           "generated": 1774141793000,
 >>>>>>> Stashed changes
@@ -28274,7 +28332,11 @@
         "type": "FeatureCollection",
         "metadata": {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
           "generated": 1774096408000,
+=======
+          "generated": 1774141798000,
+>>>>>>> Stashed changes
 =======
           "generated": 1774141798000,
 >>>>>>> Stashed changes
