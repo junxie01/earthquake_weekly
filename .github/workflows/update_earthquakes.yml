@@ -22,15 +22,18 @@ jobs:
           python-version: '3.9'
 
       - name: Install dependencies
-        run: pip install requests
+        run: pip install requests matplotlib numpy obspy
 
-      - name: Fetch USGS data
+      - name: Create images directory if not exists
+        run: mkdir -p images
+
+      - name: Fetch USGS data and generate beachballs
         run: python fetch_data.py
 
       - name: Commit and push changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add data.json
+          git add data.json images/
           # 如果没有变化则不报错
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Update earthquake data" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update earthquake data and beachballs" && git push)

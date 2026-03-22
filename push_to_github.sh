@@ -17,21 +17,37 @@ if ! git remote | grep -q "origin"; then
     git remote add origin "git@github.com:$GITHUB_USER/$REPO_NAME.git"
 fi
 
-# 1. 先把本地的修改全部暂存并提交
-echo "Staging and committing local changes..."
-git add .
-if git diff-index --quiet HEAD --; then
-    echo "No local changes to commit."
-else
-    git commit -m "Update: UI/Script layout optimization"
+# 1. 先获取远程更新
+echo "Fetching remote changes..."
+git fetch origin
+
+# 2. 暂存本地修改（避免冲突）
+echo "Stashing local changes..."
+git stash push -m "local changes" 2>/dev/null || echo "No local changes to stash."
+
+# 3. 切换到远程 main 分支的最新状态
+echo "Checking out latest main branch..."
+git checkout main
+git reset --hard origin/main
+
+# 4. 重新应用本地修改（如果有）
+if git stash list | grep -q "local changes"; then
+    echo "Applying local changes..."
+    git stash pop
 fi
 
-# 2. 再从云端拉取 Actions 产生的新数据并自动合并（Rebase）
-echo "Syncing with GitHub Actions data (pulling with rebase)..."
-git pull origin main --rebase
+# 5. 现在添加所有修改
+echo "Adding and committing changes..."
+git add .
 
-# 3. 最后安全地推送到云端
-echo "Pushing to GitHub via SSH..."
+if git diff-index --quiet HEAD --; then
+    echo "No changes to commit."
+else
+    git commit -m "Update: UI improvements and beachball generation"
+fi
+
+# 6. 推送到 GitHub
+echo "Pushing to GitHub..."
 git push -u origin main
 
 echo "Done! Your website content is now synced and updated."

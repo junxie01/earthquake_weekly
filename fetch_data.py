@@ -3,7 +3,39 @@ import json
 import datetime
 import time
 import re
+import os
+import math
 from urllib.parse import quote
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+from obspy.imaging.beachball import beach
+
+def draw_beachball(strike, dip, rake, filename, size=4):
+    """
+    使用 ObsPy 库专业绘制震源球
+    """
+    fig, ax = plt.subplots(figsize=(size, size))
+    
+    # 使用 beach 函数绘制震源球
+    # xy=(0, 0) 表示球心的位置
+    # width=200 是球的直径
+    focmec = [strike, dip, rake]
+    beach_plot = beach(focmec, xy=(0, 0), width=200, linewidth=1, facecolor='#3498db')
+    
+    # 将震源球添加到当前的坐标轴
+    ax.add_collection(beach_plot)
+    
+    # 设置坐标轴范围，否则球可能在视野之外
+    ax.set_xlim(-120, 120)
+    ax.set_ylim(-120, 120)
+    ax.set_aspect('equal')
+    ax.axis('off')
+    
+    # 保存图片
+    plt.savefig(filename, dpi=100, bbox_inches='tight', pad_inches=0)
+    plt.close()
+
 
 def fetch_google_news(query):
     encoded_query = quote(query)
@@ -62,7 +94,7 @@ def fetch_data():
 
     global_seen_images = set()
 
-    for eq in sorted_eqs[:3]:
+    for i, eq in enumerate(sorted_eqs[:3]):
         props = eq['properties']
         event_id = eq['id']
         lat, lon = eq['geometry']['coordinates'][1], eq['geometry']['coordinates'][0]
@@ -131,9 +163,22 @@ def fetch_data():
 
         google_news = fetch_google_news(f"earthquake {props['place'].split(',')[-1].strip()}")
 
+        # 生成震源球图片
+        beachball_path = None
+        if focal_params:
+            beachball_filename = f"images/beachball_{i}.png"
+            draw_beachball(
+                focal_params['strike'],
+                focal_params['dip'],
+                focal_params['rake'],
+                beachball_filename
+            )
+            beachball_path = beachball_filename
+
         results['top_3'].append({
             "id": event_id, "mag": props['mag'], "place": props['place'], "time": props['time'], "lat": lat, "lon": lon,
             "focal_params": focal_params, # STRIKE, DIP, RAKE for canvas plotting
+            "beachball_image": beachball_path, # 保存本地震源球图片路径
             "usgs_reports": usgs_reports, "public_info": public_info, "google_news": google_news,
             "history_count": len(hist_data.get('features', [])), "history_geojson": hist_data,
             "usgs_url": f"https://earthquake.usgs.gov/earthquakes/eventpage/{event_id}"

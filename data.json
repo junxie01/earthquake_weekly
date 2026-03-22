@@ -1,15 +1,22 @@
 {
+<<<<<<< Updated upstream
   "update_time": "2026-03-21T12:33:23.046510",
   "date_range": "2026-03-14 to 2026-03-21",
   "total_count": 2320,
+=======
+  "update_time": "2026-03-22T01:09:45.010949",
+  "date_range": "2026-03-15 to 2026-03-22",
+  "total_count": 2298,
+>>>>>>> Stashed changes
   "stats": {
-    "m4_5": 140,
+    "m4_5": 146,
     "m5_6": 25,
     "m6_7": 3,
     "m7_plus": 0
   },
   "top_3": [
     {
+<<<<<<< Updated upstream
       "id": "pt26080001",
       "mag": 6.9,
       "place": "northern Mid-Atlantic Ridge",
@@ -20,6 +27,26 @@
       "usgs_reports": {
         "shakemap": {
           "images": [],
+=======
+      "id": "us6000si5l",
+      "mag": 6.7,
+      "place": "northern Mid-Atlantic Ridge",
+      "time": 1774095406766,
+      "lat": 23.8862,
+      "lon": -45.8413,
+      "focal_params": {
+        "strike": 189.2,
+        "dip": 72.69,
+        "rake": -5.57
+      },
+      "beachball_image": "images/beachball_0.png",
+      "usgs_reports": {
+        "shakemap": {
+          "images": [
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000si5l:1774103945612/contents/download/intensity.jpg",
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000si5l:1774103945612/contents/download/intensity_overlay.png"
+          ],
+>>>>>>> Stashed changes
           "title": "Shakemap"
         },
         "dyfi": {
@@ -27,7 +54,13 @@
           "title": "DYFI"
         },
         "losspager": {
+<<<<<<< Updated upstream
           "images": [],
+=======
+          "images": [
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:losspager:us6000si5l:1774104073017/contents/alertfatal.png"
+          ],
+>>>>>>> Stashed changes
           "title": "PAGER"
         },
         "tectonic_summary": null
@@ -40,10 +73,18 @@
       ],
       "google_news": [
         {
+<<<<<<< Updated upstream
+=======
+          "text": "Strong and shallow M6.7 earthquake hits northern Mid-Atlantic Ridge - The Watchers",
+          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNUDlTd0ZSWWJKcWVkMVE4VVdxbDNENWgwOEJPR01rRW1JamxWM2JWUmFqc0R0VmVqNjlXNm9DVVlwUVhoS1VDdmI3YTN1ZVBQdjExcnpaV0ZKeTlzcGtIcWRoRWF1RVhiSDlXNzNFWkNYSld4WkhEQ2xQeEVJLUp5ZGI2T2JOZzhDZk9YX0Z2X2Zka1BVWEs5QnZiR1Z5VHRjS0Zr?oc=5"
+        },
+        {
+>>>>>>> Stashed changes
           "text": "Earthquake swarms on the Mid-Atlantic Ridge: assessing the applicability of a global catalogue for seismic analysis",
           "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOQlg2THotRWVfMlVIYzVTY2VESTVDYjRMbXl1V0RUMjlFejAwVXZNejQ2V2IwSG9qTl9QbWJsMHdtRmFnSzBqa1NIcWcxM0d5Z0xYTFIwX2hEU1dXbW02T25XXzVoc29PdjFlemRzcXpPNW9pSzVrQ2Ita2tnaFpLQTNwbk9RR3AtTHNqTkwtWmRhMU9Gamc?oc=5"
         },
         {
+<<<<<<< Updated upstream
           "text": "Earthquakes in Iceland: The Ultimate Guide",
           "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE03ZFFBSEE3RmlyYWNMUWlLLXZPaWljWTJRclNKd09tQ3BjNmlvX0pULTd6MFdGVFVHam1zQ1Y3Y0FnY3Z4NDRxUTJCLTU4V0xLcDJGaExkTldDOVhJZ1NFZDZYMThaZWZQUnFFVkxGZzhmMk9YU1UxRFVEVFRldw?oc=5"
         },
@@ -62,11 +103,28 @@
           "status": 200,
           "api": "2.4.0",
           "count": 375
+=======
+          "text": "No Tsunami Threat to Antigua and Barbuda After Strong Atlantic Earthquake",
+          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPRndhQVp5WFBETVB4blpRSEc3MGstMlpEa1dTNkpBNjhJZ2ZNaFFVLWV3UlZJMVZNRHVvaHdjVHE2ZGZzcTNRNXJ0N1lRTnhqdUZkVHVMd2lGZnJRNGhtXzlLeDFDV0dpelNYZ3RDWEZuNFV1NWpVZk50Q3d4RVBTall1OTJXY1hDaktnaGltNm1DcEdHUHk1THhBdWZIbnkxbGlDUTBCVmxRZw?oc=5"
+        }
+      ],
+      "history_count": 374,
+      "history_geojson": {
+        "type": "FeatureCollection",
+        "metadata": {
+          "generated": 1774141789000,
+          "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude=23.8862&longitude=-45.8413&maxradius=10&minmagnitude=5.0",
+          "title": "USGS Earthquakes",
+          "status": 200,
+          "api": "2.4.0",
+          "count": 374
+>>>>>>> Stashed changes
         },
         "features": [
           {
             "type": "Feature",
             "properties": {
+<<<<<<< Updated upstream
               "mag": 6.9,
               "place": "northern Mid-Atlantic Ridge",
               "time": 1774095398000,
@@ -93,16 +151,53 @@
               "magType": "Mi",
               "type": "earthquake",
               "title": "M 6.9 - northern Mid-Atlantic Ridge"
+=======
+              "mag": 6.7,
+              "place": "northern Mid-Atlantic Ridge",
+              "time": 1774095406766,
+              "updated": 1774106149040,
+              "tz": null,
+              "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000si5l",
+              "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000si5l&format=geojson",
+              "felt": null,
+              "cdi": null,
+              "mmi": 0,
+              "alert": "green",
+              "status": "reviewed",
+              "tsunami": 1,
+              "sig": 691,
+              "net": "us",
+              "code": "6000si5l",
+              "ids": ",pt26080001,usauto6000si5l,us6000si5l,",
+              "sources": ",pt,usauto,us,",
+              "types": ",impact-link,internal-moment-tensor,losspager,moment-tensor,origin,phase-data,shakemap,",
+              "nst": 116,
+              "dmin": 16.136,
+              "rms": 0.98,
+              "gap": 31,
+              "magType": "mww",
+              "type": "earthquake",
+              "title": "M 6.7 - northern Mid-Atlantic Ridge"
+>>>>>>> Stashed changes
             },
             "geometry": {
               "type": "Point",
               "coordinates": [
+<<<<<<< Updated upstream
                 -45.803,
                 23.817,
                 1
               ]
             },
             "id": "pt26080001"
+=======
+                -45.8413,
+                23.8862,
+                10
+              ]
+            },
+            "id": "us6000si5l"
+>>>>>>> Stashed changes
           },
           {
             "type": "Feature",
@@ -13469,6 +13564,7 @@
             "properties": {
               "mag": 5.1,
               "place": "North Atlantic Ocean",
+<<<<<<< Updated upstream
               "time": 245465609000,
               "updated": 1415316104580,
               "tz": null,
@@ -13509,6 +13605,8 @@
             "properties": {
               "mag": 5.1,
               "place": "North Atlantic Ocean",
+=======
+>>>>>>> Stashed changes
               "time": 244701513700,
               "updated": 1415316104436,
               "tz": null,
@@ -15067,14 +15165,23 @@
         ],
         "bbox": [
           -49.9874,
+<<<<<<< Updated upstream
           14.106,
           1,
+=======
+          14.14,
+          9.53,
+>>>>>>> Stashed changes
           -40.078,
           32.5329,
           33
         ]
       },
+<<<<<<< Updated upstream
       "usgs_url": "https://earthquake.usgs.gov/earthquakes/eventpage/pt26080001"
+=======
+      "usgs_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000si5l"
+>>>>>>> Stashed changes
     },
     {
       "id": "us6000shlp",
@@ -15088,6 +15195,7 @@
         "dip": 24.07,
         "rake": 98.4
       },
+      "beachball_image": "images/beachball_1.png",
       "usgs_reports": {
         "shakemap": {
           "images": [
@@ -15127,7 +15235,11 @@
       "history_geojson": {
         "type": "FeatureCollection",
         "metadata": {
+<<<<<<< Updated upstream
           "generated": 1774096406000,
+=======
+          "generated": 1774141793000,
+>>>>>>> Stashed changes
           "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude=-61.1525&longitude=-56.2683&maxradius=10&minmagnitude=5.0",
           "title": "USGS Earthquakes",
           "status": 200,
@@ -28119,16 +28231,19 @@
         "dip": 70.41,
         "rake": 147.45
       },
+      "beachball_image": "images/beachball_2.png",
       "usgs_reports": {
         "shakemap": {
           "images": [
-            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shnl:1774061920200/contents/download/intensity.jpg",
-            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shnl:1774061920200/contents/download/intensity_overlay.png"
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shnl:1774061920200/contents/download/intensity_overlay.png",
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shnl:1774061920200/contents/download/intensity.jpg"
           ],
           "title": "Shakemap"
         },
         "dyfi": {
-          "images": [],
+          "images": [
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:dyfi:us6000shnl:1774098709880/contents/us6000shnl_ciim.jpg"
+          ],
           "title": "DYFI"
         },
         "losspager": {
@@ -28158,7 +28273,11 @@
       "history_geojson": {
         "type": "FeatureCollection",
         "metadata": {
+<<<<<<< Updated upstream
           "generated": 1774096408000,
+=======
+          "generated": 1774141798000,
+>>>>>>> Stashed changes
           "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude=-19.2783&longitude=168.3207&maxradius=10&minmagnitude=5.0",
           "title": "USGS Earthquakes",
           "status": 200,
@@ -28172,17 +28291,17 @@
               "mag": 5.7,
               "place": "51 km W of Norsup, Vanuatu",
               "time": 1774063260605,
-              "updated": 1774072046991,
+              "updated": 1774129407295,
               "tz": null,
               "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000si17",
               "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000si17&format=geojson",
-              "felt": 1,
-              "cdi": 3.1,
+              "felt": 2,
+              "cdi": 3.4,
               "mmi": 4.462,
               "alert": "green",
               "status": "reviewed",
               "tsunami": 0,
-              "sig": 500,
+              "sig": 501,
               "net": "us",
               "code": "6000si17",
               "ids": ",us6000si17,usauto6000si17,",
@@ -28212,12 +28331,12 @@
               "mag": 6.1,
               "place": "105 km WNW of Isangel, Vanuatu",
               "time": 1773973832675,
-              "updated": 1774062196668,
+              "updated": 1774101028040,
               "tz": null,
               "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000shnl",
               "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000shnl&format=geojson",
-              "felt": null,
-              "cdi": null,
+              "felt": 0,
+              "cdi": 1,
               "mmi": 4.236,
               "alert": "green",
               "status": "reviewed",
@@ -28227,7 +28346,7 @@
               "code": "6000shnl",
               "ids": ",us6000shnl,usauto6000shnl,",
               "sources": ",us,usauto,",
-              "types": ",ground-failure,internal-moment-tensor,losspager,moment-tensor,origin,phase-data,shakemap,",
+              "types": ",dyfi,ground-failure,internal-moment-tensor,losspager,moment-tensor,origin,phase-data,shakemap,",
               "nst": 94,
               "dmin": 3.38,
               "rms": 0.91,
