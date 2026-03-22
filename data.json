@@ -1,9 +1,9 @@
 {
-  "update_time": "2026-03-22T02:22:31.609493",
+  "update_time": "2026-03-22T02:58:25.522488",
   "date_range": "2026-03-15 to 2026-03-22",
-  "total_count": 2297,
+  "total_count": 2299,
   "stats": {
-    "m4_5": 147,
+    "m4_5": 146,
     "m5_6": 25,
     "m6_7": 3,
     "m7_plus": 0
@@ -66,7 +66,7 @@
       "history_geojson": {
         "type": "FeatureCollection",
         "metadata": {
-          "generated": 1774146153000,
+          "generated": 1774148307000,
           "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude=23.8862&longitude=-45.8413&maxradius=10&minmagnitude=5.0",
           "title": "USGS Earthquakes",
           "status": 200,
@@ -15098,7 +15098,7 @@
       "history_geojson": {
         "type": "FeatureCollection",
         "metadata": {
-          "generated": 1774146154000,
+          "generated": 1774148308000,
           "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude=-61.1525&longitude=-56.2683&maxradius=10&minmagnitude=5.0",
           "title": "USGS Earthquakes",
           "status": 200,
@@ -28132,7 +28132,7 @@
       "history_geojson": {
         "type": "FeatureCollection",
         "metadata": {
-          "generated": 1774146158000,
+          "generated": 1774148311000,
           "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude=-19.2783&longitude=168.3207&maxradius=10&minmagnitude=5.0",
           "title": "USGS Earthquakes",
           "status": 200,
