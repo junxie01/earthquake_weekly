@@ -1,42 +1,15 @@
 {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  "update_time": "2026-03-21T12:33:23.046510",
-  "date_range": "2026-03-14 to 2026-03-21",
-  "total_count": 2320,
-=======
-  "update_time": "2026-03-22T01:09:45.010949",
+  "update_time": "2026-03-22T01:53:56.809943",
   "date_range": "2026-03-15 to 2026-03-22",
-  "total_count": 2298,
->>>>>>> Stashed changes
-=======
-  "update_time": "2026-03-22T01:09:45.010949",
-  "date_range": "2026-03-15 to 2026-03-22",
-  "total_count": 2298,
->>>>>>> Stashed changes
+  "total_count": 2295,
   "stats": {
-    "m4_5": 146,
+    "m4_5": 147,
     "m5_6": 25,
     "m6_7": 3,
     "m7_plus": 0
   },
   "top_3": [
     {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "id": "pt26080001",
-      "mag": 6.9,
-      "place": "northern Mid-Atlantic Ridge",
-      "time": 1774095398000,
-      "lat": 23.817,
-      "lon": -45.803,
-      "focal_params": null,
-      "usgs_reports": {
-        "shakemap": {
-          "images": [],
-=======
-=======
->>>>>>> Stashed changes
       "id": "us6000si5l",
       "mag": 6.7,
       "place": "northern Mid-Atlantic Ridge",
@@ -52,13 +25,9 @@
       "usgs_reports": {
         "shakemap": {
           "images": [
-            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000si5l:1774103945612/contents/download/intensity.jpg",
-            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000si5l:1774103945612/contents/download/intensity_overlay.png"
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000si5l:1774103945612/contents/download/intensity_overlay.png",
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000si5l:1774103945612/contents/download/intensity.jpg"
           ],
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
           "title": "Shakemap"
         },
         "dyfi": {
@@ -66,19 +35,9 @@
           "title": "DYFI"
         },
         "losspager": {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-          "images": [],
-=======
           "images": [
             "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:losspager:us6000si5l:1774104073017/contents/alertfatal.png"
           ],
->>>>>>> Stashed changes
-=======
-          "images": [
-            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:losspager:us6000si5l:1774104073017/contents/alertfatal.png"
-          ],
->>>>>>> Stashed changes
           "title": "PAGER"
         },
         "tectonic_summary": null
@@ -91,46 +50,14 @@
       ],
       "google_news": [
         {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
           "text": "Strong and shallow M6.7 earthquake hits northern Mid-Atlantic Ridge - The Watchers",
           "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNUDlTd0ZSWWJKcWVkMVE4VVdxbDNENWgwOEJPR01rRW1JamxWM2JWUmFqc0R0VmVqNjlXNm9DVVlwUVhoS1VDdmI3YTN1ZVBQdjExcnpaV0ZKeTlzcGtIcWRoRWF1RVhiSDlXNzNFWkNYSld4WkhEQ2xQeEVJLUp5ZGI2T2JOZzhDZk9YX0Z2X2Zka1BVWEs5QnZiR1Z5VHRjS0Zr?oc=5"
         },
         {
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
           "text": "Earthquake swarms on the Mid-Atlantic Ridge: assessing the applicability of a global catalogue for seismic analysis",
           "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOQlg2THotRWVfMlVIYzVTY2VESTVDYjRMbXl1V0RUMjlFejAwVXZNejQ2V2IwSG9qTl9QbWJsMHdtRmFnSzBqa1NIcWcxM0d5Z0xYTFIwX2hEU1dXbW02T25XXzVoc29PdjFlemRzcXpPNW9pSzVrQ2Ita2tnaFpLQTNwbk9RR3AtTHNqTkwtWmRhMU9Gamc?oc=5"
         },
         {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-          "text": "Earthquakes in Iceland: The Ultimate Guide",
-          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE03ZFFBSEE3RmlyYWNMUWlLLXZPaWljWTJRclNKd09tQ3BjNmlvX0pULTd6MFdGVFVHam1zQ1Y3Y0FnY3Z4NDRxUTJCLTU4V0xLcDJGaExkTldDOVhJZ1NFZDZYMThaZWZQUnFFVkxGZzhmMk9YU1UxRFVEVFRldw?oc=5"
-        },
-        {
-          "text": "The Energetic 2022 Seismic Unrest Related to Magma Intrusion at the North Mid-Atlantic Ridge",
-          "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE13QXNKa2VVeU1qSWJDeW9kZ2x5YXI2ZjdpUHdoWmx1YjNRN3dWQkxRUmxWTnVMckVFZkdDa3g2YVY4YmtkQ2cyaTF1ckdUQmlXQ09IWnVJV3ZQUk10UTJLSGV6SUF2TkZaVVBQb2w1YXZmTnB1UmdJdA?oc=5"
-        }
-      ],
-      "history_count": 375,
-      "history_geojson": {
-        "type": "FeatureCollection",
-        "metadata": {
-          "generated": 1774096404000,
-          "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude=23.817&longitude=-45.803&maxradius=10&minmagnitude=5.0",
-          "title": "USGS Earthquakes",
-          "status": 200,
-          "api": "2.4.0",
-          "count": 375
-=======
-=======
->>>>>>> Stashed changes
           "text": "No Tsunami Threat to Antigua and Barbuda After Strong Atlantic Earthquake",
           "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPRndhQVp5WFBETVB4blpRSEc3MGstMlpEa1dTNkpBNjhJZ2ZNaFFVLWV3UlZJMVZNRHVvaHdjVHE2ZGZzcTNRNXJ0N1lRTnhqdUZkVHVMd2lGZnJRNGhtXzlLeDFDV0dpelNYZ3RDWEZuNFV1NWpVZk50Q3d4RVBTall1OTJXY1hDaktnaGltNm1DcEdHUHk1THhBdWZIbnkxbGlDUTBCVmxRZw?oc=5"
         }
@@ -139,52 +66,17 @@
       "history_geojson": {
         "type": "FeatureCollection",
         "metadata": {
-          "generated": 1774141789000,
+          "generated": 1774144438000,
           "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude=23.8862&longitude=-45.8413&maxradius=10&minmagnitude=5.0",
           "title": "USGS Earthquakes",
           "status": 200,
           "api": "2.4.0",
           "count": 374
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
         },
         "features": [
           {
             "type": "Feature",
             "properties": {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-              "mag": 6.9,
-              "place": "northern Mid-Atlantic Ridge",
-              "time": 1774095398000,
-              "updated": 1774096275830,
-              "tz": null,
-              "url": "https://earthquake.usgs.gov/earthquakes/eventpage/pt26080001",
-              "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=pt26080001&format=geojson",
-              "felt": null,
-              "cdi": null,
-              "mmi": null,
-              "alert": null,
-              "status": "REVIEWED",
-              "tsunami": 1,
-              "sig": 732,
-              "net": "pt",
-              "code": "26080001",
-              "ids": ",pt26080001,usauto6000si5l,",
-              "sources": ",pt,usauto,",
-              "types": ",impact-link,internal-moment-tensor,origin,",
-              "nst": 20,
-              "dmin": null,
-              "rms": null,
-              "gap": null,
-              "magType": "Mi",
-              "type": "earthquake",
-              "title": "M 6.9 - northern Mid-Atlantic Ridge"
-=======
-=======
->>>>>>> Stashed changes
               "mag": 6.7,
               "place": "northern Mid-Atlantic Ridge",
               "time": 1774095406766,
@@ -211,35 +103,16 @@
               "magType": "mww",
               "type": "earthquake",
               "title": "M 6.7 - northern Mid-Atlantic Ridge"
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
             },
             "geometry": {
               "type": "Point",
               "coordinates": [
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-                -45.803,
-                23.817,
-                1
-              ]
-            },
-            "id": "pt26080001"
-=======
-=======
->>>>>>> Stashed changes
                 -45.8413,
                 23.8862,
                 10
               ]
             },
             "id": "us6000si5l"
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
           },
           {
             "type": "Feature",
@@ -13606,52 +13479,6 @@
             "properties": {
               "mag": 5.1,
               "place": "North Atlantic Ocean",
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-              "time": 245465609000,
-              "updated": 1415316104580,
-              "tz": null,
-              "url": "https://earthquake.usgs.gov/earthquakes/eventpage/usp0000r07",
-              "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=usp0000r07&format=geojson",
-              "felt": null,
-              "cdi": null,
-              "mmi": null,
-              "alert": null,
-              "status": "reviewed",
-              "tsunami": 0,
-              "sig": 400,
-              "net": "us",
-              "code": "p0000r07",
-              "ids": ",usp0000r07,",
-              "sources": ",us,",
-              "types": ",origin,",
-              "nst": null,
-              "dmin": null,
-              "rms": null,
-              "gap": null,
-              "magType": "mb",
-              "type": "earthquake",
-              "title": "M 5.1 - North Atlantic Ocean"
-            },
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -48.23,
-                14.106,
-                33
-              ]
-            },
-            "id": "usp0000r07"
-          },
-          {
-            "type": "Feature",
-            "properties": {
-              "mag": 5.1,
-              "place": "North Atlantic Ocean",
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
               "time": 244701513700,
               "updated": 1415316104436,
               "tz": null,
@@ -15210,32 +15037,14 @@
         ],
         "bbox": [
           -49.9874,
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-          14.106,
-          1,
-=======
           14.14,
           9.53,
->>>>>>> Stashed changes
-=======
-          14.14,
-          9.53,
->>>>>>> Stashed changes
           -40.078,
           32.5329,
           33
         ]
       },
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "usgs_url": "https://earthquake.usgs.gov/earthquakes/eventpage/pt26080001"
-=======
       "usgs_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000si5l"
->>>>>>> Stashed changes
-=======
-      "usgs_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000si5l"
->>>>>>> Stashed changes
     },
     {
       "id": "us6000shlp",
@@ -15253,8 +15062,8 @@
       "usgs_reports": {
         "shakemap": {
           "images": [
-            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shlp:1774053862802/contents/download/intensity.jpg",
-            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shlp:1774053862802/contents/download/intensity_overlay.png"
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shlp:1774053862802/contents/download/intensity_overlay.png",
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shlp:1774053862802/contents/download/intensity.jpg"
           ],
           "title": "Shakemap"
         },
@@ -15273,31 +15082,23 @@
       "public_info": [],
       "google_news": [
         {
+          "text": "Earthquake of magnitude 6.7 strikes South Shetland Islands, GFZ says",
+          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNMU9EQ1l2MDk2LU5OTWIzZzM3ZHdZR3FfYXBsQ3BIbHN4X2xRdDRnTnM0NWZjbmhkelgzVGRkRFNPbVZKdXZxNGdGY3I2MEo4aHE3M2psYUJJMVdFUXdKZWVzWDM1TTF5Q05FenAweWFEX2ozanlDRVFyekF3M0oxMTdIN05LQnowckdhV1dsVlZBcUJ5VUVzR1NCR18?oc=5"
+        },
+        {
           "text": "7.0 magnitude #earthquake. South Shetland Islands",
           "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBnd2x0MUdJd3RVSngxbXZLNmN5ek9TSGY4SFdGWlliYWY0WFhLTHJvVzZqNk1xTG4yNUM2UXd2YXMyOTRPRklIdGY0R3prRTlGMlg0Z0l2dWFmS3BpQlNOdnNKdWlrdHo5RExnVGNR?oc=5"
         },
         {
           "text": "6.7 magnitude earthquake strikes South Shetland Islands, no tsunami threat",
           "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQZ2x4SFFZS01WMlM1T2Jtb0dBVEY4dnFUcHFRb2tfdXItZG84RDdDV1lmT050eVhIVkhlaVB6ZTB1VGxqSkZ4c1ZGNE53MUVlWXhOcTE3MkptT3NtT2FOZnBuS3M1ckxTak9vMlhQWW1hM3NUTlpMeFZiRHRMVDdHVURLaUEwNVlaWjVIU3AtR2VndVYtZlloeXpRN09xSU9DNGdadWxXeld1TFluMDBXVVU4aHZDVk1YakRtaGlwM0Vwei1lLTlZRkRmY3hKY05vNHpz0gHYAUFVX3lxTE5BZ3JtQXl1Z1dob1VjTFlmQ044MFNsZW5rd3JsQUNPcTU5anJ1MFNPUWhMQ1Q2NVdsRHFJajd1UjlqM0pvTGdqLVhRd3MzbFRIaG9MbHdEOFRzdDBKd29jVHRTaFpySDAtaXVDZ3hibHZ3N2QzYmwzbXhmeTdmaVBYMnNWT1hnVWx6QXZzZUdmYkE1eU1Ma0oxV29vT0RJM1FDS0lSYjY0OTZ1WVlKNl9Jc2p2ZUFxMmxrUmkwN3d5VHN0SHRvbkdwWGxsUEpkY3hMMEQtSG9sWA?oc=5"
-        },
-        {
-          "text": "Strong and shallow M6.6 earthquake hits South Shetland Islands - The Watchers",
-          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNeVFMa0ZEVnRuU3VaQ0c5N3pXYzlpMWtzXzVQdDFERVFTTlF5T1VOdmstQ0g0ZUwyZ0hVcGJINEJDZUJObllTeEZUY2t4U2VvbWh1elg0UHF4R2Q0Ti0yTDJGTTBoeXFwT2JGc1RRNUVyRHpMNUpIaVBKTDk3OGRVZHFxcndsMnJRcVJsbEhxV1N2b3lrR0NVUjJHcWw?oc=5"
         }
       ],
       "history_count": 324,
       "history_geojson": {
         "type": "FeatureCollection",
         "metadata": {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-          "generated": 1774096406000,
-=======
-          "generated": 1774141793000,
->>>>>>> Stashed changes
-=======
-          "generated": 1774141793000,
->>>>>>> Stashed changes
+          "generated": 1774144439000,
           "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude=-61.1525&longitude=-56.2683&maxradius=10&minmagnitude=5.0",
           "title": "USGS Earthquakes",
           "status": 200,
@@ -28293,8 +28094,8 @@
       "usgs_reports": {
         "shakemap": {
           "images": [
-            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shnl:1774061920200/contents/download/intensity_overlay.png",
-            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shnl:1774061920200/contents/download/intensity.jpg"
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shnl:1774061920200/contents/download/intensity.jpg",
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shnl:1774061920200/contents/download/intensity_overlay.png"
           ],
           "title": "Shakemap"
         },
@@ -28331,15 +28132,7 @@
       "history_geojson": {
         "type": "FeatureCollection",
         "metadata": {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-          "generated": 1774096408000,
-=======
-          "generated": 1774141798000,
->>>>>>> Stashed changes
-=======
-          "generated": 1774141798000,
->>>>>>> Stashed changes
+          "generated": 1774144442000,
           "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude=-19.2783&longitude=168.3207&maxradius=10&minmagnitude=5.0",
           "title": "USGS Earthquakes",
           "status": 200,
