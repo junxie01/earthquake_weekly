@@ -42,7 +42,25 @@ fi
 # 5. 确保 images 目录存在
 mkdir -p images
 
-# 6. 现在添加所有修改（包括新的图片文件）
+# 6. 检测并修复 Git 冲突标记
+echo "Checking for Git merge conflicts..."
+
+# 检查常见文件中的冲突标记
+CONFLICT_FILES=()
+for file in script.js data.json fetch_data.py; do
+    if [ -f "$file" ]; then
+        if grep -q "<<<<<<<" "$file"; then
+            CONFLICT_FILES+=($file)
+            echo "Found conflict in $file, cleaning..."
+            # 移除冲突标记，保留本地版本
+            sed -i '' '/<<<<<<</,/=======/d' "$file"
+            sed -i '' '/>>>>>>>.*$/d' "$file"
+            echo "Cleaned conflicts in $file"
+        fi
+    fi
+done
+
+# 7. 现在添加所有修改（包括新的图片文件）
 echo "Adding and committing changes..."
 git add .
 
@@ -52,8 +70,18 @@ else
     git commit -m "Update: UI improvements and beachball generation"
 fi
 
-# 7. 推送到 GitHub
+# 8. 推送到 GitHub
 echo "Pushing to GitHub..."
 git push -u origin main
 
 echo "Done! Your website content is now synced and updated."
+
+# 9. 显示冲突修复信息
+if [ ${#CONFLICT_FILES[@]} -gt 0 ]; then
+    echo "\n=== Conflict Resolution Summary ==="
+    echo "Fixed conflicts in the following files:"
+    for file in "${CONFLICT_FILES[@]}"; do
+        echo "- $file"
+    done
+    echo "==================================="
+fi
