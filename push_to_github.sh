@@ -4,6 +4,9 @@
 GITHUB_USER="junxie01"
 REPO_NAME="earthquake_weekly"
 
+# 确保 images 目录存在
+mkdir -p images
+
 # 检查是否已初始化 git
 if [ ! -d ".git" ]; then
     echo "Initializing Git repository..."
@@ -21,9 +24,9 @@ fi
 echo "Fetching remote changes..."
 git fetch origin
 
-# 2. 暂存本地修改（避免冲突）
+# 2. 暂存本地修改（包括图片文件）
 echo "Stashing local changes..."
-git stash push -m "local changes" 2>/dev/null || echo "No local changes to stash."
+git stash push -m "local changes" -u 2>/dev/null || echo "No local changes to stash."
 
 # 3. 切换到远程 main 分支的最新状态
 echo "Checking out latest main branch..."
@@ -36,7 +39,10 @@ if git stash list | grep -q "local changes"; then
     git stash pop
 fi
 
-# 5. 现在添加所有修改
+# 5. 确保 images 目录存在
+mkdir -p images
+
+# 6. 现在添加所有修改（包括新的图片文件）
 echo "Adding and committing changes..."
 git add .
 
@@ -46,7 +52,7 @@ else
     git commit -m "Update: UI improvements and beachball generation"
 fi
 
-# 6. 推送到 GitHub
+# 7. 推送到 GitHub
 echo "Pushing to GitHub..."
 git push -u origin main
 
