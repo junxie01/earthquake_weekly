@@ -99,7 +99,7 @@ def fetch_data():
         event_id = eq['id']
         lat, lon = eq['geometry']['coordinates'][1], eq['geometry']['coordinates'][0]
 
-        print(f"Processing Event: {event_id} (M{props['mag']})")
+        print(f"Processing Event: {event_id} (M{props['mag']})" )
         detail_url = f"https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/{event_id}.geojson"
         detail_data = requests.get(detail_url, timeout=30).json()
 
@@ -109,6 +109,9 @@ def fetch_data():
             h_resp = requests.get(hist_url, timeout=15)
             if h_resp.status_code == 200: hist_data = h_resp.json()
         except: pass
+
+        # Extract depth from geometry coordinates (usually the third element)
+        depth = eq['geometry']['coordinates'][2] if len(eq['geometry']['coordinates']) > 2 else None
 
         products = detail_data.get('properties', {}).get('products', {})
 
@@ -128,6 +131,25 @@ def fetch_data():
                         "rake": float(p.get('nodal-plane-1-rake'))
                     }
                     break
+
+        # Fetch Tectonic Summary from executive page
+        tectonic_summary = None
+        try:
+            executive_url = f"https://earthquake.usgs.gov/earthquakes/eventpage/{event_id}/executive"
+            response = requests.get(executive_url, timeout=15)
+            if response.status_code == 200:
+                # Extract tectonic summary section
+                summary_match = re.search(r'<h2>Tectonic Summary</h2>\s*<div[^>]*>(.*?)</div>', response.text, re.DOTALL)
+                if summary_match:
+                    tectonic_summary = summary_match.group(1).strip()
+                    # Clean up HTML tags
+                    tectonic_summary = re.sub(r'<[^>]+>', '', tectonic_summary)
+                    # Replace multiple newlines with single newline
+                    tectonic_summary = re.sub(r'\n+', '\n', tectonic_summary)
+                    # Trim whitespace
+                    tectonic_summary = tectonic_summary.strip()
+        except Exception as e:
+            print(f"  Warning: Failed to fetch tectonic summary: {e}")
 
         def get_images(p_type):
             items = products.get(p_type, [])
@@ -150,7 +172,7 @@ def fetch_data():
             "shakemap": {"images": get_images('shakemap'), "title": "Shakemap"},
             "dyfi": {"images": get_images('dyfi'), "title": "DYFI"},
             "losspager": {"images": get_images('losspager'), "title": "PAGER"},
-            "tectonic_summary": detail_data.get('properties', {}).get('description')
+            "tectonic_summary": tectonic_summary
         }
 
         public_info = []
@@ -176,7 +198,7 @@ def fetch_data():
             beachball_path = beachball_filename
 
         results['top_3'].append({
-            "id": event_id, "mag": props['mag'], "place": props['place'], "time": props['time'], "lat": lat, "lon": lon,
+            "id": event_id, "mag": props['mag'], "place": props['place'], "time": props['time'], "lat": lat, "lon": lon, "depth": depth,
             "focal_params": focal_params, # STRIKE, DIP, RAKE for canvas plotting
             "beachball_image": beachball_path, # 保存本地震源球图片路径
             "usgs_reports": usgs_reports, "public_info": public_info, "google_news": google_news,

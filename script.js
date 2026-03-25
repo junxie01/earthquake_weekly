@@ -69,6 +69,16 @@ function getHeatColor(t) {
     return '#d62728';
 }
 
+function getColorByDepth(depth) {
+    if (!depth) return '#999999';
+    if (depth < 20) return '#add8e6';
+    if (depth < 50) return '#87ceeb';
+    if (depth < 100) return '#6495ed';
+    if (depth < 200) return '#4169e1';
+    if (depth < 300) return '#0000cd';
+    return '#000080';
+}
+
 function addLegend(map, minTime, maxTime) {
     const legend = L.control({ position: 'bottomright' });
     let legendDiv = null;
@@ -229,6 +239,8 @@ function renderTopThree(data, plates) {
             <div class="eq-header">
                 <h3>#${i + 1}: Magnitude ${eq.mag} - ${eq.place}</h3>
                 <p><strong>Time:</strong> ${new Date(eq.time).toUTCString()}</p>
+                <p><strong>Location:</strong> ${eq.lat.toFixed(4)}°N, ${eq.lon.toFixed(4)}°E</p>
+                <p><strong>Depth:</strong> ${eq.depth ? eq.depth.toFixed(2) : 'N/A'} km</p>
             </div>
             <div id="local-map-${i}" class="local-map"></div>
             <p><strong>Regional Context:</strong> ${eq.history_count} historical earthquakes (M5.0+) within 10° since 1970.</p>
@@ -269,7 +281,7 @@ function renderTopThree(data, plates) {
                 pointToLayer: (f, latlng) => {
                     if (f.id === eq.id) return null;
                     const radius = Math.max(f.properties.mag * 1.5, 2);
-                    const fillColor = getColorByTime(f.properties.time, minHistoryTime, maxHistoryTime);
+                    const fillColor = getColorByDepth(f.properties.depth);
                     return L.circleMarker(latlng, {
                         radius: radius,
                         color: '#666',
@@ -278,14 +290,14 @@ function renderTopThree(data, plates) {
                         fillOpacity: 0.5
                     });
                 },
-                onEachFeature: (f, layer) => layer.bindPopup(`M${f.properties.mag} - ${new Date(f.properties.time).getFullYear()}`)
+                onEachFeature: (f, layer) => layer.bindPopup(`M${f.properties.mag} - ${new Date(f.properties.time).getFullYear()} - Depth: ${f.properties.depth ? f.properties.depth.toFixed(2) : 'N/A'} km`)
             }).addTo(localMap);
         }
         
         const mainCircle = L.circleMarker([eq.lat, eq.lon], {
             radius: 12,
-            color: '#d32f2f',
-            fillColor: '#d32f2f',
+            color: getColorByDepth(eq.depth),
+            fillColor: getColorByDepth(eq.depth),
             fillOpacity: 0.9,
             weight: 2
         }).addTo(localMap);
@@ -364,7 +376,7 @@ function addLocalLegend(map, minTime, maxTime) {
         
         let grades = [
             { label: 'Magnitude', values: [3, 4, 5, 6, 7, 8] },
-            { label: 'Time (Recent → Old)', values: [1, 0.8, 0.6, 0.4, 0.2, 0] }
+            { label: 'Depth (km)', values: [0, 20, 50, 100, 200, 300] }
         ];
         
         let content = '<strong style="margin-right: 20px; display: block;">Legend</strong>';
@@ -372,9 +384,9 @@ function addLocalLegend(map, minTime, maxTime) {
         grades.forEach((grade, i) => {
             content += `<br><strong>${grade.label}:</strong><br>`;
             grade.values.forEach((v, j) => {
-                const color = i === 0 ? getMagnitudeColor(v) : getHeatColor(v);
+                const color = i === 0 ? getMagnitudeColor(v) : getColorByDepth(v);
                 const size = i === 0 ? Math.max(v * 1.5, 2) * 1.2 : 6;
-                const label = i === 0 ? `M${v}` : (v === 1 ? 'Recent' : (v === 0 ? '1970' : ''));
+                const label = i === 0 ? `M${v}` : `${v}+`;
                 content += `<div style="display: flex; align-items: center; margin: 1px 0;">
                     <div style="width: ${size}px; height: ${size}px; border-radius: 50%; background: ${color}; border: 1px solid #666; margin-right: 4px;"></div>
                     <span>${label}</span>
