@@ -2,7 +2,7 @@ name: Update Earthquake Data
 
 on:
   schedule:
-    - cron: '0 0 * * 0' # 每周日凌晨 (UTC)
+    - cron: '0 16 * * 0' # 每周日 16:00 UTC (北京时间周日 24:00)
   workflow_dispatch: # 允许手动触发
 
 # 显式声明权限，确保可以推送代码
