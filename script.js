@@ -130,36 +130,22 @@ function addLegend(map, minTime, maxTime) {
             { label: 'Time (Recent → Old)', values: [1, 0.8, 0.6, 0.4, 0.2, 0] }
         ];
         
-<<<<<<< Updated upstream
         let content = '<strong style="margin-right: 25px; display: block;">Legend</strong>';
         
         grades.forEach((grade, i) => {
             content += `<br><strong>${grade.label}:</strong><br>`;
-=======
-        legendDiv.innerHTML = '<strong style="margin-right: 25px; display: block;">Legend</strong>' + legendDiv.innerHTML;
-        
-        grades.forEach((grade, i) => {
-            legendDiv.innerHTML += `<br><strong>${grade.label}:</strong><br>`;
->>>>>>> Stashed changes
             grade.values.forEach((v, j) => {
                 const color = i === 0 ? getMagnitudeColor(v) : getHeatColor(v);
                 const size = i === 0 ? Math.max(v * 2.2, 2) * 2 : 8;
                 const label = i === 0 ? `M${v}` : (v === 1 ? 'Now' : (v === 0 ? '7 days ago' : ''));
-<<<<<<< Updated upstream
                 content += `<div style="display: flex; align-items: center; margin: 2px 0;">
-=======
-                legendDiv.innerHTML += `<div style="display: flex; align-items: center; margin: 2px 0;">
->>>>>>> Stashed changes
                     <div style="width: ${size}px; height: ${size}px; border-radius: 50%; background: ${color}; border: 1px solid #000; margin-right: 5px;"></div>
                     <span>${label}</span>
                 </div>`;
             });
         });
         
-<<<<<<< Updated upstream
         legendDiv.innerHTML = content;
-=======
->>>>>>> Stashed changes
         legendDiv.appendChild(closeBtn);
         
         L.DomEvent.on(closeBtn, 'click', function(e) {
@@ -197,91 +183,6 @@ function renderStats(data) {
     }
 }
 
-<<<<<<< Updated upstream
-=======
-/**
- * 绘制震源球 (Simplified Focal Mechanism Plotter)
- */
-function drawBeachball(canvasId, strike, dip, rake) {
-    const canvas = document.getElementById(canvasId);
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    const w = canvas.width;
-    const h = canvas.height;
-    const r = w / 2 - 5;
-    const cx = w / 2;
-    const cy = h / 2;
-
-    ctx.clearRect(0, 0, w, h);
-
-    // 背景大圆 (白色)
-    ctx.beginPath();
-    ctx.arc(cx, cy, r, 0, Math.PI * 2);
-    ctx.fillStyle = "#fff";
-    ctx.fill();
-    ctx.strokeStyle = "#333";
-    ctx.lineWidth = 2;
-    ctx.stroke();
-
-    ctx.save();
-    ctx.translate(cx, cy);
-    ctx.rotate((strike * Math.PI) / 180);
-
-    // 根据rake角判断并绘制震源球
-    if (Math.abs(rake) < 30 || Math.abs(rake - 180) < 30 || Math.abs(rake + 180) < 30) {
-        // 走滑断层类型
-        ctx.beginPath();
-        ctx.moveTo(0, 0);
-        ctx.arc(0, 0, r, -Math.PI / 2, Math.PI / 2, false);
-        ctx.closePath();
-        ctx.fillStyle = "#3498db";
-        ctx.fill();
-        
-        ctx.beginPath();
-        ctx.moveTo(0, -r);
-        ctx.lineTo(0, r);
-        ctx.strokeStyle = "#333";
-        ctx.lineWidth = 2;
-        ctx.stroke();
-    } else if (rake > 0) {
-        // 逆断层类型
-        ctx.beginPath();
-        ctx.arc(0, 0, r, 0, Math.PI, false);
-        ctx.fillStyle = "#3498db";
-        ctx.fill();
-        
-        ctx.beginPath();
-        ctx.moveTo(-r, 0);
-        ctx.lineTo(r, 0);
-        ctx.strokeStyle = "#333";
-        ctx.lineWidth = 2;
-        ctx.stroke();
-    } else {
-        // 正断层类型
-        ctx.beginPath();
-        ctx.arc(0, 0, r, Math.PI, 2 * Math.PI, false);
-        ctx.fillStyle = "#3498db";
-        ctx.fill();
-        
-        ctx.beginPath();
-        ctx.moveTo(-r, 0);
-        ctx.lineTo(r, 0);
-        ctx.strokeStyle = "#333";
-        ctx.lineWidth = 2;
-        ctx.stroke();
-    }
-
-    ctx.restore();
-    
-    // 重新绘制外圆确保它在最上层
-    ctx.beginPath();
-    ctx.arc(cx, cy, r, 0, Math.PI * 2);
-    ctx.strokeStyle = "#333";
-    ctx.lineWidth = 2;
-    ctx.stroke();
-}
-
->>>>>>> Stashed changes
 function renderTopThree(data, plates) {
     const container = document.getElementById('top-earthquakes');
     container.innerHTML = '';
@@ -294,21 +195,7 @@ function renderTopThree(data, plates) {
 
         let mediaHTML = '';
 
-<<<<<<< Updated upstream
         if (eq.beachball_image) {
-=======
-        // 1. 首先使用本地生成的震源球图片
-        if (eq.beachball_image) {
-            mediaHTML += `
-                <div class="media-item">
-                    <img src="${eq.beachball_image}" alt="Focal Mechanism" onclick="window.open('${eq.beachball_image}', '_blank')">
-                    <div class="media-caption">Focal Mechanism<br>
-                    <small>S:${eq.focal_params.strike}° D:${eq.focal_params.dip}° R:${eq.focal_params.rake}°</small></div>
-                </div>
-            `;
-        } else if (eq.focal_params) {
-            // 如果没有本地图片，作为后备使用 Canvas 绘制
->>>>>>> Stashed changes
             mediaHTML += `
                 <div class="media-item">
                     <img src="${eq.beachball_image}" alt="Focal Mechanism" onclick="window.open('${eq.beachball_image}', '_blank')">
@@ -347,10 +234,6 @@ function renderTopThree(data, plates) {
             <p><strong>Regional Context:</strong> ${eq.history_count} historical earthquakes (M5.0+) within 10° since 1970.</p>
 
             <div style="margin: 10px 0;">
-<<<<<<< Updated upstream
-=======
-                <p style="margin:0 0 10px 0;"><strong>Regional Context:</strong> ${eq.history_count} historical earthquakes (M5.0+) within 10° since 1970.</p>
->>>>>>> Stashed changes
                 <a href="${eq.usgs_url}" target="_blank" class="btn" style="color: #fff !important; font-weight: bold; background-color: #3498db; padding: 8px 15px; text-decoration: none; border-radius: 5px; font-size: 0.9em;">Full USGS Event Page</a>
             </div>
 
@@ -372,14 +255,6 @@ function renderTopThree(data, plates) {
         `;
         container.appendChild(card);
 
-<<<<<<< Updated upstream
-=======
-        // 绘图执行 - 只有在没有本地震源球图片时才绘制
-        if (!eq.beachball_image && eq.focal_params) {
-            drawBeachball(`beachball-${i}`, eq.focal_params.strike, eq.focal_params.dip, eq.focal_params.rake);
-        }
-
->>>>>>> Stashed changes
         const localMap = L.map(`local-map-${i}`).setView([eq.lat, eq.lon], 6);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(localMap);
         L.geoJSON(plates, { style: { color: 'orange', weight: 2 } }).addTo(localMap);
@@ -492,36 +367,22 @@ function addLocalLegend(map, minTime, maxTime) {
             { label: 'Time (Recent → Old)', values: [1, 0.8, 0.6, 0.4, 0.2, 0] }
         ];
         
-<<<<<<< Updated upstream
         let content = '<strong style="margin-right: 20px; display: block;">Legend</strong>';
         
         grades.forEach((grade, i) => {
             content += `<br><strong>${grade.label}:</strong><br>`;
-=======
-        legendDiv.innerHTML = '<strong style="margin-right: 20px; display: block;">Legend</strong>' + legendDiv.innerHTML;
-        
-        grades.forEach((grade, i) => {
-            legendDiv.innerHTML += `<br><strong>${grade.label}:</strong><br>`;
->>>>>>> Stashed changes
             grade.values.forEach((v, j) => {
                 const color = i === 0 ? getMagnitudeColor(v) : getHeatColor(v);
                 const size = i === 0 ? Math.max(v * 1.5, 2) * 1.2 : 6;
                 const label = i === 0 ? `M${v}` : (v === 1 ? 'Recent' : (v === 0 ? '1970' : ''));
-<<<<<<< Updated upstream
                 content += `<div style="display: flex; align-items: center; margin: 1px 0;">
-=======
-                legendDiv.innerHTML += `<div style="display: flex; align-items: center; margin: 1px 0;">
->>>>>>> Stashed changes
                     <div style="width: ${size}px; height: ${size}px; border-radius: 50%; background: ${color}; border: 1px solid #666; margin-right: 4px;"></div>
                     <span>${label}</span>
                 </div>`;
             });
         });
         
-<<<<<<< Updated upstream
         legendDiv.innerHTML = content;
-=======
->>>>>>> Stashed changes
         legendDiv.appendChild(closeBtn);
         
         L.DomEvent.on(closeBtn, 'click', function(e) {
@@ -542,8 +403,4 @@ function addLocalLegend(map, minTime, maxTime) {
     };
     
     legend.addTo(map);
-<<<<<<< Updated upstream
 }
-=======
-}
->>>>>>> Stashed changes
