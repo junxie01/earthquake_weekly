@@ -1,7 +1,7 @@
 {
-  "update_time": "2026-03-25T06:39:44.202929",
+  "update_time": "2026-03-25T06:50:32.403404",
   "date_range": "2026-03-18 to 2026-03-25",
-  "total_count": 2266,
+  "total_count": 2263,
   "stats": {
     "m4_5": 139,
     "m5_6": 28,
@@ -26,8 +26,8 @@
       "usgs_reports": {
         "shakemap": {
           "images": [
-            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us7000s789:1774414401321/contents/download/intensity_overlay.png",
-            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us7000s789:1774414401321/contents/download/intensity.jpg"
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us7000s789:1774414401321/contents/download/intensity.jpg",
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us7000s789:1774414401321/contents/download/intensity_overlay.png"
           ],
           "title": "Shakemap"
         },
@@ -64,7 +64,7 @@
       "history_geojson": {
         "type": "FeatureCollection",
         "metadata": {
-          "generated": 1774420786000,
+          "generated": 1774421434000,
           "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude=-18.6678&longitude=-175.5601&maxradius=10&minmagnitude=5.0",
           "title": "USGS Earthquakes",
           "status": 200,
@@ -336222,7 +336222,7 @@
       "history_geojson": {
         "type": "FeatureCollection",
         "metadata": {
-          "generated": 1774420790000,
+          "generated": 1774421437000,
           "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude=23.8496&longitude=-45.8331&maxradius=10&minmagnitude=5.0",
           "title": "USGS Earthquakes",
           "status": 200,
@@ -351295,7 +351295,7 @@
       "history_geojson": {
         "type": "FeatureCollection",
         "metadata": {
-          "generated": 1774420792000,
+          "generated": 1774421439000,
           "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude=-61.1525&longitude=-56.2683&maxradius=10&minmagnitude=5.0",
           "title": "USGS Earthquakes",
           "status": 200,
