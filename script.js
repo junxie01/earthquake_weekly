@@ -71,12 +71,13 @@ function getHeatColor(t) {
 
 function getColorByDepth(depth) {
     if (!depth) return '#999999';
-    if (depth < 20) return '#add8e6';
-    if (depth < 50) return '#87ceeb';
-    if (depth < 100) return '#6495ed';
-    if (depth < 200) return '#4169e1';
-    if (depth < 300) return '#0000cd';
-    return '#000080';
+    // 用灰度表示深度，越深越黑
+    if (depth < 20) return '#f5f5f5'; // 浅灰色
+    if (depth < 50) return '#d9d9d9';
+    if (depth < 100) return '#bdbdbd';
+    if (depth < 200) return '#969696';
+    if (depth < 300) return '#737373';
+    return '#525252'; // 深灰色
 }
 
 function addLegend(map, minTime, maxTime) {
@@ -280,7 +281,7 @@ function renderTopThree(data, plates) {
             L.geoJSON(eq.history_geojson, {
                 pointToLayer: (f, latlng) => {
                     if (f.id === eq.id) return null;
-                    const radius = Math.max(f.properties.mag * 1.5, 2);
+                    const radius = Math.max(f.properties.mag * 1.5, 2) * 0.6; // 缩小圆圈大小
                     const fillColor = getColorByDepth(f.properties.depth);
                     return L.circleMarker(latlng, {
                         radius: radius,
@@ -294,24 +295,18 @@ function renderTopThree(data, plates) {
             }).addTo(localMap);
         }
         
-        const mainCircle = L.circleMarker([eq.lat, eq.lon], {
-            radius: 12,
-            color: getColorByDepth(eq.depth),
-            fillColor: getColorByDepth(eq.depth),
-            fillOpacity: 0.9,
-            weight: 2
+        // 使用红色五角星表示本次地震
+        const mainMarker = L.marker([eq.lat, eq.lon], {
+            icon: L.divIcon({
+                html: '<span style="font-size: 24px; color: #d62728;">★</span>',
+                className: 'custom-star-icon',
+                iconSize: [24, 24],
+                iconAnchor: [12, 12]
+            })
         }).addTo(localMap);
         
-        mainCircle.bringToFront();
-        
-        let isVisible = true;
-        setInterval(() => {
-            isVisible = !isVisible;
-            mainCircle.setStyle({
-                fillOpacity: isVisible ? 0.9 : 0.2,
-                opacity: isVisible ? 1 : 0.4
-            });
-        }, 800);
+        mainMarker.bindPopup(`M${eq.mag} - Current Earthquake - Depth: ${eq.depth ? eq.depth.toFixed(2) : 'N/A'} km`);
+        mainMarker.bringToFront();
         
         addLocalLegend(localMap, minHistoryTime, maxHistoryTime);
     });
@@ -385,7 +380,7 @@ function addLocalLegend(map, minTime, maxTime) {
             content += `<br><strong>${grade.label}:</strong><br>`;
             grade.values.forEach((v, j) => {
                 const color = i === 0 ? getMagnitudeColor(v) : getColorByDepth(v);
-                const size = i === 0 ? Math.max(v * 1.5, 2) * 1.2 : 6;
+                const size = i === 0 ? Math.max(v * 1.5, 2) * 0.8 : 6; // 缩小圆圈大小
                 const label = i === 0 ? `M${v}` : `${v}+`;
                 content += `<div style="display: flex; align-items: center; margin: 1px 0;">
                     <div style="width: ${size}px; height: ${size}px; border-radius: 50%; background: ${color}; border: 1px solid #666; margin-right: 4px;"></div>
@@ -393,6 +388,13 @@ function addLocalLegend(map, minTime, maxTime) {
                 </div>`;
             });
         });
+        
+        // 添加本次地震的图例
+        content += `<br><strong>Current Event:</strong><br>`;
+        content += `<div style="display: flex; align-items: center; margin: 1px 0;">
+            <span style="font-size: 16px; color: #d62728; margin-right: 4px;">★</span>
+            <span>Current Earthquake</span>
+        </div>`;
         
         legendDiv.innerHTML = content;
         legendDiv.appendChild(closeBtn);
