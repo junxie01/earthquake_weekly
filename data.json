@@ -1,9 +1,9 @@
 {
-  "update_time": "2026-03-25T07:47:10.591975",
+  "update_time": "2026-03-25T08:05:52.316991",
   "date_range": "2026-03-18 to 2026-03-25",
-  "total_count": 2243,
+  "total_count": 2240,
   "stats": {
-    "m4_5": 140,
+    "m4_5": 141,
     "m5_6": 28,
     "m6_7": 6,
     "m7_plus": 1
@@ -64,7 +64,7 @@
       "history_geojson": {
         "type": "FeatureCollection",
         "metadata": {
-          "generated": 1774424834000,
+          "generated": 1774425962000,
           "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude=-18.6678&longitude=-175.5601&maxradius=10&minmagnitude=5.0",
           "title": "USGS Earthquakes",
           "status": 200,
@@ -344583,8 +344583,8 @@
       "usgs_reports": {
         "shakemap": {
           "images": [
-            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000si5l:1774183127331/contents/download/intensity.jpg",
-            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000si5l:1774183127331/contents/download/intensity_overlay.png"
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000si5l:1774183127331/contents/download/intensity_overlay.png",
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000si5l:1774183127331/contents/download/intensity.jpg"
           ],
           "title": "Shakemap"
         },
@@ -344624,7 +344624,7 @@
       "history_geojson": {
         "type": "FeatureCollection",
         "metadata": {
-          "generated": 1774424847000,
+          "generated": 1774425985000,
           "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude=23.8496&longitude=-45.8331&maxradius=10&minmagnitude=5.0",
           "title": "USGS Earthquakes",
           "status": 200,
@@ -360036,8 +360036,8 @@
       "usgs_reports": {
         "shakemap": {
           "images": [
-            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shlp:1774053862802/contents/download/intensity.jpg",
-            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shlp:1774053862802/contents/download/intensity_overlay.png"
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shlp:1774053862802/contents/download/intensity_overlay.png",
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shlp:1774053862802/contents/download/intensity.jpg"
           ],
           "title": "Shakemap"
         },
@@ -360072,7 +360072,7 @@
       "history_geojson": {
         "type": "FeatureCollection",
         "metadata": {
-          "generated": 1774424890000,
+          "generated": 1774425993000,
           "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude=-61.1525&longitude=-56.2683&maxradius=10&minmagnitude=5.0",
           "title": "USGS Earthquakes",
           "status": 200,

@@ -152,25 +152,25 @@ def fetch_data():
                     }
                     break
 
-        # Fetch Tectonic Summary from executive page
+        # Fetch Tectonic Summary from region-info page
         tectonic_summary = None
         try:
-            # 增加超时时间到30秒
-            executive_url = f"https://earthquake.usgs.gov/earthquakes/eventpage/{event_id}/executive"
-            print(f"  Fetching tectonic summary from: {executive_url}")
-            response = requests.get(executive_url, timeout=30)
-            print(f"  Executive page status code: {response.status_code}")
+            # 尝试从 region-info 页面获取 tectonic summary
+            region_info_url = f"https://earthquake.usgs.gov/earthquakes/eventpage/{event_id}/region-info"
+            print(f"  Fetching tectonic summary from: {region_info_url}")
+            response = requests.get(region_info_url, timeout=30)
+            print(f"  Region-info page status code: {response.status_code}")
             if response.status_code == 200:
                 # 保存页面内容到文件，以便调试
-                with open(f"executive_{event_id}.html", "w") as f:
+                with open(f"region_info_{event_id}.html", "w") as f:
                     f.write(response.text)
-                print(f"  Saved executive page to executive_{event_id}.html")
+                print(f"  Saved region-info page to region_info_{event_id}.html")
                 
                 # 尝试多种方式提取 tectonic summary
-                # 方式1: 直接从 executive 页面提取，使用更宽松的正则表达式
+                # 方式1: 直接从 region-info 页面提取，使用更宽松的正则表达式
                 summary_match = re.search(r'Tectonic Summary[\s\S]*?<div[^>]*>([\s\S]*?)</div>', response.text)
                 if summary_match:
-                    print("  Found tectonic summary in executive page")
+                    print("  Found tectonic summary in region-info page")
                     tectonic_summary = summary_match.group(1).strip()
                 else:
                     # 方式2: 尝试查找包含 tectonic summary 的 div
@@ -179,21 +179,21 @@ def fetch_data():
                         print("  Found tectonic summary in tectonic div")
                         tectonic_summary = summary_match.group(1).strip()
                     else:
-                        # 方式3: 尝试从主页面提取
-                        main_url = f"https://earthquake.usgs.gov/earthquakes/eventpage/{event_id}"
-                        print(f"  Trying main page: {main_url}")
-                        main_response = requests.get(main_url, timeout=30)
-                        print(f"  Main page status code: {main_response.status_code}")
-                        if main_response.status_code == 200:
-                            # 保存主页面内容到文件，以便调试
-                            with open(f"main_{event_id}.html", "w") as f:
-                                f.write(main_response.text)
-                            print(f"  Saved main page to main_{event_id}.html")
+                        # 方式3: 尝试从 executive 页面提取
+                        executive_url = f"https://earthquake.usgs.gov/earthquakes/eventpage/{event_id}/executive"
+                        print(f"  Trying executive page: {executive_url}")
+                        executive_response = requests.get(executive_url, timeout=30)
+                        print(f"  Executive page status code: {executive_response.status_code}")
+                        if executive_response.status_code == 200:
+                            # 保存 executive 页面内容到文件，以便调试
+                            with open(f"executive_{event_id}.html", "w") as f:
+                                f.write(executive_response.text)
+                            print(f"  Saved executive page to executive_{event_id}.html")
                             
-                            # 尝试多种可能的 HTML 结构
-                            summary_match = re.search(r'Tectonic Summary[\s\S]*?<div[^>]*>([\s\S]*?)</div>', main_response.text)
+                            # 尝试从 executive 页面提取
+                            summary_match = re.search(r'Tectonic Summary[\s\S]*?<div[^>]*>([\s\S]*?)</div>', executive_response.text)
                             if summary_match:
-                                print("  Found tectonic summary in main page")
+                                print("  Found tectonic summary in executive page")
                                 tectonic_summary = summary_match.group(1).strip()
                 
                 if tectonic_summary:
@@ -207,7 +207,7 @@ def fetch_data():
                 else:
                     print("  No tectonic summary found")
             else:
-                print(f"  Failed to fetch executive page: {response.status_code}")
+                print(f"  Failed to fetch region-info page: {response.status_code}")
         except Exception as e:
             print(f"  Warning: Failed to fetch tectonic summary: {e}")
 
