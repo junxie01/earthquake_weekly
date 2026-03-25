@@ -107,7 +107,22 @@ def fetch_data():
         hist_data = {"features": []}
         try:
             h_resp = requests.get(hist_url, timeout=15)
-            if h_resp.status_code == 200: hist_data = h_resp.json()
+            if h_resp.status_code == 200:
+                hist_data = h_resp.json()
+                # 确保每个历史地震事件都有深度信息
+                for feature in hist_data.get('features', []):
+                    if 'geometry' in feature and feature['geometry']['type'] == 'Point':
+                        coordinates = feature['geometry']['coordinates']
+                        # 确保坐标数组至少有3个元素（经度、纬度、深度）
+                        if len(coordinates) < 3:
+                            # 如果没有深度信息，添加默认值（0）
+                            coordinates.append(0)
+                        # 确保 properties 中有 depth 字段
+                        if 'properties' not in feature:
+                            feature['properties'] = {}
+                        if 'depth' not in feature['properties']:
+                            # 从 geometry.coordinates 中获取深度
+                            feature['properties']['depth'] = coordinates[2]
         except: pass
 
         # Extract depth from geometry coordinates (usually the third element)
