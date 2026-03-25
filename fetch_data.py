@@ -103,12 +103,14 @@ def fetch_data():
         detail_url = f"https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/{event_id}.geojson"
         detail_data = requests.get(detail_url, timeout=30).json()
 
+        # 获取历史地震数据，不限制返回数量，增加超时时间
         hist_url = f"https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude={lat}&longitude={lon}&maxradius=10&minmagnitude=5.0"
         hist_data = {"features": []}
         try:
-            h_resp = requests.get(hist_url, timeout=15)
+            h_resp = requests.get(hist_url, timeout=60)  # 增加超时时间到60秒
             if h_resp.status_code == 200:
                 hist_data = h_resp.json()
+                print(f"  Found {len(hist_data.get('features', []))} historical earthquakes")
                 # 确保每个历史地震事件都有深度信息
                 for feature in hist_data.get('features', []):
                     if 'geometry' in feature and feature['geometry']['type'] == 'Point':
@@ -123,7 +125,10 @@ def fetch_data():
                         if 'depth' not in feature['properties']:
                             # 从 geometry.coordinates 中获取深度
                             feature['properties']['depth'] = coordinates[2]
-        except: pass
+        except Exception as e:
+            print(f"  Error fetching historical data: {e}")
+            # 即使出错，也确保 hist_data 是有效的
+            hist_data = {"features": []}
 
         # Extract depth from geometry coordinates (usually the third element)
         depth = eq['geometry']['coordinates'][2] if len(eq['geometry']['coordinates']) > 2 else None
@@ -150,19 +155,59 @@ def fetch_data():
         # Fetch Tectonic Summary from executive page
         tectonic_summary = None
         try:
+            # 增加超时时间到30秒
             executive_url = f"https://earthquake.usgs.gov/earthquakes/eventpage/{event_id}/executive"
-            response = requests.get(executive_url, timeout=15)
+            print(f"  Fetching tectonic summary from: {executive_url}")
+            response = requests.get(executive_url, timeout=30)
+            print(f"  Executive page status code: {response.status_code}")
             if response.status_code == 200:
-                # Extract tectonic summary section
-                summary_match = re.search(r'<h2>Tectonic Summary</h2>\s*<div[^>]*>(.*?)</div>', response.text, re.DOTALL)
+                # 保存页面内容到文件，以便调试
+                with open(f"executive_{event_id}.html", "w") as f:
+                    f.write(response.text)
+                print(f"  Saved executive page to executive_{event_id}.html")
+                
+                # 尝试多种方式提取 tectonic summary
+                # 方式1: 直接从 executive 页面提取，使用更宽松的正则表达式
+                summary_match = re.search(r'Tectonic Summary[\s\S]*?<div[^>]*>([\s\S]*?)</div>', response.text)
                 if summary_match:
+                    print("  Found tectonic summary in executive page")
                     tectonic_summary = summary_match.group(1).strip()
+                else:
+                    # 方式2: 尝试查找包含 tectonic summary 的 div
+                    summary_match = re.search(r'<div[^>]*tectonic[^>]*>([\s\S]*?)</div>', response.text, re.IGNORECASE)
+                    if summary_match:
+                        print("  Found tectonic summary in tectonic div")
+                        tectonic_summary = summary_match.group(1).strip()
+                    else:
+                        # 方式3: 尝试从主页面提取
+                        main_url = f"https://earthquake.usgs.gov/earthquakes/eventpage/{event_id}"
+                        print(f"  Trying main page: {main_url}")
+                        main_response = requests.get(main_url, timeout=30)
+                        print(f"  Main page status code: {main_response.status_code}")
+                        if main_response.status_code == 200:
+                            # 保存主页面内容到文件，以便调试
+                            with open(f"main_{event_id}.html", "w") as f:
+                                f.write(main_response.text)
+                            print(f"  Saved main page to main_{event_id}.html")
+                            
+                            # 尝试多种可能的 HTML 结构
+                            summary_match = re.search(r'Tectonic Summary[\s\S]*?<div[^>]*>([\s\S]*?)</div>', main_response.text)
+                            if summary_match:
+                                print("  Found tectonic summary in main page")
+                                tectonic_summary = summary_match.group(1).strip()
+                
+                if tectonic_summary:
                     # Clean up HTML tags
                     tectonic_summary = re.sub(r'<[^>]+>', '', tectonic_summary)
                     # Replace multiple newlines with single newline
                     tectonic_summary = re.sub(r'\n+', '\n', tectonic_summary)
                     # Trim whitespace
                     tectonic_summary = tectonic_summary.strip()
+                    print(f"  Successfully fetched tectonic summary: {tectonic_summary[:100]}...")
+                else:
+                    print("  No tectonic summary found")
+            else:
+                print(f"  Failed to fetch executive page: {response.status_code}")
         except Exception as e:
             print(f"  Warning: Failed to fetch tectonic summary: {e}")
 
