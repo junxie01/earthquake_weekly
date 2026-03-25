@@ -1,9 +1,9 @@
 {
-  "update_time": "2026-03-25T05:59:48.841604",
+  "update_time": "2026-03-25T06:08:47.662222",
   "date_range": "2026-03-18 to 2026-03-25",
-  "total_count": 2271,
+  "total_count": 2269,
   "stats": {
-    "m4_5": 140,
+    "m4_5": 139,
     "m5_6": 28,
     "m6_7": 6,
     "m7_plus": 1
@@ -63,7 +63,7 @@
       "history_geojson": {
         "type": "FeatureCollection",
         "metadata": {
-          "generated": 1774418392000,
+          "generated": 1774418929000,
           "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude=-18.6678&longitude=-175.5601&maxradius=10&minmagnitude=5.0",
           "title": "USGS Earthquakes",
           "status": 200,
@@ -336220,7 +336220,7 @@
       "history_geojson": {
         "type": "FeatureCollection",
         "metadata": {
-          "generated": 1774418418000,
+          "generated": 1774418932000,
           "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude=23.8496&longitude=-45.8331&maxradius=10&minmagnitude=5.0",
           "title": "USGS Earthquakes",
           "status": 200,
@@ -351276,23 +351276,23 @@
       "public_info": [],
       "google_news": [
         {
+          "text": "Earthquake of magnitude 6.7 strikes South Shetland Islands, GFZ says",
+          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNMU9EQ1l2MDk2LU5OTWIzZzM3ZHdZR3FfYXBsQ3BIbHN4X2xRdDRnTnM0NWZjbmhkelgzVGRkRFNPbVZKdXZxNGdGY3I2MEo4aHE3M2psYUJJMVdFUXdKZWVzWDM1TTF5Q05FenAweWFEX2ozanlDRVFyekF3M0oxMTdIN05LQnowckdhV1dsVlZBcUJ5VUVzR1NCR18?oc=5"
+        },
+        {
           "text": "7.0 magnitude #earthquake. South Shetland Islands",
           "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBnd2x0MUdJd3RVSngxbXZLNmN5ek9TSGY4SFdGWlliYWY0WFhLTHJvVzZqNk1xTG4yNUM2UXd2YXMyOTRPRklIdGY0R3prRTlGMlg0Z0l2dWFmS3BpQlNOdnNKdWlrdHo5RExnVGNR?oc=5"
         },
         {
           "text": "6.7 magnitude earthquake strikes South Shetland Islands, no tsunami threat",
           "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQZ2x4SFFZS01WMlM1T2Jtb0dBVEY4dnFUcHFRb2tfdXItZG84RDdDV1lmT050eVhIVkhlaVB6ZTB1VGxqSkZ4c1ZGNE53MUVlWXhOcTE3MkptT3NtT2FOZnBuS3M1ckxTak9vMlhQWW1hM3NUTlpMeFZiRHRMVDdHVURLaUEwNVlaWjVIU3AtR2VndVYtZlloeXpRN09xSU9DNGdadWxXeld1TFluMDBXVVU4aHZDVk1YakRtaGlwM0Vwei1lLTlZRkRmY3hKY05vNHpz0gHYAUFVX3lxTE5BZ3JtQXl1Z1dob1VjTFlmQ044MFNsZW5rd3JsQUNPcTU5anJ1MFNPUWhMQ1Q2NVdsRHFJajd1UjlqM0pvTGdqLVhRd3MzbFRIaG9MbHdEOFRzdDBKd29jVHRTaFpySDAtaXVDZ3hibHZ3N2QzYmwzbXhmeTdmaVBYMnNWT1hnVWx6QXZzZUdmYkE1eU1Ma0oxV29vT0RJM1FDS0lSYjY0OTZ1WVlKNl9Jc2p2ZUFxMmxrUmkwN3d5VHN0SHRvbkdwWGxsUEpkY3hMMEQtSG9sWA?oc=5"
-        },
-        {
-          "text": "6.6 Magnitude Earthquake Reported",
-          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPN3RFTGoyOFVpZGdTaEQ0NFp6MUphVVJvc0QtdEo0UlFZajV4bWlGUzlaNWNlUFJHSk5zUVlGcTc0TElVaDNCc25oYWFnQ3hKUm0wZllzZThtSmtZWWg3RUZzdl8xZkVRWnBqUmpxVEdRMGtJRDlhZC1ZUHNKdXR3bTNGM19LdnFF?oc=5"
         }
       ],
       "history_count": 324,
       "history_geojson": {
         "type": "FeatureCollection",
         "metadata": {
-          "generated": 1774418422000,
+          "generated": 1774418934000,
           "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude=-61.1525&longitude=-56.2683&maxradius=10&minmagnitude=5.0",
           "title": "USGS Earthquakes",
           "status": 200,
