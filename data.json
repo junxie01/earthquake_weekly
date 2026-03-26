@@ -1,10 +1,10 @@
 {
-  "update_time": "2026-03-25T08:05:52.316991",
-  "date_range": "2026-03-18 to 2026-03-25",
-  "total_count": 2240,
+  "update_time": "2026-03-26T01:44:38.992822",
+  "date_range": "2026-03-19 to 2026-03-26",
+  "total_count": 2302,
   "stats": {
-    "m4_5": 141,
-    "m5_6": 28,
+    "m4_5": 140,
+    "m5_6": 31,
     "m6_7": 6,
     "m7_plus": 1
   },
@@ -26,8 +26,8 @@
       "usgs_reports": {
         "shakemap": {
           "images": [
-            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us7000s789:1774414401321/contents/download/intensity.jpg",
-            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us7000s789:1774414401321/contents/download/intensity_overlay.png"
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us7000s789:1774414401321/contents/download/intensity_overlay.png",
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us7000s789:1774414401321/contents/download/intensity.jpg"
           ],
           "title": "Shakemap"
         },
@@ -46,32 +46,101 @@
         "tectonic_summary": null
       },
       "public_info": [],
-      "google_news": [
-        {
-          "text": "Deep magnitude 7.5 earthquake in Pacific Ocean shakes Tonga, triggers brief Tsunami Warning across islands",
-          "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQZXlkUkZCZWJ4UzF0c2ZMUVBiMndOV3ZXYk5jMUEyV2ltTnByNS1sM202VEx0VG1SbmVPUjlJV1hTX0xxY3AwVVJKNzE2Nlk5bFhHZzJacGJtYkRZZTVqNElJZ3NOSk50TVpkbWFnSkExeURacWotTDAzN0RRdFp5UjRyYV81ZG5nbUlyQkdfanFqQ0dZbkdKQ3Q1LXJKdlA4TlhaZXdfUUpsT3FycUtobVAtNExvQlRFVEU5VDFDTlpPaTdBZWhlNjBKRGVYVHlTTE1BQXdCMjhtQdIB3wFBVV95cUxNMUN3UWZTX2dYX1pzRDFmS1lEM2pIcTdaYmVYdUs1SlZhRHpUWmhzUHAwMHdvUHJkcEV3RlZ3MTZmY1pIdlVHQ0w4RnBzUHV4YldFbE4zRi1jUURFRWZWaWM3T2pCQWJxdVV5dFlxaDVkcm94eWo3LURCYWdPLV9LRDAyYkUwbFpib3pUU0xQdGk1NFI0Ny1YOUp6M2ltS0dCT0lfN1ZYOHBmZHdmVEl6bjkxZWZiXzhrZE9HSGlMQzJXcmYyMjhoRVVNWW1tRXJxNHF6T3NpbHhMQ09BTGpB?oc=5"
-        },
-        {
-          "text": "Map: 7.5-Magnitude Earthquake Shakes the South Pacific Ocean",
-          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQUnJ3ZE1SZXpoU0YxWGZweWlEWWZ4aUQ3U0Y1VnpSM3BweU1oMHRUeS1VMjc2TUs5dzFyYTdDTmppLV9vUDYwVmQ4cnRGbXFMWGdJODFiVU9TejR1aGxsVmdWcV9PNnhqWkR2MXVkR05wd28xbElmWkhTT3duQmJoRV85Zk5wOGR5Ri1tNDYtdHhVTGM2a29rWWVzbVpZQQ?oc=5"
-        },
-        {
-          "text": "Tonga warns of 'dangerous' tsunami after 7.6 magnitude earthquake",
-          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPUnI5TmJyZ3JOdi1FMjRLSE1YMFh6QUpJWmJSQVQxOXFPdkRyZXZRNTMxRWs1X1hEU2p5aWFaa21md2tUSm9UbXp6UTRVNVpHTEZmRlVSRDkyUURIT3ROUTRWaFZRdDZlbzA1NDlYRHNycmRyS2ZRajRQdVZmMk1FOERoSHpwV3Nya1l6MmMwYVZJYnNfN0dLT1BnSkFsREpuNmc1Q2Jaei1ITjBG?oc=5"
-        }
-      ],
-      "history_count": 8402,
+      "google_news": [],
+      "history_count": 8404,
       "history_geojson": {
         "type": "FeatureCollection",
         "metadata": {
-          "generated": 1774425962000,
+          "generated": 1774489490000,
           "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude=-18.6678&longitude=-175.5601&maxradius=10&minmagnitude=5.0",
           "title": "USGS Earthquakes",
           "status": 200,
           "api": "2.4.0",
-          "count": 8402
+          "count": 8404
         },
         "features": [
+          {
+            "type": "Feature",
+            "properties": {
+              "mag": 5.2,
+              "place": "80 km WNW of Hihifo, Tonga",
+              "time": 1774433849823,
+              "updated": 1774434686040,
+              "tz": null,
+              "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s7ha",
+              "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us7000s7ha&format=geojson",
+              "felt": null,
+              "cdi": null,
+              "mmi": null,
+              "alert": null,
+              "status": "reviewed",
+              "tsunami": 0,
+              "sig": 416,
+              "net": "us",
+              "code": "7000s7ha",
+              "ids": ",us7000s7ha,",
+              "sources": ",us,",
+              "types": ",origin,phase-data,",
+              "nst": 96,
+              "dmin": 3.105,
+              "rms": 0.72,
+              "gap": 55,
+              "magType": "mb",
+              "type": "earthquake",
+              "title": "M 5.2 - 80 km WNW of Hihifo, Tonga",
+              "depth": 198.051
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -174.4632,
+                -15.6261,
+                198.051
+              ]
+            },
+            "id": "us7000s7ha"
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "mag": 5.6,
+              "place": "80 km NW of Hihifo, Tonga",
+              "time": 1774433459550,
+              "updated": 1774441797545,
+              "tz": null,
+              "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000s7h9",
+              "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us7000s7h9&format=geojson",
+              "felt": null,
+              "cdi": null,
+              "mmi": 3.199,
+              "alert": "green",
+              "status": "reviewed",
+              "tsunami": 0,
+              "sig": 482,
+              "net": "us",
+              "code": "7000s7h9",
+              "ids": ",usauto7000s7h9,us7000s7h9,",
+              "sources": ",usauto,us,",
+              "types": ",internal-moment-tensor,losspager,moment-tensor,origin,phase-data,shakemap,",
+              "nst": 38,
+              "dmin": 2.988,
+              "rms": 0.93,
+              "gap": 98,
+              "magType": "mww",
+              "type": "earthquake",
+              "title": "M 5.6 - 80 km NW of Hihifo, Tonga",
+              "depth": 198.327
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -174.3933,
+                -15.5143,
+                198.327
+              ]
+            },
+            "id": "us7000s7h9"
+          },
           {
             "type": "Feature",
             "properties": {
@@ -978,15 +1047,15 @@
             "type": "Feature",
             "properties": {
               "mag": 5.6,
-              "place": "137 km NE of Hihifo, Tonga",
-              "time": 1770758082380,
-              "updated": 1772579600042,
+              "place": "140 km NE of Hihifo, Tonga",
+              "time": 1770758082344,
+              "updated": 1774477752074,
               "tz": null,
               "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000s7pk",
               "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000s7pk&format=geojson",
               "felt": null,
               "cdi": null,
-              "mmi": 3.597,
+              "mmi": 3.563,
               "alert": "green",
               "status": "reviewed",
               "tsunami": 0,
@@ -997,19 +1066,19 @@
               "sources": ",usauto,pt,us,",
               "types": ",internal-moment-tensor,internal-origin,losspager,moment-tensor,origin,phase-data,shakemap,",
               "nst": 86,
-              "dmin": 2.466,
+              "dmin": 2.432,
               "rms": 0.65,
               "gap": 35,
               "magType": "mww",
               "type": "earthquake",
-              "title": "M 5.6 - 137 km NE of Hihifo, Tonga",
+              "title": "M 5.6 - 140 km NE of Hihifo, Tonga",
               "depth": 10
             },
             "geometry": {
               "type": "Point",
               "coordinates": [
-                -172.999,
-                -14.9766,
+                -172.9639,
+                -14.9714,
                 10
               ]
             },
@@ -1020,14 +1089,14 @@
             "properties": {
               "mag": 6.2,
               "place": "Fiji region",
-              "time": 1770756294295,
-              "updated": 1774382160040,
+              "time": 1770756292845,
+              "updated": 1774453340962,
               "tz": null,
               "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000s7p7",
               "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us6000s7p7&format=geojson",
               "felt": null,
               "cdi": null,
-              "mmi": 2.628,
+              "mmi": 2.69,
               "alert": "green",
               "status": "reviewed",
               "tsunami": 0,
@@ -1037,21 +1106,21 @@
               "ids": ",us6000s7p7,usauto6000s7p7,pt26041000,",
               "sources": ",us,usauto,pt,",
               "types": ",ground-failure,internal-moment-tensor,internal-origin,losspager,moment-tensor,origin,phase-data,shakemap,",
-              "nst": 133,
-              "dmin": 4.742,
-              "rms": 0.92,
+              "nst": 134,
+              "dmin": 4.69,
+              "rms": 0.93,
               "gap": 28,
               "magType": "mww",
               "type": "earthquake",
               "title": "M 6.2 - Fiji region",
-              "depth": 532.492
+              "depth": 513
             },
             "geometry": {
               "type": "Point",
               "coordinates": [
-                -178.3209,
-                -21.0445,
-                532.492
+                -178.3783,
+                -21.0263,
+                513
               ]
             },
             "id": "us6000s7p7"
@@ -344583,8 +344652,8 @@
       "usgs_reports": {
         "shakemap": {
           "images": [
-            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000si5l:1774183127331/contents/download/intensity_overlay.png",
-            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000si5l:1774183127331/contents/download/intensity.jpg"
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000si5l:1774183127331/contents/download/intensity.jpg",
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000si5l:1774183127331/contents/download/intensity_overlay.png"
           ],
           "title": "Shakemap"
         },
@@ -344606,25 +344675,12 @@
           "url": "https://tsunami.gov"
         }
       ],
-      "google_news": [
-        {
-          "text": "6.9 -magnitude earthquake hits northern Mid-Atlantic Ridge",
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE4yWUpkZWZjMGpFZG9Gb3BzNWpzRFhyNm9wdlplUGlzakFkTWpPQy0yMXFuVkpaZlF6Z29vdDdEai03Zmw4ZWprWGpIcjJGa2t3Q1BKY2NKVjVGbmJjYncwSUlIVF81a3p1RWZra3dn?oc=5"
-        },
-        {
-          "text": "Strong and shallow M6.7 earthquake hits northern Mid-Atlantic Ridge - The Watchers",
-          "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNUDlTd0ZSWWJKcWVkMVE4VVdxbDNENWgwOEJPR01rRW1JamxWM2JWUmFqc0R0VmVqNjlXNm9DVVlwUVhoS1VDdmI3YTN1ZVBQdjExcnpaV0ZKeTlzcGtIcWRoRWF1RVhiSDlXNzNFWkNYSld4WkhEQ2xQeEVJLUp5ZGI2T2JOZzhDZk9YX0Z2X2Zka1BVWEs5QnZiR1Z5VHRjS0Zr?oc=5"
-        },
-        {
-          "text": "No tsunami threat to Caribbean after 6.9 magnitude Mid-Atlantic earthquake",
-          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPMnIyOU5POUc0N2Z0R2xCYlB5X1FDeWgtbFRGR3ljelFEUHJwUVBfbC1GcTFFMkhYdzBEclYxT0k1aWZaZUpKM3RwM2M3dVRtblU4NXNFallPanF3dkJucHZlQ2tfNm5Ta2RyVGp1aHA4M1ZXUVhxdnA4WnpSdzJ6OEhlUnVQWlF5VWZaWEVqUUhGZ1NHbmJscm9aOVBlTkFnZnhtVWwxNW1zUQ?oc=5"
-        }
-      ],
+      "google_news": [],
       "history_count": 375,
       "history_geojson": {
         "type": "FeatureCollection",
         "metadata": {
-          "generated": 1774425985000,
+          "generated": 1774489509000,
           "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude=23.8496&longitude=-45.8331&maxradius=10&minmagnitude=5.0",
           "title": "USGS Earthquakes",
           "status": 200,
@@ -360036,8 +360092,8 @@
       "usgs_reports": {
         "shakemap": {
           "images": [
-            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shlp:1774053862802/contents/download/intensity_overlay.png",
-            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shlp:1774053862802/contents/download/intensity.jpg"
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shlp:1774053862802/contents/download/intensity.jpg",
+            "https://earthquake.usgs.gov/pdl/products/urn:usgs-product:us:shakemap:us6000shlp:1774053862802/contents/download/intensity_overlay.png"
           ],
           "title": "Shakemap"
         },
@@ -360054,25 +360110,12 @@
         "tectonic_summary": null
       },
       "public_info": [],
-      "google_news": [
-        {
-          "text": "7.0 magnitude #earthquake. South Shetland Islands",
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBnd2x0MUdJd3RVSngxbXZLNmN5ek9TSGY4SFdGWlliYWY0WFhLTHJvVzZqNk1xTG4yNUM2UXd2YXMyOTRPRklIdGY0R3prRTlGMlg0Z0l2dWFmS3BpQlNOdnNKdWlrdHo5RExnVGNR?oc=5"
-        },
-        {
-          "text": "6.7 magnitude earthquake strikes South Shetland Islands, no tsunami threat",
-          "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQZ2x4SFFZS01WMlM1T2Jtb0dBVEY4dnFUcHFRb2tfdXItZG84RDdDV1lmT050eVhIVkhlaVB6ZTB1VGxqSkZ4c1ZGNE53MUVlWXhOcTE3MkptT3NtT2FOZnBuS3M1ckxTak9vMlhQWW1hM3NUTlpMeFZiRHRMVDdHVURLaUEwNVlaWjVIU3AtR2VndVYtZlloeXpRN09xSU9DNGdadWxXeld1TFluMDBXVVU4aHZDVk1YakRtaGlwM0Vwei1lLTlZRkRmY3hKY05vNHpz0gHYAUFVX3lxTE5BZ3JtQXl1Z1dob1VjTFlmQ044MFNsZW5rd3JsQUNPcTU5anJ1MFNPUWhMQ1Q2NVdsRHFJajd1UjlqM0pvTGdqLVhRd3MzbFRIaG9MbHdEOFRzdDBKd29jVHRTaFpySDAtaXVDZ3hibHZ3N2QzYmwzbXhmeTdmaVBYMnNWT1hnVWx6QXZzZUdmYkE1eU1Ma0oxV29vT0RJM1FDS0lSYjY0OTZ1WVlKNl9Jc2p2ZUFxMmxrUmkwN3d5VHN0SHRvbkdwWGxsUEpkY3hMMEQtSG9sWA?oc=5"
-        },
-        {
-          "text": "6.6 Magnitude Earthquake Reported",
-          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPN3RFTGoyOFVpZGdTaEQ0NFp6MUphVVJvc0QtdEo0UlFZajV4bWlGUzlaNWNlUFJHSk5zUVlGcTc0TElVaDNCc25oYWFnQ3hKUm0wZllzZThtSmtZWWg3RUZzdl8xZkVRWnBqUmpxVEdRMGtJRDlhZC1ZUHNKdXR3bTNGM19LdnFF?oc=5"
-        }
-      ],
+      "google_news": [],
       "history_count": 324,
       "history_geojson": {
         "type": "FeatureCollection",
         "metadata": {
-          "generated": 1774425993000,
+          "generated": 1774489526000,
           "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude=-61.1525&longitude=-56.2683&maxradius=10&minmagnitude=5.0",
           "title": "USGS Earthquakes",
           "status": 200,

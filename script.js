@@ -21,6 +21,9 @@ async function loadApp() {
         document.getElementById('loading').style.display = 'none';
         document.getElementById('content').style.display = 'block';
 
+        console.log('Data loaded:', data);
+        console.log('Top 3 earthquakes:', data.top_3);
+
         initMainMap(currentEqs, plates);
         renderStats(data);
         renderTopThree(data, plates);
@@ -273,9 +276,13 @@ function renderTopThree(data, plates) {
         L.geoJSON(plates, { style: { color: 'orange', weight: 2 } }).addTo(localMap);
         
         const historyFeatures = eq.history_geojson?.features || [];
-        const historyTimes = historyFeatures.map(f => f.properties.time);
-        const minHistoryTime = Math.min(...historyTimes);
-        const maxHistoryTime = Math.max(...historyTimes);
+        let minHistoryTime = 0;
+        let maxHistoryTime = 0;
+        if (historyFeatures.length > 0) {
+            const historyTimes = historyFeatures.map(f => f.properties.time);
+            minHistoryTime = Math.min(...historyTimes);
+            maxHistoryTime = Math.max(...historyTimes);
+        }
         
         if (eq.history_geojson) {
             L.geoJSON(eq.history_geojson, {

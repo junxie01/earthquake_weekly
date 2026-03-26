@@ -82,7 +82,40 @@ def fetch_data():
         "m7_plus": len([m for m in magnitudes if m >= 7.0])
     }
 
+    # 按震级排序并过滤出前三大地震，确保位置差异
     sorted_eqs = sorted([f for f in features if f['properties']['mag'] is not None], key=lambda x: x['properties']['mag'], reverse=True)
+    top_3_eqs = []
+    
+    for eq in sorted_eqs:
+        if len(top_3_eqs) == 0:
+            # 添加第一个地震
+            top_3_eqs.append(eq)
+        else:
+            # 检查与前面所有地震的距离
+            far_enough = True
+            for existing_eq in top_3_eqs:
+                # 计算经纬度差
+                existing_lat = existing_eq['geometry']['coordinates'][1]
+                existing_lon = existing_eq['geometry']['coordinates'][0]
+                current_lat = eq['geometry']['coordinates'][1]
+                current_lon = eq['geometry']['coordinates'][0]
+                
+                lat_diff = abs(current_lat - existing_lat)
+                lon_diff = abs(current_lon - existing_lon)
+                # 检查是否至少有一个方向的差异大于5度
+                if lat_diff < 5 and lon_diff < 5:
+                    far_enough = False
+                    break
+            if far_enough:
+                top_3_eqs.append(eq)
+                if len(top_3_eqs) == 3:
+                    break
+    
+    # 如果找不到足够的地震（可能所有地震都在同一区域），则使用前三个最大的
+    if len(top_3_eqs) < 3:
+        # 添加剩余的地震，不考虑位置
+        remaining_eqs = [eq for eq in sorted_eqs if eq not in top_3_eqs]
+        top_3_eqs.extend(remaining_eqs[:3 - len(top_3_eqs)])
 
     results = {
         "update_time": datetime.datetime.utcnow().isoformat(),
@@ -94,7 +127,7 @@ def fetch_data():
 
     global_seen_images = set()
 
-    for i, eq in enumerate(sorted_eqs[:3]):
+    for i, eq in enumerate(top_3_eqs):
         props = eq['properties']
         event_id = eq['id']
         lat, lon = eq['geometry']['coordinates'][1], eq['geometry']['coordinates'][0]
