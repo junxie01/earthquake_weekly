@@ -127,7 +127,7 @@ def fetch_data():
 
     global_seen_images = set()
 
-    for i, eq in enumerate(top_3_eqs):
+    for i, eq in enumerate(sorted_eqs[:3]):
         props = eq['properties']
         event_id = eq['id']
         lat, lon = eq['geometry']['coordinates'][1], eq['geometry']['coordinates'][0]

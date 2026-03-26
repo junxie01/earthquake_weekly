@@ -24,9 +24,15 @@ fi
 echo "Fetching remote changes..."
 git fetch origin
 
+<<<<<<< Updated upstream
 # 2. 暂存本地修改（包括图片文件）
 echo "Stashing local changes..."
 git stash push -m "local changes" -u 2>/dev/null || echo "No local changes to stash."
+=======
+# 2. 暂存本地修改（避免冲突）
+echo "Stashing local changes..."
+git stash push -m "local changes" 2>/dev/null || echo "No local changes to stash."
+>>>>>>> Stashed changes
 
 # 3. 切换到远程 main 分支的最新状态
 echo "Checking out latest main branch..."
@@ -39,6 +45,7 @@ if git stash list | grep -q "local changes"; then
     git stash pop
 fi
 
+<<<<<<< Updated upstream
 # 5. 确保 images 目录存在
 mkdir -p images
 
@@ -64,13 +71,23 @@ done
 echo "Adding and committing changes..."
 git add .
 
+=======
+# 5. 现在添加所有修改
+echo "Adding and committing changes..."
+git add .
+
+>>>>>>> Stashed changes
 if git diff-index --quiet HEAD --; then
     echo "No changes to commit."
 else
     git commit -m "Update: UI improvements and beachball generation"
 fi
 
+<<<<<<< Updated upstream
 # 8. 推送到 GitHub
+=======
+# 6. 推送到 GitHub
+>>>>>>> Stashed changes
 echo "Pushing to GitHub..."
 git push -u origin main
 
