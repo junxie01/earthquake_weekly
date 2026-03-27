@@ -128,106 +128,107 @@ def fetch_data():
     global_seen_images = set()
 
     for i, eq in enumerate(sorted_eqs[:3]):
-        props = eq['properties']
-        event_id = eq['id']
-        lat, lon = eq['geometry']['coordinates'][1], eq['geometry']['coordinates'][0]
-
-        print(f"Processing Event: {event_id} (M{props['mag']})" )
-        detail_url = f"https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/{event_id}.geojson"
-        detail_data = requests.get(detail_url, timeout=30).json()
-
-        # 获取历史地震数据，不限制返回数量，增加超时时间
-        hist_url = f"https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude={lat}&longitude={lon}&maxradius=10&minmagnitude=5.0"
-        hist_data = {"features": []}
         try:
-            h_resp = requests.get(hist_url, timeout=60)  # 增加超时时间到60秒
-            if h_resp.status_code == 200:
-                hist_data = h_resp.json()
-                print(f"  Found {len(hist_data.get('features', []))} historical earthquakes")
-                # 确保每个历史地震事件都有深度信息
-                for feature in hist_data.get('features', []):
-                    if 'geometry' in feature and feature['geometry']['type'] == 'Point':
-                        coordinates = feature['geometry']['coordinates']
-                        # 确保坐标数组至少有3个元素（经度、纬度、深度）
-                        if len(coordinates) < 3:
-                            # 如果没有深度信息，添加默认值（0）
-                            coordinates.append(0)
-                        # 确保 properties 中有 depth 字段
-                        if 'properties' not in feature:
-                            feature['properties'] = {}
-                        if 'depth' not in feature['properties']:
-                            # 从 geometry.coordinates 中获取深度
-                            feature['properties']['depth'] = coordinates[2]
-        except Exception as e:
-            print(f"  Error fetching historical data: {e}")
-            # 即使出错，也确保 hist_data 是有效的
+            props = eq['properties']
+            event_id = eq['id']
+            lat, lon = eq['geometry']['coordinates'][1], eq['geometry']['coordinates'][0]
+
+            print(f"Processing Event: {event_id} (M{props['mag']})" )
+            detail_url = f"https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/{event_id}.geojson"
+            detail_data = requests.get(detail_url, timeout=30).json()
+
+            # 获取历史地震数据，不限制返回数量，增加超时时间
+            hist_url = f"https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=1970-01-01&latitude={lat}&longitude={lon}&maxradius=10&minmagnitude=5.0"
             hist_data = {"features": []}
+            try:
+                h_resp = requests.get(hist_url, timeout=60)  # 增加超时时间到60秒
+                if h_resp.status_code == 200:
+                    hist_data = h_resp.json()
+                    print(f"  Found {len(hist_data.get('features', []))} historical earthquakes")
+                    # 确保每个历史地震事件都有深度信息
+                    for feature in hist_data.get('features', []):
+                        if 'geometry' in feature and feature['geometry']['type'] == 'Point':
+                            coordinates = feature['geometry']['coordinates']
+                            # 确保坐标数组至少有3个元素（经度、纬度、深度）
+                            if len(coordinates) < 3:
+                                # 如果没有深度信息，添加默认值（0）
+                                coordinates.append(0)
+                            # 确保 properties 中有 depth 字段
+                            if 'properties' not in feature:
+                                feature['properties'] = {}
+                            if 'depth' not in feature['properties']:
+                                # 从 geometry.coordinates 中获取深度
+                                feature['properties']['depth'] = coordinates[2]
+            except Exception as e:
+                print(f"  Error fetching historical data: {e}")
+                # 即使出错，也确保 hist_data 是有效的
+                hist_data = {"features": []}
 
-        # Extract depth from geometry coordinates (usually the third element)
-        depth = eq['geometry']['coordinates'][2] if len(eq['geometry']['coordinates']) > 2 else None
+            # Extract depth from geometry coordinates (usually the third element)
+            depth = eq['geometry']['coordinates'][2] if len(eq['geometry']['coordinates']) > 2 else None
 
-        products = detail_data.get('properties', {}).get('products', {})
+            products = detail_data.get('properties', {}).get('products', {})
 
-        # Extract Focal Mechanism Parameters (Strike, Dip, Rake)
-        focal_params = None
-        # Priority: moment-tensor -> focal-mechanism
-        for p_type in ['moment-tensor', 'focal-mechanism']:
-            if p_type in products:
-                # Get the first item (usually primary)
-                item = products[p_type][0]
-                # Look into properties for focal-mechanism parameters
-                p = item.get('properties', {})
-                if 'nodal-plane-1-strike' in p:
-                    focal_params = {
-                        "strike": float(p.get('nodal-plane-1-strike')),
-                        "dip": float(p.get('nodal-plane-1-dip')),
-                        "rake": float(p.get('nodal-plane-1-rake'))
-                    }
-                    break
+            # Extract Focal Mechanism Parameters (Strike, Dip, Rake)
+            focal_params = None
+            # Priority: moment-tensor -> focal-mechanism
+            for p_type in ['moment-tensor', 'focal-mechanism']:
+                if p_type in products:
+                    # Get the first item (usually primary)
+                    item = products[p_type][0]
+                    # Look into properties for focal-mechanism parameters
+                    p = item.get('properties', {})
+                    if 'nodal-plane-1-strike' in p:
+                        focal_params = {
+                            "strike": float(p.get('nodal-plane-1-strike')),
+                            "dip": float(p.get('nodal-plane-1-dip')),
+                            "rake": float(p.get('nodal-plane-1-rake'))
+                        }
+                        break
 
-        # Fetch Tectonic Summary from region-info page
-        tectonic_summary = None
-        try:
-            # 尝试从 region-info 页面获取 tectonic summary
-            region_info_url = f"https://earthquake.usgs.gov/earthquakes/eventpage/{event_id}/region-info"
-            print(f"  Fetching tectonic summary from: {region_info_url}")
-            response = requests.get(region_info_url, timeout=30)
-            print(f"  Region-info page status code: {response.status_code}")
-            if response.status_code == 200:
-                # 保存页面内容到文件，以便调试
-                with open(f"region_info_{event_id}.html", "w") as f:
-                    f.write(response.text)
-                print(f"  Saved region-info page to region_info_{event_id}.html")
-                
-                # 尝试多种方式提取 tectonic summary
-                # 方式1: 直接从 region-info 页面提取，使用更宽松的正则表达式
-                summary_match = re.search(r'Tectonic Summary[\s\S]*?<div[^>]*>([\s\S]*?)</div>', response.text)
-                if summary_match:
-                    print("  Found tectonic summary in region-info page")
-                    tectonic_summary = summary_match.group(1).strip()
-                else:
-                    # 方式2: 尝试查找包含 tectonic summary 的 div
-                    summary_match = re.search(r'<div[^>]*tectonic[^>]*>([\s\S]*?)</div>', response.text, re.IGNORECASE)
+            # Fetch Tectonic Summary from region-info page
+            tectonic_summary = None
+            try:
+                # 尝试从 region-info 页面获取 tectonic summary
+                region_info_url = f"https://earthquake.usgs.gov/earthquakes/eventpage/{event_id}/region-info"
+                print(f"  Fetching tectonic summary from: {region_info_url}")
+                response = requests.get(region_info_url, timeout=30)
+                print(f"  Region-info page status code: {response.status_code}")
+                if response.status_code == 200:
+                    # 保存页面内容到文件，以便调试
+                    with open(f"region_info_{event_id}.html", "w") as f:
+                        f.write(response.text)
+                    print(f"  Saved region-info page to region_info_{event_id}.html")
+                    
+                    # 尝试多种方式提取 tectonic summary
+                    # 方式1: 直接从 region-info 页面提取，使用更宽松的正则表达式
+                    summary_match = re.search(r'Tectonic Summary[\s\S]*?<div[^>]*>([\s\S]*?)</div>', response.text)
                     if summary_match:
-                        print("  Found tectonic summary in tectonic div")
+                        print("  Found tectonic summary in region-info page")
                         tectonic_summary = summary_match.group(1).strip()
                     else:
-                        # 方式3: 尝试从 executive 页面提取
-                        executive_url = f"https://earthquake.usgs.gov/earthquakes/eventpage/{event_id}/executive"
-                        print(f"  Trying executive page: {executive_url}")
-                        executive_response = requests.get(executive_url, timeout=30)
-                        print(f"  Executive page status code: {executive_response.status_code}")
-                        if executive_response.status_code == 200:
-                            # 保存 executive 页面内容到文件，以便调试
-                            with open(f"executive_{event_id}.html", "w") as f:
-                                f.write(executive_response.text)
-                            print(f"  Saved executive page to executive_{event_id}.html")
-                            
-                            # 尝试从 executive 页面提取
-                            summary_match = re.search(r'Tectonic Summary[\s\S]*?<div[^>]*>([\s\S]*?)</div>', executive_response.text)
-                            if summary_match:
-                                print("  Found tectonic summary in executive page")
-                                tectonic_summary = summary_match.group(1).strip()
+                        # 方式2: 尝试查找包含 tectonic summary 的 div
+                        summary_match = re.search(r'<div[^>]*tectonic[^>]*>([\s\S]*?)</div>', response.text, re.IGNORECASE)
+                        if summary_match:
+                            print("  Found tectonic summary in tectonic div")
+                            tectonic_summary = summary_match.group(1).strip()
+                        else:
+                            # 方式3: 尝试从 executive 页面提取
+                            executive_url = f"https://earthquake.usgs.gov/earthquakes/eventpage/{event_id}/executive"
+                            print(f"  Trying executive page: {executive_url}")
+                            executive_response = requests.get(executive_url, timeout=30)
+                            print(f"  Executive page status code: {executive_response.status_code}")
+                            if executive_response.status_code == 200:
+                                # 保存 executive 页面内容到文件，以便调试
+                                with open(f"executive_{event_id}.html", "w") as f:
+                                    f.write(executive_response.text)
+                                print(f"  Saved executive page to executive_{event_id}.html")
+                                
+                                # 尝试从 executive 页面提取
+                                summary_match = re.search(r'Tectonic Summary[\s\S]*?<div[^>]*>([\s\S]*?)</div>', executive_response.text)
+                                if summary_match:
+                                    print("  Found tectonic summary in executive page")
+                                    tectonic_summary = summary_match.group(1).strip()
                 
                 if tectonic_summary:
                     # Clean up HTML tags
@@ -239,66 +240,67 @@ def fetch_data():
                     print(f"  Successfully fetched tectonic summary: {tectonic_summary[:100]}...")
                 else:
                     print("  No tectonic summary found")
-            else:
-                print(f"  Failed to fetch region-info page: {response.status_code}")
-        except Exception as e:
-            print(f"  Warning: Failed to fetch tectonic summary: {e}")
+            except Exception as e:
+                print(f"  Warning: Failed to fetch tectonic summary: {e}")
 
-        def get_images(p_type):
-            items = products.get(p_type, [])
-            imgs = []
-            for item in items:
-                contents = item.get('contents', {})
-                keys = ['fm', 'focal', 'beachball', 'mechanism', 'mpp', 'm_p', 'download'] if p_type in ['moment-tensor', 'focal-mechanism'] else ['intensity', 'pager', 'dyfi_geo']
-                for k, v in contents.items():
-                    kl, url = k.lower(), v['url']
-                    if any(x in kl for x in keys) and kl.endswith(('.png', '.jpg', '.jpeg')) and url not in global_seen_images:
-                        imgs.append(url); global_seen_images.add(url)
-                if not imgs:
+            def get_images(p_type):
+                items = products.get(p_type, [])
+                imgs = []
+                for item in items:
+                    contents = item.get('contents', {})
+                    keys = ['fm', 'focal', 'beachball', 'mechanism', 'mpp', 'm_p', 'download'] if p_type in ['moment-tensor', 'focal-mechanism'] else ['intensity', 'pager', 'dyfi_geo']
                     for k, v in contents.items():
-                        url = v['url']
-                        if k.lower().endswith(('.png', '.jpg', '.jpeg')) and url not in global_seen_images:
-                            imgs.append(url); global_seen_images.add(url); break
-            return list(set(imgs))[:2]
+                        kl, url = k.lower(), v['url']
+                        if any(x in kl for x in keys) and kl.endswith(('.png', '.jpg', '.jpeg')) and url not in global_seen_images:
+                            imgs.append(url); global_seen_images.add(url)
+                    if not imgs:
+                        for k, v in contents.items():
+                            url = v['url']
+                            if k.lower().endswith(('.png', '.jpg', '.jpeg')) and url not in global_seen_images:
+                                imgs.append(url); global_seen_images.add(url); break
+                return list(set(imgs))[:2]
 
-        usgs_reports = {
-            "shakemap": {"images": get_images('shakemap'), "title": "Shakemap"},
-            "dyfi": {"images": get_images('dyfi'), "title": "DYFI"},
-            "losspager": {"images": get_images('losspager'), "title": "PAGER"},
-            "tectonic_summary": tectonic_summary
-        }
+            usgs_reports = {
+                "shakemap": {"images": get_images('shakemap'), "title": "Shakemap"},
+                "dyfi": {"images": get_images('dyfi'), "title": "DYFI"},
+                "losspager": {"images": get_images('losspager'), "title": "PAGER"},
+                "tectonic_summary": tectonic_summary
+            }
 
-        public_info = []
-        for lp in ['general-link', 'impact-link', 'associated-link']:
-            for item in products.get(lp, []):
-                p = item.get('properties', {})
-                if p.get('url'): public_info.append({"text": p.get('text') or p.get('title'), "url": p.get('url')})
+            public_info = []
+            for lp in ['general-link', 'impact-link', 'associated-link']:
+                for item in products.get(lp, []):
+                    p = item.get('properties', {})
+                    if p.get('url'): public_info.append({"text": p.get('text') or p.get('title'), "url": p.get('url')})
+                    if len(public_info) >= 3: break
                 if len(public_info) >= 3: break
-            if len(public_info) >= 3: break
 
-        google_news = fetch_google_news(f"earthquake {props['place'].split(',')[-1].strip()}")
+            google_news = fetch_google_news(f"earthquake {props['place'].split(',')[-1].strip()}")
 
-        # 生成震源球图片
-        beachball_path = None
-        if focal_params:
-            beachball_filename = f"images/beachball_{i}.png"
-            draw_beachball(
-                focal_params['strike'],
-                focal_params['dip'],
-                focal_params['rake'],
-                beachball_filename
-            )
-            beachball_path = beachball_filename
+            # 生成震源球图片
+            beachball_path = None
+            if focal_params:
+                beachball_filename = f"images/beachball_{i}.png"
+                draw_beachball(
+                    focal_params['strike'],
+                    focal_params['dip'],
+                    focal_params['rake'],
+                    beachball_filename
+                )
+                beachball_path = beachball_filename
 
-        results['top_3'].append({
-            "id": event_id, "mag": props['mag'], "place": props['place'], "time": props['time'], "lat": lat, "lon": lon, "depth": depth,
-            "focal_params": focal_params, # STRIKE, DIP, RAKE for canvas plotting
-            "beachball_image": beachball_path, # 保存本地震源球图片路径
-            "usgs_reports": usgs_reports, "public_info": public_info, "google_news": google_news,
-            "history_count": len(hist_data.get('features', [])), "history_geojson": hist_data,
-            "usgs_url": f"https://earthquake.usgs.gov/earthquakes/eventpage/{event_id}"
-        })
-        time.sleep(0.5)
+            results['top_3'].append({
+                "id": event_id, "mag": props['mag'], "place": props['place'], "time": props['time'], "lat": lat, "lon": lon, "depth": depth,
+                "focal_params": focal_params, # STRIKE, DIP, RAKE for canvas plotting
+                "beachball_image": beachball_path, # 保存本地震源球图片路径
+                "usgs_reports": usgs_reports, "public_info": public_info, "google_news": google_news,
+                "history_count": len(hist_data.get('features', [])), "history_geojson": hist_data,
+                "usgs_url": f"https://earthquake.usgs.gov/earthquakes/eventpage/{event_id}"
+            })
+            time.sleep(0.5)
+        except Exception as e:
+            print(f"  Error processing event {eq.get('id', 'unknown')}: {e}")
+            continue
 
     with open('data.json', 'w') as f:
         json.dump(results, f, indent=2)
