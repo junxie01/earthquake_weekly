@@ -24,10 +24,6 @@ fi
 echo "Fetching remote changes..."
 git fetch origin
 
-<<<<<<< Updated upstream
-=======
-#<<<<<<< Updated upstream
->>>>>>> Stashed changes
 # 2. 暂存本地修改（包括图片文件）
 echo "Stashing local changes..."
 git stash push -m "local changes" -u 2>/dev/null || echo "No local changes to stash."

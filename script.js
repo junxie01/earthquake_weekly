@@ -8,15 +8,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function loadApp() {
     try {
-        const [storedDataResp, platesResp, currentEqsResp] = await Promise.all([
-            fetch(DATA_JSON_URL),
-            fetch(PLATE_BOUNDARIES_URL),
-            fetch(USGS_WEEKLY_URL)
-        ]);
-
+        // 首先加载本地数据
+        const storedDataResp = await fetch(DATA_JSON_URL);
         const data = await storedDataResp.json();
-        const plates = await platesResp.json();
-        const currentEqs = await currentEqsResp.json();
+        
+        // 尝试加载外部资源，但如果失败也能继续
+        let plates = null;
+        let currentEqs = null;
+        
+        try {
+            const platesResp = await fetch(PLATE_BOUNDARIES_URL);
+            plates = await platesResp.json();
+        } catch (e) {
+            console.warn('Failed to load plate boundaries:', e);
+        }
+        
+        try {
+            const currentEqsResp = await fetch(USGS_WEEKLY_URL);
+            currentEqs = await currentEqsResp.json();
+        } catch (e) {
+            console.warn('Failed to load weekly earthquake data:', e);
+        }
 
         document.getElementById('loading').style.display = 'none';
         document.getElementById('content').style.display = 'block';
@@ -24,7 +36,11 @@ async function loadApp() {
         console.log('Data loaded:', data);
         console.log('Top 3 earthquakes:', data.top_3);
 
-        initMainMap(currentEqs, plates);
+        // 只有当所有数据都加载成功时才初始化主地图
+        if (currentEqs && plates) {
+            initMainMap(currentEqs, plates);
+        }
+        
         renderStats(data);
         renderTopThree(data, plates);
     } catch (error) {
@@ -369,12 +385,19 @@ function renderTopThree(data, plates) {
 
         const localMap = L.map(`local-map-${i}`).setView([eq.lat, eq.lon], 6);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(localMap);
-        L.geoJSON(plates, { style: { color: 'orange', weight: 2 } }).addTo(localMap);
+        // 只有当 plates 数据存在时才添加板块边界
+        if (plates) {
+            L.geoJSON(plates, { style: { color: 'orange', weight: 2 } }).addTo(localMap);
+        }
         
         const historyFeatures = eq.history_geojson?.features || [];
-        const historyTimes = historyFeatures.map(f => f.properties.time);
-        const minHistoryTime = Math.min(...historyTimes);
-        const maxHistoryTime = Math.max(...historyTimes);
+        let minHistoryTime = 0;
+        let maxHistoryTime = 0;
+        if (historyFeatures.length > 0) {
+            const historyTimes = historyFeatures.map(f => f.properties.time);
+            minHistoryTime = Math.min(...historyTimes);
+            maxHistoryTime = Math.max(...historyTimes);
+        }
         
         if (eq.history_geojson) {
             L.geoJSON(eq.history_geojson, {
