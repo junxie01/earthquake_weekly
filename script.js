@@ -1,5 +1,5 @@
 const DATA_JSON_URL = 'data.json';
-const PLATE_BOUNDARIES_URL = 'https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json';
+const PLATE_BOUNDARIES_URL = 'pb2002_boundaries.json'; // 本地文件路径
 const USGS_WEEKLY_URL = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson';
 
 document.addEventListener('DOMContentLoaded', () => {
