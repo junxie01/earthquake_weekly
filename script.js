@@ -303,6 +303,7 @@ function renderTopThree(data, plates) {
     console.log('Earthquake data:', data.top_3);
 
     data.top_3.forEach((eq, i) => {
+        try {
         console.log(`Processing earthquake ${i+1}:`, eq);
         const card = document.createElement('div');
         card.className = 'eq-card';
@@ -435,6 +436,9 @@ function renderTopThree(data, plates) {
         mainMarker.bringToFront();
         
         addLocalLegend(localMap, minHistoryTime, maxHistoryTime);
+        } catch (error) {
+            console.error(`Error processing earthquake ${i+1}:`, error);
+        }
     });
 }
 
