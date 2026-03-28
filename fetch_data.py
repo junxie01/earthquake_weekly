@@ -107,11 +107,16 @@ def fetch_data():
     print("Fetching weekly earthquake data...")
     print("=" * 60)
     
+    # 确保images目录存在
+    os.makedirs('images', exist_ok=True)
+    
     weekly_url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson"
     
     try:
-        resp = requests.get(weekly_url, timeout=30)
-        resp.raise_for_status()
+        resp = fetch_with_retry(weekly_url, max_retries=3, timeout=30)
+        if not resp:
+            print("Error fetching weekly data: Failed after multiple retries")
+            return
         data = resp.json()
     except Exception as e:
         print(f"Error fetching weekly data: {e}")
@@ -291,7 +296,22 @@ def fetch_data():
 
             # 获取 Google News
             location = props['place'].split(',')[-1].strip() if ',' in props['place'] else props['place']
-            google_news = fetch_google_news(f"earthquake {location}")
+            # 尝试多种搜索查询格式
+            google_news = []
+            search_queries = [
+                f"earthquake {location}",
+                f"{props['place']} earthquake",
+                f"M{props['mag']} earthquake {location}"
+            ]
+            
+            for query in search_queries:
+                news = fetch_google_news(query)
+                if news:
+                    google_news = news
+                    break
+            
+            if not google_news:
+                print(f"    No Google News found for any query")
 
             # 生成震源球图片
             beachball_path = None
