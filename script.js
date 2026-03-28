@@ -320,10 +320,10 @@ function renderTopThree(data, plates) {
                 </div>
             `;
         } else if (eq.focal_params) {
-            // 如果没有本地图片，作为后备使用 Canvas 绘制
+            // 如果没有本地图片，创建一个canvas元素来绘制
             mediaHTML += `
                 <div class="media-item">
-                    <img src="${eq.beachball_image}" alt="Focal Mechanism" onclick="window.open('${eq.beachball_image}', '_blank')">
+                    <canvas id="beachball-${i}" width="150" height="150"></canvas>
                     <div class="media-caption">Focal Mechanism<br>
                     <small>S:${eq.focal_params.strike}° D:${eq.focal_params.dip}° R:${eq.focal_params.rake}°</small></div>
                 </div>
