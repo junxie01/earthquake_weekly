@@ -299,7 +299,11 @@ function renderTopThree(data, plates) {
     container.innerHTML = '';
     if (!data.top_3) return;
 
+    console.log('Rendering top 3 earthquakes:', data.top_3.length);
+    console.log('Earthquake data:', data.top_3);
+
     data.top_3.forEach((eq, i) => {
+        console.log(`Processing earthquake ${i+1}:`, eq);
         const card = document.createElement('div');
         card.className = 'eq-card';
         const reports = eq.usgs_reports;
