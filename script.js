@@ -384,57 +384,65 @@ function renderTopThree(data, plates) {
 
         // 绘图执行 - 只有在没有本地震源球图片时才绘制
         if (!eq.beachball_image && eq.focal_params) {
-            drawBeachball(`beachball-${i}`, eq.focal_params.strike, eq.focal_params.dip, eq.focal_params.rake);
+            try {
+                drawBeachball(`beachball-${i}`, eq.focal_params.strike, eq.focal_params.dip, eq.focal_params.rake);
+            } catch (error) {
+                console.error(`Error drawing beachball for earthquake ${i+1}:`, error);
+            }
         }
 
-        const localMap = L.map(`local-map-${i}`).setView([eq.lat, eq.lon], 6);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(localMap);
-        // 只有当 plates 数据存在时才添加板块边界
-        if (plates) {
-            L.geoJSON(plates, { style: { color: 'orange', weight: 2 } }).addTo(localMap);
-        }
-        
-        const historyFeatures = eq.history_geojson?.features || [];
-        let minHistoryTime = 0;
-        let maxHistoryTime = 0;
-        if (historyFeatures.length > 0) {
-            const historyTimes = historyFeatures.map(f => f.properties.time);
-            minHistoryTime = Math.min(...historyTimes);
-            maxHistoryTime = Math.max(...historyTimes);
-        }
-        
-        if (eq.history_geojson) {
-            L.geoJSON(eq.history_geojson, {
-                pointToLayer: (f, latlng) => {
-                    if (f.id === eq.id) return null;
-                    const radius = Math.max(f.properties.mag * 1.5, 2) * 0.4; // 进一步缩小圆圈大小
-                    const fillColor = getColorByDepth(f.properties.depth);
-                    return L.circleMarker(latlng, {
-                        radius: radius,
-                        color: '#666',
-                        weight: 0.5,
-                        fillColor: fillColor,
-                        fillOpacity: 0.5
-                    });
-                },
-                onEachFeature: (f, layer) => layer.bindPopup(`M${f.properties.mag} - ${new Date(f.properties.time).getFullYear()} - Depth: ${f.properties.depth ? f.properties.depth.toFixed(2) : 'N/A'} km`)
+        try {
+            const localMap = L.map(`local-map-${i}`).setView([eq.lat, eq.lon], 6);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(localMap);
+            // 只有当 plates 数据存在时才添加板块边界
+            if (plates) {
+                L.geoJSON(plates, { style: { color: 'orange', weight: 2 } }).addTo(localMap);
+            }
+            
+            const historyFeatures = eq.history_geojson?.features || [];
+            let minHistoryTime = 0;
+            let maxHistoryTime = 0;
+            if (historyFeatures.length > 0) {
+                const historyTimes = historyFeatures.map(f => f.properties.time);
+                minHistoryTime = Math.min(...historyTimes);
+                maxHistoryTime = Math.max(...historyTimes);
+            }
+            
+            if (eq.history_geojson) {
+                L.geoJSON(eq.history_geojson, {
+                    pointToLayer: (f, latlng) => {
+                        if (f.id === eq.id) return null;
+                        const radius = Math.max(f.properties.mag * 1.5, 2) * 0.4; // 进一步缩小圆圈大小
+                        const fillColor = getColorByDepth(f.properties.depth);
+                        return L.circleMarker(latlng, {
+                            radius: radius,
+                            color: '#666',
+                            weight: 0.5,
+                            fillColor: fillColor,
+                            fillOpacity: 0.5
+                        });
+                    },
+                    onEachFeature: (f, layer) => layer.bindPopup(`M${f.properties.mag} - ${new Date(f.properties.time).getFullYear()} - Depth: ${f.properties.depth ? f.properties.depth.toFixed(2) : 'N/A'} km`)
+                }).addTo(localMap);
+            }
+            
+            // 使用红色五角星表示本次地震
+            const mainMarker = L.marker([eq.lat, eq.lon], {
+                icon: L.divIcon({
+                    html: '<span style="font-size: 24px; color: #d32f2f;">★</span>',
+                    className: 'custom-star-icon',
+                    iconSize: [24, 24],
+                    iconAnchor: [12, 12]
+                })
             }).addTo(localMap);
+            
+            mainMarker.bindPopup(`M${eq.mag} - Current Earthquake - Depth: ${eq.depth ? eq.depth.toFixed(2) : 'N/A'} km`);
+            mainMarker.bringToFront();
+            
+            addLocalLegend(localMap, minHistoryTime, maxHistoryTime);
+        } catch (error) {
+            console.error(`Error initializing map for earthquake ${i+1}:`, error);
         }
-        
-        // 使用红色五角星表示本次地震
-        const mainMarker = L.marker([eq.lat, eq.lon], {
-            icon: L.divIcon({
-                html: '<span style="font-size: 24px; color: #d32f2f;">★</span>',
-                className: 'custom-star-icon',
-                iconSize: [24, 24],
-                iconAnchor: [12, 12]
-            })
-        }).addTo(localMap);
-        
-        mainMarker.bindPopup(`M${eq.mag} - Current Earthquake - Depth: ${eq.depth ? eq.depth.toFixed(2) : 'N/A'} km`);
-        mainMarker.bringToFront();
-        
-        addLocalLegend(localMap, minHistoryTime, maxHistoryTime);
     });
 }
 
