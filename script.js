@@ -437,7 +437,6 @@ function renderTopThree(data, plates) {
             }).addTo(localMap);
             
             mainMarker.bindPopup(`M${eq.mag} - Current Earthquake - Depth: ${eq.depth ? eq.depth.toFixed(2) : 'N/A'} km`);
-            mainMarker.bringToFront();
             
             addLocalLegend(localMap, minHistoryTime, maxHistoryTime);
         } catch (error) {
