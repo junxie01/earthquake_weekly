@@ -8,24 +8,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function loadApp() {
     try {
+        console.log('Starting to load data...');
+        
         // 首先加载本地数据
+        console.log('Loading data.json...');
         const storedDataResp = await fetch(DATA_JSON_URL);
         const data = await storedDataResp.json();
+        console.log('data.json loaded successfully');
         
         // 尝试加载外部资源，但如果失败也能继续
         let plates = null;
         let currentEqs = null;
         
         try {
+            console.log('Loading plate boundaries...');
             const platesResp = await fetch(PLATE_BOUNDARIES_URL);
             plates = await platesResp.json();
+            console.log('Plate boundaries loaded:', plates.features?.length || 0, 'features');
         } catch (e) {
             console.warn('Failed to load plate boundaries:', e);
         }
         
         try {
+            console.log('Loading weekly earthquake data...');
             const currentEqsResp = await fetch(USGS_WEEKLY_URL);
             currentEqs = await currentEqsResp.json();
+            console.log('Weekly earthquake data loaded');
         } catch (e) {
             console.warn('Failed to load weekly earthquake data:', e);
         }
@@ -36,8 +44,9 @@ async function loadApp() {
         console.log('Data loaded:', data);
         console.log('Top 3 earthquakes:', data.top_3);
 
-        // 只有当所有数据都加载成功时才初始化主地图
-        if (currentEqs && plates) {
+        // 初始化主地图 - 即使没有 weekly 数据也显示板块边界
+        if (plates) {
+            console.log('Initializing main map...');
             initMainMap(currentEqs, plates);
         }
         
@@ -55,26 +64,31 @@ function initMainMap(data, plates) {
         attribution: '© OpenStreetMap'
     }).addTo(map);
     if (plates) {
+        console.log('Adding plate boundaries to main map');
         L.geoJSON(plates, { style: { color: 'orange', weight: 1.5, dashArray: '5, 5' } }).addTo(map);
     }
     
-    const features = data.features || [];
-    const times = features.map(f => f.properties.time);
-    const minTime = Math.min(...times);
-    const maxTime = Math.max(...times);
-    
-    L.geoJSON(data, {
-        pointToLayer: (f, latlng) => L.circleMarker(latlng, {
-            radius: Math.max(f.properties.mag * 2.2, 2),
-            fillColor: getColorByTime(f.properties.time, minTime, maxTime),
-            color: "#000", weight: 0.5, fillOpacity: 0.7
-        }),
-        onEachFeature: (f, layer) => {
-            layer.bindPopup(`<strong>M${f.properties.mag}</strong> - ${f.properties.place}<br>${new Date(f.properties.time).toLocaleString()}`);
-        }
-    }).addTo(map);
-    
-    addLegend(map, minTime, maxTime);
+    if (data && data.features) {
+        const features = data.features || [];
+        const times = features.map(f => f.properties.time);
+        const minTime = Math.min(...times);
+        const maxTime = Math.max(...times);
+        
+        L.geoJSON(data, {
+            pointToLayer: (f, latlng) => L.circleMarker(latlng, {
+                radius: Math.max(f.properties.mag * 2.2, 2),
+                fillColor: getColorByTime(f.properties.time, minTime, maxTime),
+                color: "#000", weight: 0.5, fillOpacity: 0.7
+            }),
+            onEachFeature: (f, layer) => {
+                layer.bindPopup(`<strong>M${f.properties.mag}</strong> - ${f.properties.place}<br>${new Date(f.properties.time).toLocaleString()}`);
+            }
+        }).addTo(map);
+        
+        addLegend(map, minTime, maxTime);
+    } else {
+        console.log('No weekly earthquake data available for main map');
+    }
 }
 
 function getColorByTime(time, minTime, maxTime) {
@@ -305,7 +319,10 @@ function renderTopThree(data, plates) {
     console.log('Earthquake data:', data.top_3);
 
     data.top_3.forEach((eq, i) => {
-        console.log(`Processing earthquake ${i+1}:`, eq);
+        console.log(`Processing earthquake ${i+1}:`, eq.place);
+        console.log(`  History count:`, eq.history_count);
+        console.log(`  History geojson:`, eq.history_geojson ? 'exists' : 'missing');
+        console.log(`  History features:`, eq.history_geojson?.features?.length || 0);
         const card = document.createElement('div');
         card.className = 'eq-card';
         const reports = eq.usgs_reports;
